@@ -19,15 +19,25 @@
         <h1 class="title-top">Herramienta</h1>
         <h1 class="title-bottom">Instituto</h1>
       </div>
-  
-      <div>
-        <a href='/IniciarSesion'>Iniciar Sesion</a>
-      </div>
-      
-      <div>
-        <a href='/RegistrarUsuario'>Registrar Usuario</a>
-      </div>
     </center>
+  </section>
+  
+  <section>
+    
+    <select name="nom_usuario" form="forminiciosesion">
+      {% for usuario in usuarios %}
+      <option value='{{usuario.nombre_usuario}}'>{{usuario.nombre}} {{usuario.apellido}}</option>
+      {% endfor %}
+    </select>
+    
+    <form action="/IniciarSesion" method="POST" id="forminiciosesion">
+      <div>
+        <input type="submit" value="Submit">
+      </div>
+    </form>
+    
+    
+    
   </section>
 
 </body>

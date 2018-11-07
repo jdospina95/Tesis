@@ -9,13 +9,22 @@ session = ''
 @app.route('/', methods=['GET'])
 def index():
     global session
-    return render_template('index.html')
+    return render_template('index.html', sesion = session)
     
 @app.route('/IniciarSesion', methods=['GET', 'POST'])
 def iniciarsesion():
     global session
-    session = request.form['nombre_usuario']
-    return render_template('iniciarSesion.html')
+    if request.method == 'POST':
+        session = request.form['nom_usuario']
+        return redirect('/')
+    else:
+        files = os.listdir('database')
+        reg = []
+        for fname in files:
+            with open("database/"+fname,"r") as f:
+                data = json.load(f)
+                reg.append({'nombre':data['nombre'], 'apellido':data['apellido']})
+        return render_template('iniciarSesion.html',usuarios=reg)
     
 @app.route('/RegistrarUsuario', methods=['GET', 'POST'])
 def registrarusuario():
@@ -24,7 +33,6 @@ def registrarusuario():
         data = {}
         for (k,v) in fdata.items():
             data[k]=v
-        print data
         nombre,apellido = data['nombre'],data['apellido']
         with open("database/"+nombre+apellido+".json","w") as f:
             json.dump(data,f)
