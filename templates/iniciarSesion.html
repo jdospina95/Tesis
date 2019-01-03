@@ -23,26 +23,24 @@
   </section>
   
   <section>
-    
-    <select name="nom_usuario" form="forminiciosesion">
-      {% for usuario in usuarios %}
-      <option value='{{usuario.nombre_usuario}}'>{{usuario.nombre}} {{usuario.apellido}}</option>
-      {% endfor %}
-    </select>
-    
-    <form action="/IniciarSesion" method="POST" id="forminiciosesion">
-      <div>
-        <input type="submit" value="Submit">
-      </div>
-    </form>
-    
-    
-    
+    <center>
+      <select name="nom_usuario" form="forminiciosesion">
+        {% for usuario in usuarios %}
+        <option value='{{usuario.nombre_usuario}}'>{{usuario.nombre}} {{usuario.apellido}}</option>
+        {% endfor %}
+      </select>
+      
+      <form action="/IniciarSesion" method="POST" id="forminiciosesion">
+        <div>
+          <input type="submit" value="Iniciar Sesion">
+        </div>
+      </form>
+    </center>
   </section>
 
 </body>
 
-<bottom>
+<footer>
   <center>
     <div class="bottom">
       <a href="mailto:jdospina95@javerianacali.edu.co">
@@ -50,6 +48,6 @@
         <span class="yellow-with-darkyellow">Santiago Rengifo & Juan David Ospina</span></a>
     </div>
   </center>
-</bottom>
+</footer>
 
 </html>
