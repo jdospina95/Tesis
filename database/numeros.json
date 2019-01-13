@@ -1,0 +1,4006 @@
+[
+ {
+   "numero": 0,
+   "texto": "cero"
+ },
+ {
+   "numero": 1,
+   "texto": "uno"
+ },
+ {
+   "numero": 2,
+   "texto": "dos"
+ },
+ {
+   "numero": 3,
+   "texto": "tres"
+ },
+ {
+   "numero": 4,
+   "texto": "cuatro"
+ },
+ {
+   "numero": 5,
+   "texto": "cinco"
+ },
+ {
+   "numero": 6,
+   "texto": "seis"
+ },
+ {
+   "numero": 7,
+   "texto": "siete"
+ },
+ {
+   "numero": 8,
+   "texto": "ocho"
+ },
+ {
+   "numero": 9,
+   "texto": "nueve"
+ },
+ {
+   "numero": 10,
+   "texto": "diez"
+ },
+ {
+   "numero": 11,
+   "texto": "once"
+ },
+ {
+   "numero": 12,
+   "texto": "doce"
+ },
+ {
+   "numero": 13,
+   "texto": "trece"
+ },
+ {
+   "numero": 14,
+   "texto": "catorce"
+ },
+ {
+   "numero": 15,
+   "texto": "quince"
+ },
+ {
+   "numero": 16,
+   "texto": "dieciseis"
+ },
+ {
+   "numero": 17,
+   "texto": "diecisiete"
+ },
+ {
+   "numero": 18,
+   "texto": "dieciocho"
+ },
+ {
+   "numero": 19,
+   "texto": "diecinueve"
+ },
+ {
+   "numero": 20,
+   "texto": "veinte"
+ },
+ {
+   "numero": 21,
+   "texto": "veintiuno"
+ },
+ {
+   "numero": 22,
+   "texto": "veintidos"
+ },
+ {
+   "numero": 23,
+   "texto": "veintitres"
+ },
+ {
+   "numero": 24,
+   "texto": "veinticuatro"
+ },
+ {
+   "numero": 25,
+   "texto": "veinticinco"
+ },
+ {
+   "numero": 26,
+   "texto": "veintiseis"
+ },
+ {
+   "numero": 27,
+   "texto": "veintisiete"
+ },
+ {
+   "numero": 28,
+   "texto": "veintiocho"
+ },
+ {
+   "numero": 29,
+   "texto": "veintinueve"
+ },
+ {
+   "numero": 30,
+   "texto": "treinta"
+ },
+ {
+   "numero": 31,
+   "texto": "treinta y uno"
+ },
+ {
+   "numero": 32,
+   "texto": "treinta y dos"
+ },
+ {
+   "numero": 33,
+   "texto": "treinta y tres"
+ },
+ {
+   "numero": 34,
+   "texto": "treinta y cuatro"
+ },
+ {
+   "numero": 35,
+   "texto": "treinta y cinco"
+ },
+ {
+   "numero": 36,
+   "texto": "treinta y seis"
+ },
+ {
+   "numero": 37,
+   "texto": "treinta y siete"
+ },
+ {
+   "numero": 38,
+   "texto": "treinta y ocho"
+ },
+ {
+   "numero": 39,
+   "texto": "treinta y nueve"
+ },
+ {
+   "numero": 40,
+   "texto": "cuarenta"
+ },
+ {
+   "numero": 41,
+   "texto": "cuarenta y uno"
+ },
+ {
+   "numero": 42,
+   "texto": "cuarenta y dos"
+ },
+ {
+   "numero": 43,
+   "texto": "cuarenta y tres"
+ },
+ {
+   "numero": 44,
+   "texto": "cuarenta y cuatro"
+ },
+ {
+   "numero": 45,
+   "texto": "cuarenta y cinco"
+ },
+ {
+   "numero": 46,
+   "texto": "cuarenta y seis"
+ },
+ {
+   "numero": 47,
+   "texto": "cuarenta y siete"
+ },
+ {
+   "numero": 48,
+   "texto": "cuarenta y ocho"
+ },
+ {
+   "numero": 49,
+   "texto": "cuarenta y nueve"
+ },
+ {
+   "numero": 50,
+   "texto": "cincuenta"
+ },
+ {
+   "numero": 51,
+   "texto": "cincuenta y uno"
+ },
+ {
+   "numero": 52,
+   "texto": "cincuenta y dos"
+ },
+ {
+   "numero": 53,
+   "texto": "cincuenta y tres"
+ },
+ {
+   "numero": 54,
+   "texto": "cincuenta y cuatro"
+ },
+ {
+   "numero": 55,
+   "texto": "cincuenta y cinco"
+ },
+ {
+   "numero": 56,
+   "texto": "cincuenta y seis"
+ },
+ {
+   "numero": 57,
+   "texto": "cincuenta y siete"
+ },
+ {
+   "numero": 58,
+   "texto": "cincuenta y ocho"
+ },
+ {
+   "numero": 59,
+   "texto": "cincuenta y nueve"
+ },
+ {
+   "numero": 60,
+   "texto": "sesenta"
+ },
+ {
+   "numero": 61,
+   "texto": "sesenta y uno"
+ },
+ {
+   "numero": 62,
+   "texto": "sesenta y dos"
+ },
+ {
+   "numero": 63,
+   "texto": "sesenta y tres"
+ },
+ {
+   "numero": 64,
+   "texto": "sesenta y cuatro"
+ },
+ {
+   "numero": 65,
+   "texto": "sesenta y cinco"
+ },
+ {
+   "numero": 66,
+   "texto": "sesenta y seis"
+ },
+ {
+   "numero": 67,
+   "texto": "sesenta y siete"
+ },
+ {
+   "numero": 68,
+   "texto": "sesenta y ocho"
+ },
+ {
+   "numero": 69,
+   "texto": "sesenta y nueve"
+ },
+ {
+   "numero": 70,
+   "texto": "setenta"
+ },
+ {
+   "numero": 71,
+   "texto": "setenta y uno"
+ },
+ {
+   "numero": 72,
+   "texto": "setenta y dos"
+ },
+ {
+   "numero": 73,
+   "texto": "setenta y tres"
+ },
+ {
+   "numero": 74,
+   "texto": "setenta y cuatro"
+ },
+ {
+   "numero": 75,
+   "texto": "setenta y cinco"
+ },
+ {
+   "numero": 76,
+   "texto": "setenta y seis"
+ },
+ {
+   "numero": 77,
+   "texto": "setenta y siete"
+ },
+ {
+   "numero": 78,
+   "texto": "setenta y ocho"
+ },
+ {
+   "numero": 79,
+   "texto": "setenta y nueve"
+ },
+ {
+   "numero": 80,
+   "texto": "ochenta"
+ },
+ {
+   "numero": 81,
+   "texto": "ochenta y uno"
+ },
+ {
+   "numero": 82,
+   "texto": "ochenta y dos"
+ },
+ {
+   "numero": 83,
+   "texto": "ochenta y tres"
+ },
+ {
+   "numero": 84,
+   "texto": "ochenta y cuatro"
+ },
+ {
+   "numero": 85,
+   "texto": "ochenta y cinco"
+ },
+ {
+   "numero": 86,
+   "texto": "ochenta y seis"
+ },
+ {
+   "numero": 87,
+   "texto": "ochenta y siete"
+ },
+ {
+   "numero": 88,
+   "texto": "ochenta y ocho"
+ },
+ {
+   "numero": 89,
+   "texto": "ochenta y nueve"
+ },
+ {
+   "numero": 90,
+   "texto": "noventa"
+ },
+ {
+   "numero": 91,
+   "texto": "noventa y uno"
+ },
+ {
+   "numero": 92,
+   "texto": "noventa y dos"
+ },
+ {
+   "numero": 93,
+   "texto": "noventa y tres"
+ },
+ {
+   "numero": 94,
+   "texto": "noventa y cuatro"
+ },
+ {
+   "numero": 95,
+   "texto": "noventa y cinco"
+ },
+ {
+   "numero": 96,
+   "texto": "noventa y seis"
+ },
+ {
+   "numero": 97,
+   "texto": "noventa y siete"
+ },
+ {
+   "numero": 98,
+   "texto": "noventa y ocho"
+ },
+ {
+   "numero": 99,
+   "texto": "noventa y nueve"
+ },
+ {
+   "numero": 100,
+   "texto": "cien"
+ },
+ {
+   "numero": 101,
+   "texto": "ciento uno"
+ },
+ {
+   "numero": 102,
+   "texto": "ciento dos"
+ },
+ {
+   "numero": 103,
+   "texto": "ciento tres"
+ },
+ {
+   "numero": 104,
+   "texto": "ciento cuatro"
+ },
+ {
+   "numero": 105,
+   "texto": "ciento cinco"
+ },
+ {
+   "numero": 106,
+   "texto": "ciento seis"
+ },
+ {
+   "numero": 107,
+   "texto": "ciento siete"
+ },
+ {
+   "numero": 108,
+   "texto": "ciento ocho"
+ },
+ {
+   "numero": 109,
+   "texto": "ciento nueve"
+ },
+ {
+   "numero": 110,
+   "texto": "ciento diez"
+ },
+ {
+   "numero": 111,
+   "texto": "ciento once"
+ },
+ {
+   "numero": 112,
+   "texto": "ciento doce"
+ },
+ {
+   "numero": 113,
+   "texto": "ciento trece"
+ },
+ {
+   "numero": 114,
+   "texto": "ciento catorce"
+ },
+ {
+   "numero": 115,
+   "texto": "ciento quince"
+ },
+ {
+   "numero": 116,
+   "texto": "ciento dieciseis"
+ },
+ {
+   "numero": 117,
+   "texto": "ciento diecisiete"
+ },
+ {
+   "numero": 118,
+   "texto": "ciento dieciocho"
+ },
+ {
+   "numero": 119,
+   "texto": "ciento diecinueve"
+ },
+ {
+   "numero": 120,
+   "texto": "ciento veinte"
+ },
+ {
+   "numero": 121,
+   "texto": "ciento veintiuno"
+ },
+ {
+   "numero": 122,
+   "texto": "ciento veintidos"
+ },
+ {
+   "numero": 123,
+   "texto": "ciento veintitres"
+ },
+ {
+   "numero": 124,
+   "texto": "ciento veinticuatro"
+ },
+ {
+   "numero": 125,
+   "texto": "ciento veinticinco"
+ },
+ {
+   "numero": 126,
+   "texto": "ciento veintiseis"
+ },
+ {
+   "numero": 127,
+   "texto": "ciento veintisiete"
+ },
+ {
+   "numero": 128,
+   "texto": "ciento veintiocho"
+ },
+ {
+   "numero": 129,
+   "texto": "ciento veintinueve"
+ },
+ {
+   "numero": 130,
+   "texto": "ciento treinta"
+ },
+ {
+   "numero": 131,
+   "texto": "ciento treinta y uno"
+ },
+ {
+   "numero": 132,
+   "texto": "ciento treinta y dos"
+ },
+ {
+   "numero": 133,
+   "texto": "ciento treinta y tres"
+ },
+ {
+   "numero": 134,
+   "texto": "ciento treinta y cuatro"
+ },
+ {
+   "numero": 135,
+   "texto": "ciento treinta y cinco"
+ },
+ {
+   "numero": 136,
+   "texto": "ciento treinta y seis"
+ },
+ {
+   "numero": 137,
+   "texto": "ciento treinta y siete"
+ },
+ {
+   "numero": 138,
+   "texto": "ciento treinta y ocho"
+ },
+ {
+   "numero": 139,
+   "texto": "ciento treinta y nueve"
+ },
+ {
+   "numero": 140,
+   "texto": "ciento cuarenta"
+ },
+ {
+   "numero": 141,
+   "texto": "ciento cuarenta y uno"
+ },
+ {
+   "numero": 142,
+   "texto": "ciento cuarenta y dos"
+ },
+ {
+   "numero": 143,
+   "texto": "ciento cuarenta y tres"
+ },
+ {
+   "numero": 144,
+   "texto": "ciento cuarenta y cuatro"
+ },
+ {
+   "numero": 145,
+   "texto": "ciento cuarenta y cinco"
+ },
+ {
+   "numero": 146,
+   "texto": "ciento cuarenta y seis"
+ },
+ {
+   "numero": 147,
+   "texto": "ciento cuarenta y siete"
+ },
+ {
+   "numero": 148,
+   "texto": "ciento cuarenta y ocho"
+ },
+ {
+   "numero": 149,
+   "texto": "ciento cuarenta y nueve"
+ },
+ {
+   "numero": 150,
+   "texto": "ciento cincuenta"
+ },
+ {
+   "numero": 151,
+   "texto": "ciento cincuenta y uno"
+ },
+ {
+   "numero": 152,
+   "texto": "ciento cincuenta y dos"
+ },
+ {
+   "numero": 153,
+   "texto": "ciento cincuenta y tres"
+ },
+ {
+   "numero": 154,
+   "texto": "ciento cincuenta y cuatro"
+ },
+ {
+   "numero": 155,
+   "texto": "ciento cincuenta y cinco"
+ },
+ {
+   "numero": 156,
+   "texto": "ciento cincuenta y seis"
+ },
+ {
+   "numero": 157,
+   "texto": "ciento cincuenta y siete"
+ },
+ {
+   "numero": 158,
+   "texto": "ciento cincuenta y ocho"
+ },
+ {
+   "numero": 159,
+   "texto": "ciento cincuenta y nueve"
+ },
+ {
+   "numero": 160,
+   "texto": "ciento sesenta"
+ },
+ {
+   "numero": 161,
+   "texto": "ciento sesenta y uno"
+ },
+ {
+   "numero": 162,
+   "texto": "ciento sesenta y dos"
+ },
+ {
+   "numero": 163,
+   "texto": "ciento sesenta y tres"
+ },
+ {
+   "numero": 164,
+   "texto": "ciento sesenta y cuatro"
+ },
+ {
+   "numero": 165,
+   "texto": "ciento sesenta y cinco"
+ },
+ {
+   "numero": 166,
+   "texto": "ciento sesenta y seis"
+ },
+ {
+   "numero": 167,
+   "texto": "ciento sesenta y siete"
+ },
+ {
+   "numero": 168,
+   "texto": "ciento sesenta y ocho"
+ },
+ {
+   "numero": 169,
+   "texto": "ciento sesenta y nueve"
+ },
+ {
+   "numero": 170,
+   "texto": "ciento setenta"
+ },
+ {
+   "numero": 171,
+   "texto": "ciento setenta y uno"
+ },
+ {
+   "numero": 172,
+   "texto": "ciento setenta y dos"
+ },
+ {
+   "numero": 173,
+   "texto": "ciento setenta y tres"
+ },
+ {
+   "numero": 174,
+   "texto": "ciento setenta y cuatro"
+ },
+ {
+   "numero": 175,
+   "texto": "ciento setenta y cinco"
+ },
+ {
+   "numero": 176,
+   "texto": "ciento setenta y seis"
+ },
+ {
+   "numero": 177,
+   "texto": "ciento setenta y siete"
+ },
+ {
+   "numero": 178,
+   "texto": "ciento setenta y ocho"
+ },
+ {
+   "numero": 179,
+   "texto": "ciento setenta y nueve"
+ },
+ {
+   "numero": 180,
+   "texto": "ciento ochenta"
+ },
+ {
+   "numero": 181,
+   "texto": "ciento ochenta y uno"
+ },
+ {
+   "numero": 182,
+   "texto": "ciento ochenta y dos"
+ },
+ {
+   "numero": 183,
+   "texto": "ciento ochenta y tres"
+ },
+ {
+   "numero": 184,
+   "texto": "ciento ochenta y cuatro"
+ },
+ {
+   "numero": 185,
+   "texto": "ciento ochenta y cinco"
+ },
+ {
+   "numero": 186,
+   "texto": "ciento ochenta y seis"
+ },
+ {
+   "numero": 187,
+   "texto": "ciento ochenta y siete"
+ },
+ {
+   "numero": 188,
+   "texto": "ciento ochenta y ocho"
+ },
+ {
+   "numero": 189,
+   "texto": "ciento ochenta y nueve"
+ },
+ {
+   "numero": 190,
+   "texto": "ciento noventa"
+ },
+ {
+   "numero": 191,
+   "texto": "ciento noventa y uno"
+ },
+ {
+   "numero": 192,
+   "texto": "ciento noventa y dos"
+ },
+ {
+   "numero": 193,
+   "texto": "ciento noventa y tres"
+ },
+ {
+   "numero": 194,
+   "texto": "ciento noventa y cuatro"
+ },
+ {
+   "numero": 195,
+   "texto": "ciento noventa y cinco"
+ },
+ {
+   "numero": 196,
+   "texto": "ciento noventa y seis"
+ },
+ {
+   "numero": 197,
+   "texto": "ciento noventa y siete"
+ },
+ {
+   "numero": 198,
+   "texto": "ciento noventa y ocho"
+ },
+ {
+   "numero": 199,
+   "texto": "ciento noventa y nueve"
+ },
+ {
+   "numero": 200,
+   "texto": "doscientos"
+ },
+ {
+   "numero": 201,
+   "texto": "doscientos uno"
+ },
+ {
+   "numero": 202,
+   "texto": "doscientos dos"
+ },
+ {
+   "numero": 203,
+   "texto": "doscientos tres"
+ },
+ {
+   "numero": 204,
+   "texto": "doscientos cuatro"
+ },
+ {
+   "numero": 205,
+   "texto": "doscientos cinco"
+ },
+ {
+   "numero": 206,
+   "texto": "doscientos seis"
+ },
+ {
+   "numero": 207,
+   "texto": "doscientos siete"
+ },
+ {
+   "numero": 208,
+   "texto": "doscientos ocho"
+ },
+ {
+   "numero": 209,
+   "texto": "doscientos nueve"
+ },
+ {
+   "numero": 210,
+   "texto": "doscientos diez"
+ },
+ {
+   "numero": 211,
+   "texto": "doscientos once"
+ },
+ {
+   "numero": 212,
+   "texto": "doscientos doce"
+ },
+ {
+   "numero": 213,
+   "texto": "doscientos trece"
+ },
+ {
+   "numero": 214,
+   "texto": "doscientos catorce"
+ },
+ {
+   "numero": 215,
+   "texto": "doscientos quince"
+ },
+ {
+   "numero": 216,
+   "texto": "doscientos dieciseis"
+ },
+ {
+   "numero": 217,
+   "texto": "doscientos diecisiete"
+ },
+ {
+   "numero": 218,
+   "texto": "doscientos dieciocho"
+ },
+ {
+   "numero": 219,
+   "texto": "doscientos diecinueve"
+ },
+ {
+   "numero": 220,
+   "texto": "doscientos veinte"
+ },
+ {
+   "numero": 221,
+   "texto": "doscientos veintiuno"
+ },
+ {
+   "numero": 222,
+   "texto": "doscientos veintidos"
+ },
+ {
+   "numero": 223,
+   "texto": "doscientos veintitres"
+ },
+ {
+   "numero": 224,
+   "texto": "doscientos veinticuatro"
+ },
+ {
+   "numero": 225,
+   "texto": "doscientos veinticinco"
+ },
+ {
+   "numero": 226,
+   "texto": "doscientos veintiseis"
+ },
+ {
+   "numero": 227,
+   "texto": "doscientos veintisiete"
+ },
+ {
+   "numero": 228,
+   "texto": "doscientos veintiocho"
+ },
+ {
+   "numero": 229,
+   "texto": "doscientos veintinueve"
+ },
+ {
+   "numero": 230,
+   "texto": "doscientos treinta"
+ },
+ {
+   "numero": 231,
+   "texto": "doscientos treinta y uno"
+ },
+ {
+   "numero": 232,
+   "texto": "doscientos treinta y dos"
+ },
+ {
+   "numero": 233,
+   "texto": "doscientos treinta y tres"
+ },
+ {
+   "numero": 234,
+   "texto": "doscientos treinta y cuatro"
+ },
+ {
+   "numero": 235,
+   "texto": "doscientos treinta y cinco"
+ },
+ {
+   "numero": 236,
+   "texto": "doscientos treinta y seis"
+ },
+ {
+   "numero": 237,
+   "texto": "doscientos treinta y siete"
+ },
+ {
+   "numero": 238,
+   "texto": "doscientos treinta y ocho"
+ },
+ {
+   "numero": 239,
+   "texto": "doscientos treinta y nueve"
+ },
+ {
+   "numero": 240,
+   "texto": "doscientos cuarenta"
+ },
+ {
+   "numero": 241,
+   "texto": "doscientos cuarenta y uno"
+ },
+ {
+   "numero": 242,
+   "texto": "doscientos cuarenta y dos"
+ },
+ {
+   "numero": 243,
+   "texto": "doscientos cuarenta y tres"
+ },
+ {
+   "numero": 244,
+   "texto": "doscientos cuarenta y cuatro"
+ },
+ {
+   "numero": 245,
+   "texto": "doscientos cuarenta y cinco"
+ },
+ {
+   "numero": 246,
+   "texto": "doscientos cuarenta y seis"
+ },
+ {
+   "numero": 247,
+   "texto": "doscientos cuarenta y siete"
+ },
+ {
+   "numero": 248,
+   "texto": "doscientos cuarenta y ocho"
+ },
+ {
+   "numero": 249,
+   "texto": "doscientos cuarenta y nueve"
+ },
+ {
+   "numero": 250,
+   "texto": "doscientos cincuenta"
+ },
+ {
+   "numero": 251,
+   "texto": "doscientos cincuenta y uno"
+ },
+ {
+   "numero": 252,
+   "texto": "doscientos cincuenta y dos"
+ },
+ {
+   "numero": 253,
+   "texto": "doscientos cincuenta y tres"
+ },
+ {
+   "numero": 254,
+   "texto": "doscientos cincuenta y cuatro"
+ },
+ {
+   "numero": 255,
+   "texto": "doscientos cincuenta y cinco"
+ },
+ {
+   "numero": 256,
+   "texto": "doscientos cincuenta y seis"
+ },
+ {
+   "numero": 257,
+   "texto": "doscientos cincuenta y siete"
+ },
+ {
+   "numero": 258,
+   "texto": "doscientos cincuenta y ocho"
+ },
+ {
+   "numero": 259,
+   "texto": "doscientos cincuenta y nueve"
+ },
+ {
+   "numero": 260,
+   "texto": "doscientos sesenta"
+ },
+ {
+   "numero": 261,
+   "texto": "doscientos sesenta y uno"
+ },
+ {
+   "numero": 262,
+   "texto": "doscientos sesenta y dos"
+ },
+ {
+   "numero": 263,
+   "texto": "doscientos sesenta y tres"
+ },
+ {
+   "numero": 264,
+   "texto": "doscientos sesenta y cuatro"
+ },
+ {
+   "numero": 265,
+   "texto": "doscientos sesenta y cinco"
+ },
+ {
+   "numero": 266,
+   "texto": "doscientos sesenta y seis"
+ },
+ {
+   "numero": 267,
+   "texto": "doscientos sesenta y siete"
+ },
+ {
+   "numero": 268,
+   "texto": "doscientos sesenta y ocho"
+ },
+ {
+   "numero": 269,
+   "texto": "doscientos sesenta y nueve"
+ },
+ {
+   "numero": 270,
+   "texto": "doscientos setenta"
+ },
+ {
+   "numero": 271,
+   "texto": "doscientos setenta y uno"
+ },
+ {
+   "numero": 272,
+   "texto": "doscientos setenta y dos"
+ },
+ {
+   "numero": 273,
+   "texto": "doscientos setenta y tres"
+ },
+ {
+   "numero": 274,
+   "texto": "doscientos setenta y cuatro"
+ },
+ {
+   "numero": 275,
+   "texto": "doscientos setenta y cinco"
+ },
+ {
+   "numero": 276,
+   "texto": "doscientos setenta y seis"
+ },
+ {
+   "numero": 277,
+   "texto": "doscientos setenta y siete"
+ },
+ {
+   "numero": 278,
+   "texto": "doscientos setenta y ocho"
+ },
+ {
+   "numero": 279,
+   "texto": "doscientos setenta y nueve"
+ },
+ {
+   "numero": 280,
+   "texto": "doscientos ochenta"
+ },
+ {
+   "numero": 281,
+   "texto": "doscientos ochenta y uno"
+ },
+ {
+   "numero": 282,
+   "texto": "doscientos ochenta y dos"
+ },
+ {
+   "numero": 283,
+   "texto": "doscientos ochenta y tres"
+ },
+ {
+   "numero": 284,
+   "texto": "doscientos ochenta y cuatro"
+ },
+ {
+   "numero": 285,
+   "texto": "doscientos ochenta y cinco"
+ },
+ {
+   "numero": 286,
+   "texto": "doscientos ochenta y seis"
+ },
+ {
+   "numero": 287,
+   "texto": "doscientos ochenta y siete"
+ },
+ {
+   "numero": 288,
+   "texto": "doscientos ochenta y ocho"
+ },
+ {
+   "numero": 289,
+   "texto": "doscientos ochenta y nueve"
+ },
+ {
+   "numero": 290,
+   "texto": "doscientos noventa"
+ },
+ {
+   "numero": 291,
+   "texto": "doscientos noventa y uno"
+ },
+ {
+   "numero": 292,
+   "texto": "doscientos noventa y dos"
+ },
+ {
+   "numero": 293,
+   "texto": "doscientos noventa y tres"
+ },
+ {
+   "numero": 294,
+   "texto": "doscientos noventa y cuatro"
+ },
+ {
+   "numero": 295,
+   "texto": "doscientos noventa y cinco"
+ },
+ {
+   "numero": 296,
+   "texto": "doscientos noventa y seis"
+ },
+ {
+   "numero": 297,
+   "texto": "doscientos noventa y siete"
+ },
+ {
+   "numero": 298,
+   "texto": "doscientos noventa y ocho"
+ },
+ {
+   "numero": 299,
+   "texto": "doscientos noventa y nueve"
+ },
+ {
+   "numero": 300,
+   "texto": "trescientos"
+ },
+ {
+   "numero": 301,
+   "texto": "trescientos uno"
+ },
+ {
+   "numero": 302,
+   "texto": "trescientos dos"
+ },
+ {
+   "numero": 303,
+   "texto": "trescientos tres"
+ },
+ {
+   "numero": 304,
+   "texto": "trescientos cuatro"
+ },
+ {
+   "numero": 305,
+   "texto": "trescientos cinco"
+ },
+ {
+   "numero": 306,
+   "texto": "trescientos seis"
+ },
+ {
+   "numero": 307,
+   "texto": "trescientos siete"
+ },
+ {
+   "numero": 308,
+   "texto": "trescientos ocho"
+ },
+ {
+   "numero": 309,
+   "texto": "trescientos nueve"
+ },
+ {
+   "numero": 310,
+   "texto": "trescientos diez"
+ },
+ {
+   "numero": 311,
+   "texto": "trescientos once"
+ },
+ {
+   "numero": 312,
+   "texto": "trescientos doce"
+ },
+ {
+   "numero": 313,
+   "texto": "trescientos trece"
+ },
+ {
+   "numero": 314,
+   "texto": "trescientos catorce"
+ },
+ {
+   "numero": 315,
+   "texto": "trescientos quince"
+ },
+ {
+   "numero": 316,
+   "texto": "trescientos dieciseis"
+ },
+ {
+   "numero": 317,
+   "texto": "trescientos diecisiete"
+ },
+ {
+   "numero": 318,
+   "texto": "trescientos dieciocho"
+ },
+ {
+   "numero": 319,
+   "texto": "trescientos diecinueve"
+ },
+ {
+   "numero": 320,
+   "texto": "trescientos veinte"
+ },
+ {
+   "numero": 321,
+   "texto": "trescientos veintiuno"
+ },
+ {
+   "numero": 322,
+   "texto": "trescientos veintidos"
+ },
+ {
+   "numero": 323,
+   "texto": "trescientos veintitres"
+ },
+ {
+   "numero": 324,
+   "texto": "trescientos veinticuatro"
+ },
+ {
+   "numero": 325,
+   "texto": "trescientos veinticinco"
+ },
+ {
+   "numero": 326,
+   "texto": "trescientos veintiseis"
+ },
+ {
+   "numero": 327,
+   "texto": "trescientos veintisiete"
+ },
+ {
+   "numero": 328,
+   "texto": "trescientos veintiocho"
+ },
+ {
+   "numero": 329,
+   "texto": "trescientos veintinueve"
+ },
+ {
+   "numero": 330,
+   "texto": "trescientos treinta"
+ },
+ {
+   "numero": 331,
+   "texto": "trescientos treinta y uno"
+ },
+ {
+   "numero": 332,
+   "texto": "trescientos treinta y dos"
+ },
+ {
+   "numero": 333,
+   "texto": "trescientos treinta y tres"
+ },
+ {
+   "numero": 334,
+   "texto": "trescientos treinta y cuatro"
+ },
+ {
+   "numero": 335,
+   "texto": "trescientos treinta y cinco"
+ },
+ {
+   "numero": 336,
+   "texto": "trescientos treinta y seis"
+ },
+ {
+   "numero": 337,
+   "texto": "trescientos treinta y siete"
+ },
+ {
+   "numero": 338,
+   "texto": "trescientos treinta y ocho"
+ },
+ {
+   "numero": 339,
+   "texto": "trescientos treinta y nueve"
+ },
+ {
+   "numero": 340,
+   "texto": "trescientos cuarenta"
+ },
+ {
+   "numero": 341,
+   "texto": "trescientos cuarenta y uno"
+ },
+ {
+   "numero": 342,
+   "texto": "trescientos cuarenta y dos"
+ },
+ {
+   "numero": 343,
+   "texto": "trescientos cuarenta y tres"
+ },
+ {
+   "numero": 344,
+   "texto": "trescientos cuarenta y cuatro"
+ },
+ {
+   "numero": 345,
+   "texto": "trescientos cuarenta y cinco"
+ },
+ {
+   "numero": 346,
+   "texto": "trescientos cuarenta y seis"
+ },
+ {
+   "numero": 347,
+   "texto": "trescientos cuarenta y siete"
+ },
+ {
+   "numero": 348,
+   "texto": "trescientos cuarenta y ocho"
+ },
+ {
+   "numero": 349,
+   "texto": "trescientos cuarenta y nueve"
+ },
+ {
+   "numero": 350,
+   "texto": "trescientos cincuenta"
+ },
+ {
+   "numero": 351,
+   "texto": "trescientos cincuenta y uno"
+ },
+ {
+   "numero": 352,
+   "texto": "trescientos cincuenta y dos"
+ },
+ {
+   "numero": 353,
+   "texto": "trescientos cincuenta y tres"
+ },
+ {
+   "numero": 354,
+   "texto": "trescientos cincuenta y cuatro"
+ },
+ {
+   "numero": 355,
+   "texto": "trescientos cincuenta y cinco"
+ },
+ {
+   "numero": 356,
+   "texto": "trescientos cincuenta y seis"
+ },
+ {
+   "numero": 357,
+   "texto": "trescientos cincuenta y siete"
+ },
+ {
+   "numero": 358,
+   "texto": "trescientos cincuenta y ocho"
+ },
+ {
+   "numero": 359,
+   "texto": "trescientos cincuenta y nueve"
+ },
+ {
+   "numero": 360,
+   "texto": "trescientos sesenta"
+ },
+ {
+   "numero": 361,
+   "texto": "trescientos sesenta y uno"
+ },
+ {
+   "numero": 362,
+   "texto": "trescientos sesenta y dos"
+ },
+ {
+   "numero": 363,
+   "texto": "trescientos sesenta y tres"
+ },
+ {
+   "numero": 364,
+   "texto": "trescientos sesenta y cuatro"
+ },
+ {
+   "numero": 365,
+   "texto": "trescientos sesenta y cinco"
+ },
+ {
+   "numero": 366,
+   "texto": "trescientos sesenta y seis"
+ },
+ {
+   "numero": 367,
+   "texto": "trescientos sesenta y siete"
+ },
+ {
+   "numero": 368,
+   "texto": "trescientos sesenta y ocho"
+ },
+ {
+   "numero": 369,
+   "texto": "trescientos sesenta y nueve"
+ },
+ {
+   "numero": 370,
+   "texto": "trescientos setenta"
+ },
+ {
+   "numero": 371,
+   "texto": "trescientos setenta y uno"
+ },
+ {
+   "numero": 372,
+   "texto": "trescientos setenta y dos"
+ },
+ {
+   "numero": 373,
+   "texto": "trescientos setenta y tres"
+ },
+ {
+   "numero": 374,
+   "texto": "trescientos setenta y cuatro"
+ },
+ {
+   "numero": 375,
+   "texto": "trescientos setenta y cinco"
+ },
+ {
+   "numero": 376,
+   "texto": "trescientos setenta y seis"
+ },
+ {
+   "numero": 377,
+   "texto": "trescientos setenta y siete"
+ },
+ {
+   "numero": 378,
+   "texto": "trescientos setenta y ocho"
+ },
+ {
+   "numero": 379,
+   "texto": "trescientos setenta y nueve"
+ },
+ {
+   "numero": 380,
+   "texto": "trescientos ochenta"
+ },
+ {
+   "numero": 381,
+   "texto": "trescientos ochenta y uno"
+ },
+ {
+   "numero": 382,
+   "texto": "trescientos ochenta y dos"
+ },
+ {
+   "numero": 383,
+   "texto": "trescientos ochenta y tres"
+ },
+ {
+   "numero": 384,
+   "texto": "trescientos ochenta y cuatro"
+ },
+ {
+   "numero": 385,
+   "texto": "trescientos ochenta y cinco"
+ },
+ {
+   "numero": 386,
+   "texto": "trescientos ochenta y seis"
+ },
+ {
+   "numero": 387,
+   "texto": "trescientos ochenta y siete"
+ },
+ {
+   "numero": 388,
+   "texto": "trescientos ochenta y ocho"
+ },
+ {
+   "numero": 389,
+   "texto": "trescientos ochenta y nueve"
+ },
+ {
+   "numero": 390,
+   "texto": "trescientos noventa"
+ },
+ {
+   "numero": 391,
+   "texto": "trescientos noventa y uno"
+ },
+ {
+   "numero": 392,
+   "texto": "trescientos noventa y dos"
+ },
+ {
+   "numero": 393,
+   "texto": "trescientos noventa y tres"
+ },
+ {
+   "numero": 394,
+   "texto": "trescientos noventa y cuatro"
+ },
+ {
+   "numero": 395,
+   "texto": "trescientos noventa y cinco"
+ },
+ {
+   "numero": 396,
+   "texto": "trescientos noventa y seis"
+ },
+ {
+   "numero": 397,
+   "texto": "trescientos noventa y siete"
+ },
+ {
+   "numero": 398,
+   "texto": "trescientos noventa y ocho"
+ },
+ {
+   "numero": 399,
+   "texto": "trescientos noventa y nueve"
+ },
+ {
+   "numero": 400,
+   "texto": "cuatrocientos"
+ },
+ {
+   "numero": 401,
+   "texto": "cuatrocientos uno"
+ },
+ {
+   "numero": 402,
+   "texto": "cuatrocientos dos"
+ },
+ {
+   "numero": 403,
+   "texto": "cuatrocientos tres"
+ },
+ {
+   "numero": 404,
+   "texto": "cuatrocientos cuatro"
+ },
+ {
+   "numero": 405,
+   "texto": "cuatrocientos cinco"
+ },
+ {
+   "numero": 406,
+   "texto": "cuatrocientos seis"
+ },
+ {
+   "numero": 407,
+   "texto": "cuatrocientos siete"
+ },
+ {
+   "numero": 408,
+   "texto": "cuatrocientos ocho"
+ },
+ {
+   "numero": 409,
+   "texto": "cuatrocientos nueve"
+ },
+ {
+   "numero": 410,
+   "texto": "cuatrocientos diez"
+ },
+ {
+   "numero": 411,
+   "texto": "cuatrocientos once"
+ },
+ {
+   "numero": 412,
+   "texto": "cuatrocientos doce"
+ },
+ {
+   "numero": 413,
+   "texto": "cuatrocientos trece"
+ },
+ {
+   "numero": 414,
+   "texto": "cuatrocientos catorce"
+ },
+ {
+   "numero": 415,
+   "texto": "cuatrocientos quince"
+ },
+ {
+   "numero": 416,
+   "texto": "cuatrocientos dieciseis"
+ },
+ {
+   "numero": 417,
+   "texto": "cuatrocientos diecisiete"
+ },
+ {
+   "numero": 418,
+   "texto": "cuatrocientos dieciocho"
+ },
+ {
+   "numero": 419,
+   "texto": "cuatrocientos diecinueve"
+ },
+ {
+   "numero": 420,
+   "texto": "cuatrocientos veinte"
+ },
+ {
+   "numero": 421,
+   "texto": "cuatrocientos veintiuno"
+ },
+ {
+   "numero": 422,
+   "texto": "cuatrocientos veintidos"
+ },
+ {
+   "numero": 423,
+   "texto": "cuatrocientos veintitres"
+ },
+ {
+   "numero": 424,
+   "texto": "cuatrocientos veinticuatro"
+ },
+ {
+   "numero": 425,
+   "texto": "cuatrocientos veinticinco"
+ },
+ {
+   "numero": 426,
+   "texto": "cuatrocientos veintiseis"
+ },
+ {
+   "numero": 427,
+   "texto": "cuatrocientos veintisiete"
+ },
+ {
+   "numero": 428,
+   "texto": "cuatrocientos veintiocho"
+ },
+ {
+   "numero": 429,
+   "texto": "cuatrocientos veintinueve"
+ },
+ {
+   "numero": 430,
+   "texto": "cuatrocientos treinta"
+ },
+ {
+   "numero": 431,
+   "texto": "cuatrocientos treinta y uno"
+ },
+ {
+   "numero": 432,
+   "texto": "cuatrocientos treinta y dos"
+ },
+ {
+   "numero": 433,
+   "texto": "cuatrocientos treinta y tres"
+ },
+ {
+   "numero": 434,
+   "texto": "cuatrocientos treinta y cuatro"
+ },
+ {
+   "numero": 435,
+   "texto": "cuatrocientos treinta y cinco"
+ },
+ {
+   "numero": 436,
+   "texto": "cuatrocientos treinta y seis"
+ },
+ {
+   "numero": 437,
+   "texto": "cuatrocientos treinta y siete"
+ },
+ {
+   "numero": 438,
+   "texto": "cuatrocientos treinta y ocho"
+ },
+ {
+   "numero": 439,
+   "texto": "cuatrocientos treinta y nueve"
+ },
+ {
+   "numero": 440,
+   "texto": "cuatrocientos cuarenta"
+ },
+ {
+   "numero": 441,
+   "texto": "cuatrocientos cuarenta y uno"
+ },
+ {
+   "numero": 442,
+   "texto": "cuatrocientos cuarenta y dos"
+ },
+ {
+   "numero": 443,
+   "texto": "cuatrocientos cuarenta y tres"
+ },
+ {
+   "numero": 444,
+   "texto": "cuatrocientos cuarenta y cuatro"
+ },
+ {
+   "numero": 445,
+   "texto": "cuatrocientos cuarenta y cinco"
+ },
+ {
+   "numero": 446,
+   "texto": "cuatrocientos cuarenta y seis"
+ },
+ {
+   "numero": 447,
+   "texto": "cuatrocientos cuarenta y siete"
+ },
+ {
+   "numero": 448,
+   "texto": "cuatrocientos cuarenta y ocho"
+ },
+ {
+   "numero": 449,
+   "texto": "cuatrocientos cuarenta y nueve"
+ },
+ {
+   "numero": 450,
+   "texto": "cuatrocientos cincuenta"
+ },
+ {
+   "numero": 451,
+   "texto": "cuatrocientos cincuenta y uno"
+ },
+ {
+   "numero": 452,
+   "texto": "cuatrocientos cincuenta y dos"
+ },
+ {
+   "numero": 453,
+   "texto": "cuatrocientos cincuenta y tres"
+ },
+ {
+   "numero": 454,
+   "texto": "cuatrocientos cincuenta y cuatro"
+ },
+ {
+   "numero": 455,
+   "texto": "cuatrocientos cincuenta y cinco"
+ },
+ {
+   "numero": 456,
+   "texto": "cuatrocientos cincuenta y seis"
+ },
+ {
+   "numero": 457,
+   "texto": "cuatrocientos cincuenta y siete"
+ },
+ {
+   "numero": 458,
+   "texto": "cuatrocientos cincuenta y ocho"
+ },
+ {
+   "numero": 459,
+   "texto": "cuatrocientos cincuenta y nueve"
+ },
+ {
+   "numero": 460,
+   "texto": "cuatrocientos sesenta"
+ },
+ {
+   "numero": 461,
+   "texto": "cuatrocientos sesenta y uno"
+ },
+ {
+   "numero": 462,
+   "texto": "cuatrocientos sesenta y dos"
+ },
+ {
+   "numero": 463,
+   "texto": "cuatrocientos sesenta y tres"
+ },
+ {
+   "numero": 464,
+   "texto": "cuatrocientos sesenta y cuatro"
+ },
+ {
+   "numero": 465,
+   "texto": "cuatrocientos sesenta y cinco"
+ },
+ {
+   "numero": 466,
+   "texto": "cuatrocientos sesenta y seis"
+ },
+ {
+   "numero": 467,
+   "texto": "cuatrocientos sesenta y siete"
+ },
+ {
+   "numero": 468,
+   "texto": "cuatrocientos sesenta y ocho"
+ },
+ {
+   "numero": 469,
+   "texto": "cuatrocientos sesenta y nueve"
+ },
+ {
+   "numero": 470,
+   "texto": "cuatrocientos setenta"
+ },
+ {
+   "numero": 471,
+   "texto": "cuatrocientos setenta y uno"
+ },
+ {
+   "numero": 472,
+   "texto": "cuatrocientos setenta y dos"
+ },
+ {
+   "numero": 473,
+   "texto": "cuatrocientos setenta y tres"
+ },
+ {
+   "numero": 474,
+   "texto": "cuatrocientos setenta y cuatro"
+ },
+ {
+   "numero": 475,
+   "texto": "cuatrocientos setenta y cinco"
+ },
+ {
+   "numero": 476,
+   "texto": "cuatrocientos setenta y seis"
+ },
+ {
+   "numero": 477,
+   "texto": "cuatrocientos setenta y siete"
+ },
+ {
+   "numero": 478,
+   "texto": "cuatrocientos setenta y ocho"
+ },
+ {
+   "numero": 479,
+   "texto": "cuatrocientos setenta y nueve"
+ },
+ {
+   "numero": 480,
+   "texto": "cuatrocientos ochenta"
+ },
+ {
+   "numero": 481,
+   "texto": "cuatrocientos ochenta y uno"
+ },
+ {
+   "numero": 482,
+   "texto": "cuatrocientos ochenta y dos"
+ },
+ {
+   "numero": 483,
+   "texto": "cuatrocientos ochenta y tres"
+ },
+ {
+   "numero": 484,
+   "texto": "cuatrocientos ochenta y cuatro"
+ },
+ {
+   "numero": 485,
+   "texto": "cuatrocientos ochenta y cinco"
+ },
+ {
+   "numero": 486,
+   "texto": "cuatrocientos ochenta y seis"
+ },
+ {
+   "numero": 487,
+   "texto": "cuatrocientos ochenta y siete"
+ },
+ {
+   "numero": 488,
+   "texto": "cuatrocientos ochenta y ocho"
+ },
+ {
+   "numero": 489,
+   "texto": "cuatrocientos ochenta y nueve"
+ },
+ {
+   "numero": 490,
+   "texto": "cuatrocientos noventa"
+ },
+ {
+   "numero": 491,
+   "texto": "cuatrocientos noventa y uno"
+ },
+ {
+   "numero": 492,
+   "texto": "cuatrocientos noventa y dos"
+ },
+ {
+   "numero": 493,
+   "texto": "cuatrocientos noventa y tres"
+ },
+ {
+   "numero": 494,
+   "texto": "cuatrocientos noventa y cuatro"
+ },
+ {
+   "numero": 495,
+   "texto": "cuatrocientos noventa y cinco"
+ },
+ {
+   "numero": 496,
+   "texto": "cuatrocientos noventa y seis"
+ },
+ {
+   "numero": 497,
+   "texto": "cuatrocientos noventa y siete"
+ },
+ {
+   "numero": 498,
+   "texto": "cuatrocientos noventa y ocho"
+ },
+ {
+   "numero": 499,
+   "texto": "cuatrocientos noventa y nueve"
+ },
+ {
+   "numero": 500,
+   "texto": "quinientos"
+ },
+ {
+   "numero": 501,
+   "texto": "quinientos uno"
+ },
+ {
+   "numero": 502,
+   "texto": "quinientos dos"
+ },
+ {
+   "numero": 503,
+   "texto": "quinientos tres"
+ },
+ {
+   "numero": 504,
+   "texto": "quinientos cuatro"
+ },
+ {
+   "numero": 505,
+   "texto": "quinientos cinco"
+ },
+ {
+   "numero": 506,
+   "texto": "quinientos seis"
+ },
+ {
+   "numero": 507,
+   "texto": "quinientos siete"
+ },
+ {
+   "numero": 508,
+   "texto": "quinientos ocho"
+ },
+ {
+   "numero": 509,
+   "texto": "quinientos nueve"
+ },
+ {
+   "numero": 510,
+   "texto": "quinientos diez"
+ },
+ {
+   "numero": 511,
+   "texto": "quinientos once"
+ },
+ {
+   "numero": 512,
+   "texto": "quinientos doce"
+ },
+ {
+   "numero": 513,
+   "texto": "quinientos trece"
+ },
+ {
+   "numero": 514,
+   "texto": "quinientos catorce"
+ },
+ {
+   "numero": 515,
+   "texto": "quinientos quince"
+ },
+ {
+   "numero": 516,
+   "texto": "quinientos dieciseis"
+ },
+ {
+   "numero": 517,
+   "texto": "quinientos diecisiete"
+ },
+ {
+   "numero": 518,
+   "texto": "quinientos dieciocho"
+ },
+ {
+   "numero": 519,
+   "texto": "quinientos diecinueve"
+ },
+ {
+   "numero": 520,
+   "texto": "quinientos veinte"
+ },
+ {
+   "numero": 521,
+   "texto": "quinientos veintiuno"
+ },
+ {
+   "numero": 522,
+   "texto": "quinientos veintidos"
+ },
+ {
+   "numero": 523,
+   "texto": "quinientos veintitres"
+ },
+ {
+   "numero": 524,
+   "texto": "quinientos veinticuatro"
+ },
+ {
+   "numero": 525,
+   "texto": "quinientos veinticinco"
+ },
+ {
+   "numero": 526,
+   "texto": "quinientos veintiseis"
+ },
+ {
+   "numero": 527,
+   "texto": "quinientos veintisiete"
+ },
+ {
+   "numero": 528,
+   "texto": "quinientos veintiocho"
+ },
+ {
+   "numero": 529,
+   "texto": "quinientos veintinueve"
+ },
+ {
+   "numero": 530,
+   "texto": "quinientos treinta"
+ },
+ {
+   "numero": 531,
+   "texto": "quinientos treinta y uno"
+ },
+ {
+   "numero": 532,
+   "texto": "quinientos treinta y dos"
+ },
+ {
+   "numero": 533,
+   "texto": "quinientos treinta y tres"
+ },
+ {
+   "numero": 534,
+   "texto": "quinientos treinta y cuatro"
+ },
+ {
+   "numero": 535,
+   "texto": "quinientos treinta y cinco"
+ },
+ {
+   "numero": 536,
+   "texto": "quinientos treinta y seis"
+ },
+ {
+   "numero": 537,
+   "texto": "quinientos treinta y siete"
+ },
+ {
+   "numero": 538,
+   "texto": "quinientos treinta y ocho"
+ },
+ {
+   "numero": 539,
+   "texto": "quinientos treinta y nueve"
+ },
+ {
+   "numero": 540,
+   "texto": "quinientos cuarenta"
+ },
+ {
+   "numero": 541,
+   "texto": "quinientos cuarenta y uno"
+ },
+ {
+   "numero": 542,
+   "texto": "quinientos cuarenta y dos"
+ },
+ {
+   "numero": 543,
+   "texto": "quinientos cuarenta y tres"
+ },
+ {
+   "numero": 544,
+   "texto": "quinientos cuarenta y cuatro"
+ },
+ {
+   "numero": 545,
+   "texto": "quinientos cuarenta y cinco"
+ },
+ {
+   "numero": 546,
+   "texto": "quinientos cuarenta y seis"
+ },
+ {
+   "numero": 547,
+   "texto": "quinientos cuarenta y siete"
+ },
+ {
+   "numero": 548,
+   "texto": "quinientos cuarenta y ocho"
+ },
+ {
+   "numero": 549,
+   "texto": "quinientos cuarenta y nueve"
+ },
+ {
+   "numero": 550,
+   "texto": "quinientos cincuenta"
+ },
+ {
+   "numero": 551,
+   "texto": "quinientos cincuenta y uno"
+ },
+ {
+   "numero": 552,
+   "texto": "quinientos cincuenta y dos"
+ },
+ {
+   "numero": 553,
+   "texto": "quinientos cincuenta y tres"
+ },
+ {
+   "numero": 554,
+   "texto": "quinientos cincuenta y cuatro"
+ },
+ {
+   "numero": 555,
+   "texto": "quinientos cincuenta y cinco"
+ },
+ {
+   "numero": 556,
+   "texto": "quinientos cincuenta y seis"
+ },
+ {
+   "numero": 557,
+   "texto": "quinientos cincuenta y siete"
+ },
+ {
+   "numero": 558,
+   "texto": "quinientos cincuenta y ocho"
+ },
+ {
+   "numero": 559,
+   "texto": "quinientos cincuenta y nueve"
+ },
+ {
+   "numero": 560,
+   "texto": "quinientos sesenta"
+ },
+ {
+   "numero": 561,
+   "texto": "quinientos sesenta y uno"
+ },
+ {
+   "numero": 562,
+   "texto": "quinientos sesenta y dos"
+ },
+ {
+   "numero": 563,
+   "texto": "quinientos sesenta y tres"
+ },
+ {
+   "numero": 564,
+   "texto": "quinientos sesenta y cuatro"
+ },
+ {
+   "numero": 565,
+   "texto": "quinientos sesenta y cinco"
+ },
+ {
+   "numero": 566,
+   "texto": "quinientos sesenta y seis"
+ },
+ {
+   "numero": 567,
+   "texto": "quinientos sesenta y siete"
+ },
+ {
+   "numero": 568,
+   "texto": "quinientos sesenta y ocho"
+ },
+ {
+   "numero": 569,
+   "texto": "quinientos sesenta y nueve"
+ },
+ {
+   "numero": 570,
+   "texto": "quinientos setenta"
+ },
+ {
+   "numero": 571,
+   "texto": "quinientos setenta y uno"
+ },
+ {
+   "numero": 572,
+   "texto": "quinientos setenta y dos"
+ },
+ {
+   "numero": 573,
+   "texto": "quinientos setenta y tres"
+ },
+ {
+   "numero": 574,
+   "texto": "quinientos setenta y cuatro"
+ },
+ {
+   "numero": 575,
+   "texto": "quinientos setenta y cinco"
+ },
+ {
+   "numero": 576,
+   "texto": "quinientos setenta y seis"
+ },
+ {
+   "numero": 577,
+   "texto": "quinientos setenta y siete"
+ },
+ {
+   "numero": 578,
+   "texto": "quinientos setenta y ocho"
+ },
+ {
+   "numero": 579,
+   "texto": "quinientos setenta y nueve"
+ },
+ {
+   "numero": 580,
+   "texto": "quinientos ochenta"
+ },
+ {
+   "numero": 581,
+   "texto": "quinientos ochenta y uno"
+ },
+ {
+   "numero": 582,
+   "texto": "quinientos ochenta y dos"
+ },
+ {
+   "numero": 583,
+   "texto": "quinientos ochenta y tres"
+ },
+ {
+   "numero": 584,
+   "texto": "quinientos ochenta y cuatro"
+ },
+ {
+   "numero": 585,
+   "texto": "quinientos ochenta y cinco"
+ },
+ {
+   "numero": 586,
+   "texto": "quinientos ochenta y seis"
+ },
+ {
+   "numero": 587,
+   "texto": "quinientos ochenta y siete"
+ },
+ {
+   "numero": 588,
+   "texto": "quinientos ochenta y ocho"
+ },
+ {
+   "numero": 589,
+   "texto": "quinientos ochenta y nueve"
+ },
+ {
+   "numero": 590,
+   "texto": "quinientos noventa"
+ },
+ {
+   "numero": 591,
+   "texto": "quinientos noventa y uno"
+ },
+ {
+   "numero": 592,
+   "texto": "quinientos noventa y dos"
+ },
+ {
+   "numero": 593,
+   "texto": "quinientos noventa y tres"
+ },
+ {
+   "numero": 594,
+   "texto": "quinientos noventa y cuatro"
+ },
+ {
+   "numero": 595,
+   "texto": "quinientos noventa y cinco"
+ },
+ {
+   "numero": 596,
+   "texto": "quinientos noventa y seis"
+ },
+ {
+   "numero": 597,
+   "texto": "quinientos noventa y siete"
+ },
+ {
+   "numero": 598,
+   "texto": "quinientos noventa y ocho"
+ },
+ {
+   "numero": 599,
+   "texto": "quinientos noventa y nueve"
+ },
+ {
+   "numero": 600,
+   "texto": "seiscientos"
+ },
+ {
+   "numero": 601,
+   "texto": "seiscientos uno"
+ },
+ {
+   "numero": 602,
+   "texto": "seiscientos dos"
+ },
+ {
+   "numero": 603,
+   "texto": "seiscientos tres"
+ },
+ {
+   "numero": 604,
+   "texto": "seiscientos cuatro"
+ },
+ {
+   "numero": 605,
+   "texto": "seiscientos cinco"
+ },
+ {
+   "numero": 606,
+   "texto": "seiscientos seis"
+ },
+ {
+   "numero": 607,
+   "texto": "seiscientos siete"
+ },
+ {
+   "numero": 608,
+   "texto": "seiscientos ocho"
+ },
+ {
+   "numero": 609,
+   "texto": "seiscientos nueve"
+ },
+ {
+   "numero": 610,
+   "texto": "seiscientos diez"
+ },
+ {
+   "numero": 611,
+   "texto": "seiscientos once"
+ },
+ {
+   "numero": 612,
+   "texto": "seiscientos doce"
+ },
+ {
+   "numero": 613,
+   "texto": "seiscientos trece"
+ },
+ {
+   "numero": 614,
+   "texto": "seiscientos catorce"
+ },
+ {
+   "numero": 615,
+   "texto": "seiscientos quince"
+ },
+ {
+   "numero": 616,
+   "texto": "seiscientos dieciseis"
+ },
+ {
+   "numero": 617,
+   "texto": "seiscientos diecisiete"
+ },
+ {
+   "numero": 618,
+   "texto": "seiscientos dieciocho"
+ },
+ {
+   "numero": 619,
+   "texto": "seiscientos diecinueve"
+ },
+ {
+   "numero": 620,
+   "texto": "seiscientos veinte"
+ },
+ {
+   "numero": 621,
+   "texto": "seiscientos veintiuno"
+ },
+ {
+   "numero": 622,
+   "texto": "seiscientos veintidos"
+ },
+ {
+   "numero": 623,
+   "texto": "seiscientos veintitres"
+ },
+ {
+   "numero": 624,
+   "texto": "seiscientos veinticuatro"
+ },
+ {
+   "numero": 625,
+   "texto": "seiscientos veinticinco"
+ },
+ {
+   "numero": 626,
+   "texto": "seiscientos veintiseis"
+ },
+ {
+   "numero": 627,
+   "texto": "seiscientos veintisiete"
+ },
+ {
+   "numero": 628,
+   "texto": "seiscientos veintiocho"
+ },
+ {
+   "numero": 629,
+   "texto": "seiscientos veintinueve"
+ },
+ {
+   "numero": 630,
+   "texto": "seiscientos treinta"
+ },
+ {
+   "numero": 631,
+   "texto": "seiscientos treinta y uno"
+ },
+ {
+   "numero": 632,
+   "texto": "seiscientos treinta y dos"
+ },
+ {
+   "numero": 633,
+   "texto": "seiscientos treinta y tres"
+ },
+ {
+   "numero": 634,
+   "texto": "seiscientos treinta y cuatro"
+ },
+ {
+   "numero": 635,
+   "texto": "seiscientos treinta y cinco"
+ },
+ {
+   "numero": 636,
+   "texto": "seiscientos treinta y seis"
+ },
+ {
+   "numero": 637,
+   "texto": "seiscientos treinta y siete"
+ },
+ {
+   "numero": 638,
+   "texto": "seiscientos treinta y ocho"
+ },
+ {
+   "numero": 639,
+   "texto": "seiscientos treinta y nueve"
+ },
+ {
+   "numero": 640,
+   "texto": "seiscientos cuarenta"
+ },
+ {
+   "numero": 641,
+   "texto": "seiscientos cuarenta y uno"
+ },
+ {
+   "numero": 642,
+   "texto": "seiscientos cuarenta y dos"
+ },
+ {
+   "numero": 643,
+   "texto": "seiscientos cuarenta y tres"
+ },
+ {
+   "numero": 644,
+   "texto": "seiscientos cuarenta y cuatro"
+ },
+ {
+   "numero": 645,
+   "texto": "seiscientos cuarenta y cinco"
+ },
+ {
+   "numero": 646,
+   "texto": "seiscientos cuarenta y seis"
+ },
+ {
+   "numero": 647,
+   "texto": "seiscientos cuarenta y siete"
+ },
+ {
+   "numero": 648,
+   "texto": "seiscientos cuarenta y ocho"
+ },
+ {
+   "numero": 649,
+   "texto": "seiscientos cuarenta y nueve"
+ },
+ {
+   "numero": 650,
+   "texto": "seiscientos cincuenta"
+ },
+ {
+   "numero": 651,
+   "texto": "seiscientos cincuenta y uno"
+ },
+ {
+   "numero": 652,
+   "texto": "seiscientos cincuenta y dos"
+ },
+ {
+   "numero": 653,
+   "texto": "seiscientos cincuenta y tres"
+ },
+ {
+   "numero": 654,
+   "texto": "seiscientos cincuenta y cuatro"
+ },
+ {
+   "numero": 655,
+   "texto": "seiscientos cincuenta y cinco"
+ },
+ {
+   "numero": 656,
+   "texto": "seiscientos cincuenta y seis"
+ },
+ {
+   "numero": 657,
+   "texto": "seiscientos cincuenta y siete"
+ },
+ {
+   "numero": 658,
+   "texto": "seiscientos cincuenta y ocho"
+ },
+ {
+   "numero": 659,
+   "texto": "seiscientos cincuenta y nueve"
+ },
+ {
+   "numero": 660,
+   "texto": "seiscientos sesenta"
+ },
+ {
+   "numero": 661,
+   "texto": "seiscientos sesenta y uno"
+ },
+ {
+   "numero": 662,
+   "texto": "seiscientos sesenta y dos"
+ },
+ {
+   "numero": 663,
+   "texto": "seiscientos sesenta y tres"
+ },
+ {
+   "numero": 664,
+   "texto": "seiscientos sesenta y cuatro"
+ },
+ {
+   "numero": 665,
+   "texto": "seiscientos sesenta y cinco"
+ },
+ {
+   "numero": 666,
+   "texto": "seiscientos sesenta y seis"
+ },
+ {
+   "numero": 667,
+   "texto": "seiscientos sesenta y siete"
+ },
+ {
+   "numero": 668,
+   "texto": "seiscientos sesenta y ocho"
+ },
+ {
+   "numero": 669,
+   "texto": "seiscientos sesenta y nueve"
+ },
+ {
+   "numero": 670,
+   "texto": "seiscientos setenta"
+ },
+ {
+   "numero": 671,
+   "texto": "seiscientos setenta y uno"
+ },
+ {
+   "numero": 672,
+   "texto": "seiscientos setenta y dos"
+ },
+ {
+   "numero": 673,
+   "texto": "seiscientos setenta y tres"
+ },
+ {
+   "numero": 674,
+   "texto": "seiscientos setenta y cuatro"
+ },
+ {
+   "numero": 675,
+   "texto": "seiscientos setenta y cinco"
+ },
+ {
+   "numero": 676,
+   "texto": "seiscientos setenta y seis"
+ },
+ {
+   "numero": 677,
+   "texto": "seiscientos setenta y siete"
+ },
+ {
+   "numero": 678,
+   "texto": "seiscientos setenta y ocho"
+ },
+ {
+   "numero": 679,
+   "texto": "seiscientos setenta y nueve"
+ },
+ {
+   "numero": 680,
+   "texto": "seiscientos ochenta"
+ },
+ {
+   "numero": 681,
+   "texto": "seiscientos ochenta y uno"
+ },
+ {
+   "numero": 682,
+   "texto": "seiscientos ochenta y dos"
+ },
+ {
+   "numero": 683,
+   "texto": "seiscientos ochenta y tres"
+ },
+ {
+   "numero": 684,
+   "texto": "seiscientos ochenta y cuatro"
+ },
+ {
+   "numero": 685,
+   "texto": "seiscientos ochenta y cinco"
+ },
+ {
+   "numero": 686,
+   "texto": "seiscientos ochenta y seis"
+ },
+ {
+   "numero": 687,
+   "texto": "seiscientos ochenta y siete"
+ },
+ {
+   "numero": 688,
+   "texto": "seiscientos ochenta y ocho"
+ },
+ {
+   "numero": 689,
+   "texto": "seiscientos ochenta y nueve"
+ },
+ {
+   "numero": 690,
+   "texto": "seiscientos noventa"
+ },
+ {
+   "numero": 691,
+   "texto": "seiscientos noventa y uno"
+ },
+ {
+   "numero": 692,
+   "texto": "seiscientos noventa y dos"
+ },
+ {
+   "numero": 693,
+   "texto": "seiscientos noventa y tres"
+ },
+ {
+   "numero": 694,
+   "texto": "seiscientos noventa y cuatro"
+ },
+ {
+   "numero": 695,
+   "texto": "seiscientos noventa y cinco"
+ },
+ {
+   "numero": 696,
+   "texto": "seiscientos noventa y seis"
+ },
+ {
+   "numero": 697,
+   "texto": "seiscientos noventa y siete"
+ },
+ {
+   "numero": 698,
+   "texto": "seiscientos noventa y ocho"
+ },
+ {
+   "numero": 699,
+   "texto": "seiscientos noventa y nueve"
+ },
+ {
+   "numero": 700,
+   "texto": "setecientos"
+ },
+ {
+   "numero": 701,
+   "texto": "setecientos uno"
+ },
+ {
+   "numero": 702,
+   "texto": "setecientos dos"
+ },
+ {
+   "numero": 703,
+   "texto": "setecientos tres"
+ },
+ {
+   "numero": 704,
+   "texto": "setecientos cuatro"
+ },
+ {
+   "numero": 705,
+   "texto": "setecientos cinco"
+ },
+ {
+   "numero": 706,
+   "texto": "setecientos seis"
+ },
+ {
+   "numero": 707,
+   "texto": "setecientos siete"
+ },
+ {
+   "numero": 708,
+   "texto": "setecientos ocho"
+ },
+ {
+   "numero": 709,
+   "texto": "setecientos nueve"
+ },
+ {
+   "numero": 710,
+   "texto": "setecientos diez"
+ },
+ {
+   "numero": 711,
+   "texto": "setecientos once"
+ },
+ {
+   "numero": 712,
+   "texto": "setecientos doce"
+ },
+ {
+   "numero": 713,
+   "texto": "setecientos trece"
+ },
+ {
+   "numero": 714,
+   "texto": "setecientos catorce"
+ },
+ {
+   "numero": 715,
+   "texto": "setecientos quince"
+ },
+ {
+   "numero": 716,
+   "texto": "setecientos dieciseis"
+ },
+ {
+   "numero": 717,
+   "texto": "setecientos diecisiete"
+ },
+ {
+   "numero": 718,
+   "texto": "setecientos dieciocho"
+ },
+ {
+   "numero": 719,
+   "texto": "setecientos diecinueve"
+ },
+ {
+   "numero": 720,
+   "texto": "setecientos veinte"
+ },
+ {
+   "numero": 721,
+   "texto": "setecientos veintiuno"
+ },
+ {
+   "numero": 722,
+   "texto": "setecientos veintidos"
+ },
+ {
+   "numero": 723,
+   "texto": "setecientos veintitres"
+ },
+ {
+   "numero": 724,
+   "texto": "setecientos veinticuatro"
+ },
+ {
+   "numero": 725,
+   "texto": "setecientos veinticinco"
+ },
+ {
+   "numero": 726,
+   "texto": "setecientos veintiseis"
+ },
+ {
+   "numero": 727,
+   "texto": "setecientos veintisiete"
+ },
+ {
+   "numero": 728,
+   "texto": "setecientos veintiocho"
+ },
+ {
+   "numero": 729,
+   "texto": "setecientos veintinueve"
+ },
+ {
+   "numero": 730,
+   "texto": "setecientos treinta"
+ },
+ {
+   "numero": 731,
+   "texto": "setecientos treinta y uno"
+ },
+ {
+   "numero": 732,
+   "texto": "setecientos treinta y dos"
+ },
+ {
+   "numero": 733,
+   "texto": "setecientos treinta y tres"
+ },
+ {
+   "numero": 734,
+   "texto": "setecientos treinta y cuatro"
+ },
+ {
+   "numero": 735,
+   "texto": "setecientos treinta y cinco"
+ },
+ {
+   "numero": 736,
+   "texto": "setecientos treinta y seis"
+ },
+ {
+   "numero": 737,
+   "texto": "setecientos treinta y siete"
+ },
+ {
+   "numero": 738,
+   "texto": "setecientos treinta y ocho"
+ },
+ {
+   "numero": 739,
+   "texto": "setecientos treinta y nueve"
+ },
+ {
+   "numero": 740,
+   "texto": "setecientos cuarenta"
+ },
+ {
+   "numero": 741,
+   "texto": "setecientos cuarenta y uno"
+ },
+ {
+   "numero": 742,
+   "texto": "setecientos cuarenta y dos"
+ },
+ {
+   "numero": 743,
+   "texto": "setecientos cuarenta y tres"
+ },
+ {
+   "numero": 744,
+   "texto": "setecientos cuarenta y cuatro"
+ },
+ {
+   "numero": 745,
+   "texto": "setecientos cuarenta y cinco"
+ },
+ {
+   "numero": 746,
+   "texto": "setecientos cuarenta y seis"
+ },
+ {
+   "numero": 747,
+   "texto": "setecientos cuarenta y siete"
+ },
+ {
+   "numero": 748,
+   "texto": "setecientos cuarenta y ocho"
+ },
+ {
+   "numero": 749,
+   "texto": "setecientos cuarenta y nueve"
+ },
+ {
+   "numero": 750,
+   "texto": "setecientos cincuenta"
+ },
+ {
+   "numero": 751,
+   "texto": "setecientos cincuenta y uno"
+ },
+ {
+   "numero": 752,
+   "texto": "setecientos cincuenta y dos"
+ },
+ {
+   "numero": 753,
+   "texto": "setecientos cincuenta y tres"
+ },
+ {
+   "numero": 754,
+   "texto": "setecientos cincuenta y cuatro"
+ },
+ {
+   "numero": 755,
+   "texto": "setecientos cincuenta y cinco"
+ },
+ {
+   "numero": 756,
+   "texto": "setecientos cincuenta y seis"
+ },
+ {
+   "numero": 757,
+   "texto": "setecientos cincuenta y siete"
+ },
+ {
+   "numero": 758,
+   "texto": "setecientos cincuenta y ocho"
+ },
+ {
+   "numero": 759,
+   "texto": "setecientos cincuenta y nueve"
+ },
+ {
+   "numero": 760,
+   "texto": "setecientos sesenta"
+ },
+ {
+   "numero": 761,
+   "texto": "setecientos sesenta y uno"
+ },
+ {
+   "numero": 762,
+   "texto": "setecientos sesenta y dos"
+ },
+ {
+   "numero": 763,
+   "texto": "setecientos sesenta y tres"
+ },
+ {
+   "numero": 764,
+   "texto": "setecientos sesenta y cuatro"
+ },
+ {
+   "numero": 765,
+   "texto": "setecientos sesenta y cinco"
+ },
+ {
+   "numero": 766,
+   "texto": "setecientos sesenta y seis"
+ },
+ {
+   "numero": 767,
+   "texto": "setecientos sesenta y siete"
+ },
+ {
+   "numero": 768,
+   "texto": "setecientos sesenta y ocho"
+ },
+ {
+   "numero": 769,
+   "texto": "setecientos sesenta y nueve"
+ },
+ {
+   "numero": 770,
+   "texto": "setecientos setenta"
+ },
+ {
+   "numero": 771,
+   "texto": "setecientos setenta y uno"
+ },
+ {
+   "numero": 772,
+   "texto": "setecientos setenta y dos"
+ },
+ {
+   "numero": 773,
+   "texto": "setecientos setenta y tres"
+ },
+ {
+   "numero": 774,
+   "texto": "setecientos setenta y cuatro"
+ },
+ {
+   "numero": 775,
+   "texto": "setecientos setenta y cinco"
+ },
+ {
+   "numero": 776,
+   "texto": "setecientos setenta y seis"
+ },
+ {
+   "numero": 777,
+   "texto": "setecientos setenta y siete"
+ },
+ {
+   "numero": 778,
+   "texto": "setecientos setenta y ocho"
+ },
+ {
+   "numero": 779,
+   "texto": "setecientos setenta y nueve"
+ },
+ {
+   "numero": 780,
+   "texto": "setecientos ochenta"
+ },
+ {
+   "numero": 781,
+   "texto": "setecientos ochenta y uno"
+ },
+ {
+   "numero": 782,
+   "texto": "setecientos ochenta y dos"
+ },
+ {
+   "numero": 783,
+   "texto": "setecientos ochenta y tres"
+ },
+ {
+   "numero": 784,
+   "texto": "setecientos ochenta y cuatro"
+ },
+ {
+   "numero": 785,
+   "texto": "setecientos ochenta y cinco"
+ },
+ {
+   "numero": 786,
+   "texto": "setecientos ochenta y seis"
+ },
+ {
+   "numero": 787,
+   "texto": "setecientos ochenta y siete"
+ },
+ {
+   "numero": 788,
+   "texto": "setecientos ochenta y ocho"
+ },
+ {
+   "numero": 789,
+   "texto": "setecientos ochenta y nueve"
+ },
+ {
+   "numero": 790,
+   "texto": "setecientos noventa"
+ },
+ {
+   "numero": 791,
+   "texto": "setecientos noventa y uno"
+ },
+ {
+   "numero": 792,
+   "texto": "setecientos noventa y dos"
+ },
+ {
+   "numero": 793,
+   "texto": "setecientos noventa y tres"
+ },
+ {
+   "numero": 794,
+   "texto": "setecientos noventa y cuatro"
+ },
+ {
+   "numero": 795,
+   "texto": "setecientos noventa y cinco"
+ },
+ {
+   "numero": 796,
+   "texto": "setecientos noventa y seis"
+ },
+ {
+   "numero": 797,
+   "texto": "setecientos noventa y siete"
+ },
+ {
+   "numero": 798,
+   "texto": "setecientos noventa y ocho"
+ },
+ {
+   "numero": 799,
+   "texto": "setecientos noventa y nueve"
+ },
+ {
+   "numero": 800,
+   "texto": "ochocientos"
+ },
+ {
+   "numero": 801,
+   "texto": "ochocientos uno"
+ },
+ {
+   "numero": 802,
+   "texto": "ochocientos dos"
+ },
+ {
+   "numero": 803,
+   "texto": "ochocientos tres"
+ },
+ {
+   "numero": 804,
+   "texto": "ochocientos cuatro"
+ },
+ {
+   "numero": 805,
+   "texto": "ochocientos cinco"
+ },
+ {
+   "numero": 806,
+   "texto": "ochocientos seis"
+ },
+ {
+   "numero": 807,
+   "texto": "ochocientos siete"
+ },
+ {
+   "numero": 808,
+   "texto": "ochocientos ocho"
+ },
+ {
+   "numero": 809,
+   "texto": "ochocientos nueve"
+ },
+ {
+   "numero": 810,
+   "texto": "ochocientos diez"
+ },
+ {
+   "numero": 811,
+   "texto": "ochocientos once"
+ },
+ {
+   "numero": 812,
+   "texto": "ochocientos doce"
+ },
+ {
+   "numero": 813,
+   "texto": "ochocientos trece"
+ },
+ {
+   "numero": 814,
+   "texto": "ochocientos catorce"
+ },
+ {
+   "numero": 815,
+   "texto": "ochocientos quince"
+ },
+ {
+   "numero": 816,
+   "texto": "ochocientos dieciseis"
+ },
+ {
+   "numero": 817,
+   "texto": "ochocientos diecisiete"
+ },
+ {
+   "numero": 818,
+   "texto": "ochocientos dieciocho"
+ },
+ {
+   "numero": 819,
+   "texto": "ochocientos diecinueve"
+ },
+ {
+   "numero": 820,
+   "texto": "ochocientos veinte"
+ },
+ {
+   "numero": 821,
+   "texto": "ochocientos veintiuno"
+ },
+ {
+   "numero": 822,
+   "texto": "ochocientos veintidos"
+ },
+ {
+   "numero": 823,
+   "texto": "ochocientos veintitres"
+ },
+ {
+   "numero": 824,
+   "texto": "ochocientos veinticuatro"
+ },
+ {
+   "numero": 825,
+   "texto": "ochocientos veinticinco"
+ },
+ {
+   "numero": 826,
+   "texto": "ochocientos veintiseis"
+ },
+ {
+   "numero": 827,
+   "texto": "ochocientos veintisiete"
+ },
+ {
+   "numero": 828,
+   "texto": "ochocientos veintiocho"
+ },
+ {
+   "numero": 829,
+   "texto": "ochocientos veintinueve"
+ },
+ {
+   "numero": 830,
+   "texto": "ochocientos treinta"
+ },
+ {
+   "numero": 831,
+   "texto": "ochocientos treinta y uno"
+ },
+ {
+   "numero": 832,
+   "texto": "ochocientos treinta y dos"
+ },
+ {
+   "numero": 833,
+   "texto": "ochocientos treinta y tres"
+ },
+ {
+   "numero": 834,
+   "texto": "ochocientos treinta y cuatro"
+ },
+ {
+   "numero": 835,
+   "texto": "ochocientos treinta y cinco"
+ },
+ {
+   "numero": 836,
+   "texto": "ochocientos treinta y seis"
+ },
+ {
+   "numero": 837,
+   "texto": "ochocientos treinta y siete"
+ },
+ {
+   "numero": 838,
+   "texto": "ochocientos treinta y ocho"
+ },
+ {
+   "numero": 839,
+   "texto": "ochocientos treinta y nueve"
+ },
+ {
+   "numero": 840,
+   "texto": "ochocientos cuarenta"
+ },
+ {
+   "numero": 841,
+   "texto": "ochocientos cuarenta y uno"
+ },
+ {
+   "numero": 842,
+   "texto": "ochocientos cuarenta y dos"
+ },
+ {
+   "numero": 843,
+   "texto": "ochocientos cuarenta y tres"
+ },
+ {
+   "numero": 844,
+   "texto": "ochocientos cuarenta y cuatro"
+ },
+ {
+   "numero": 845,
+   "texto": "ochocientos cuarenta y cinco"
+ },
+ {
+   "numero": 846,
+   "texto": "ochocientos cuarenta y seis"
+ },
+ {
+   "numero": 847,
+   "texto": "ochocientos cuarenta y siete"
+ },
+ {
+   "numero": 848,
+   "texto": "ochocientos cuarenta y ocho"
+ },
+ {
+   "numero": 849,
+   "texto": "ochocientos cuarenta y nueve"
+ },
+ {
+   "numero": 850,
+   "texto": "ochocientos cincuenta"
+ },
+ {
+   "numero": 851,
+   "texto": "ochocientos cincuenta y uno"
+ },
+ {
+   "numero": 852,
+   "texto": "ochocientos cincuenta y dos"
+ },
+ {
+   "numero": 853,
+   "texto": "ochocientos cincuenta y tres"
+ },
+ {
+   "numero": 854,
+   "texto": "ochocientos cincuenta y cuatro"
+ },
+ {
+   "numero": 855,
+   "texto": "ochocientos cincuenta y cinco"
+ },
+ {
+   "numero": 856,
+   "texto": "ochocientos cincuenta y seis"
+ },
+ {
+   "numero": 857,
+   "texto": "ochocientos cincuenta y siete"
+ },
+ {
+   "numero": 858,
+   "texto": "ochocientos cincuenta y ocho"
+ },
+ {
+   "numero": 859,
+   "texto": "ochocientos cincuenta y nueve"
+ },
+ {
+   "numero": 860,
+   "texto": "ochocientos sesenta"
+ },
+ {
+   "numero": 861,
+   "texto": "ochocientos sesenta y uno"
+ },
+ {
+   "numero": 862,
+   "texto": "ochocientos sesenta y dos"
+ },
+ {
+   "numero": 863,
+   "texto": "ochocientos sesenta y tres"
+ },
+ {
+   "numero": 864,
+   "texto": "ochocientos sesenta y cuatro"
+ },
+ {
+   "numero": 865,
+   "texto": "ochocientos sesenta y cinco"
+ },
+ {
+   "numero": 866,
+   "texto": "ochocientos sesenta y seis"
+ },
+ {
+   "numero": 867,
+   "texto": "ochocientos sesenta y siete"
+ },
+ {
+   "numero": 868,
+   "texto": "ochocientos sesenta y ocho"
+ },
+ {
+   "numero": 869,
+   "texto": "ochocientos sesenta y nueve"
+ },
+ {
+   "numero": 870,
+   "texto": "ochocientos setenta"
+ },
+ {
+   "numero": 871,
+   "texto": "ochocientos setenta y uno"
+ },
+ {
+   "numero": 872,
+   "texto": "ochocientos setenta y dos"
+ },
+ {
+   "numero": 873,
+   "texto": "ochocientos setenta y tres"
+ },
+ {
+   "numero": 874,
+   "texto": "ochocientos setenta y cuatro"
+ },
+ {
+   "numero": 875,
+   "texto": "ochocientos setenta y cinco"
+ },
+ {
+   "numero": 876,
+   "texto": "ochocientos setenta y seis"
+ },
+ {
+   "numero": 877,
+   "texto": "ochocientos setenta y siete"
+ },
+ {
+   "numero": 878,
+   "texto": "ochocientos setenta y ocho"
+ },
+ {
+   "numero": 879,
+   "texto": "ochocientos setenta y nueve"
+ },
+ {
+   "numero": 880,
+   "texto": "ochocientos ochenta"
+ },
+ {
+   "numero": 881,
+   "texto": "ochocientos ochenta y uno"
+ },
+ {
+   "numero": 882,
+   "texto": "ochocientos ochenta y dos"
+ },
+ {
+   "numero": 883,
+   "texto": "ochocientos ochenta y tres"
+ },
+ {
+   "numero": 884,
+   "texto": "ochocientos ochenta y cuatro"
+ },
+ {
+   "numero": 885,
+   "texto": "ochocientos ochenta y cinco"
+ },
+ {
+   "numero": 886,
+   "texto": "ochocientos ochenta y seis"
+ },
+ {
+   "numero": 887,
+   "texto": "ochocientos ochenta y siete"
+ },
+ {
+   "numero": 888,
+   "texto": "ochocientos ochenta y ocho"
+ },
+ {
+   "numero": 889,
+   "texto": "ochocientos ochenta y nueve"
+ },
+ {
+   "numero": 890,
+   "texto": "ochocientos noventa"
+ },
+ {
+   "numero": 891,
+   "texto": "ochocientos noventa y uno"
+ },
+ {
+   "numero": 892,
+   "texto": "ochocientos noventa y dos"
+ },
+ {
+   "numero": 893,
+   "texto": "ochocientos noventa y tres"
+ },
+ {
+   "numero": 894,
+   "texto": "ochocientos noventa y cuatro"
+ },
+ {
+   "numero": 895,
+   "texto": "ochocientos noventa y cinco"
+ },
+ {
+   "numero": 896,
+   "texto": "ochocientos noventa y seis"
+ },
+ {
+   "numero": 897,
+   "texto": "ochocientos noventa y siete"
+ },
+ {
+   "numero": 898,
+   "texto": "ochocientos noventa y ocho"
+ },
+ {
+   "numero": 899,
+   "texto": "ochocientos noventa y nueve"
+ },
+ {
+   "numero": 900,
+   "texto": "novecientos"
+ },
+ {
+   "numero": 901,
+   "texto": "novecientos uno"
+ },
+ {
+   "numero": 902,
+   "texto": "novecientos dos"
+ },
+ {
+   "numero": 903,
+   "texto": "novecientos tres"
+ },
+ {
+   "numero": 904,
+   "texto": "novecientos cuatro"
+ },
+ {
+   "numero": 905,
+   "texto": "novecientos cinco"
+ },
+ {
+   "numero": 906,
+   "texto": "novecientos seis"
+ },
+ {
+   "numero": 907,
+   "texto": "novecientos siete"
+ },
+ {
+   "numero": 908,
+   "texto": "novecientos ocho"
+ },
+ {
+   "numero": 909,
+   "texto": "novecientos nueve"
+ },
+ {
+   "numero": 910,
+   "texto": "novecientos diez"
+ },
+ {
+   "numero": 911,
+   "texto": "novecientos once"
+ },
+ {
+   "numero": 912,
+   "texto": "novecientos doce"
+ },
+ {
+   "numero": 913,
+   "texto": "novecientos trece"
+ },
+ {
+   "numero": 914,
+   "texto": "novecientos catorce"
+ },
+ {
+   "numero": 915,
+   "texto": "novecientos quince"
+ },
+ {
+   "numero": 916,
+   "texto": "novecientos dieciseis"
+ },
+ {
+   "numero": 917,
+   "texto": "novecientos diecisiete"
+ },
+ {
+   "numero": 918,
+   "texto": "novecientos dieciocho"
+ },
+ {
+   "numero": 919,
+   "texto": "novecientos diecinueve"
+ },
+ {
+   "numero": 920,
+   "texto": "novecientos veinte"
+ },
+ {
+   "numero": 921,
+   "texto": "novecientos veintiuno"
+ },
+ {
+   "numero": 922,
+   "texto": "novecientos veintidos"
+ },
+ {
+   "numero": 923,
+   "texto": "novecientos veintitres"
+ },
+ {
+   "numero": 924,
+   "texto": "novecientos veinticuatro"
+ },
+ {
+   "numero": 925,
+   "texto": "novecientos veinticinco"
+ },
+ {
+   "numero": 926,
+   "texto": "novecientos veintiseis"
+ },
+ {
+   "numero": 927,
+   "texto": "novecientos veintisiete"
+ },
+ {
+   "numero": 928,
+   "texto": "novecientos veintiocho"
+ },
+ {
+   "numero": 929,
+   "texto": "novecientos veintinueve"
+ },
+ {
+   "numero": 930,
+   "texto": "novecientos treinta"
+ },
+ {
+   "numero": 931,
+   "texto": "novecientos treinta y uno"
+ },
+ {
+   "numero": 932,
+   "texto": "novecientos treinta y dos"
+ },
+ {
+   "numero": 933,
+   "texto": "novecientos treinta y tres"
+ },
+ {
+   "numero": 934,
+   "texto": "novecientos treinta y cuatro"
+ },
+ {
+   "numero": 935,
+   "texto": "novecientos treinta y cinco"
+ },
+ {
+   "numero": 936,
+   "texto": "novecientos treinta y seis"
+ },
+ {
+   "numero": 937,
+   "texto": "novecientos treinta y siete"
+ },
+ {
+   "numero": 938,
+   "texto": "novecientos treinta y ocho"
+ },
+ {
+   "numero": 939,
+   "texto": "novecientos treinta y nueve"
+ },
+ {
+   "numero": 940,
+   "texto": "novecientos cuarenta"
+ },
+ {
+   "numero": 941,
+   "texto": "novecientos cuarenta y uno"
+ },
+ {
+   "numero": 942,
+   "texto": "novecientos cuarenta y dos"
+ },
+ {
+   "numero": 943,
+   "texto": "novecientos cuarenta y tres"
+ },
+ {
+   "numero": 944,
+   "texto": "novecientos cuarenta y cuatro"
+ },
+ {
+   "numero": 945,
+   "texto": "novecientos cuarenta y cinco"
+ },
+ {
+   "numero": 946,
+   "texto": "novecientos cuarenta y seis"
+ },
+ {
+   "numero": 947,
+   "texto": "novecientos cuarenta y siete"
+ },
+ {
+   "numero": 948,
+   "texto": "novecientos cuarenta y ocho"
+ },
+ {
+   "numero": 949,
+   "texto": "novecientos cuarenta y nueve"
+ },
+ {
+   "numero": 950,
+   "texto": "novecientos cincuenta"
+ },
+ {
+   "numero": 951,
+   "texto": "novecientos cincuenta y uno"
+ },
+ {
+   "numero": 952,
+   "texto": "novecientos cincuenta y dos"
+ },
+ {
+   "numero": 953,
+   "texto": "novecientos cincuenta y tres"
+ },
+ {
+   "numero": 954,
+   "texto": "novecientos cincuenta y cuatro"
+ },
+ {
+   "numero": 955,
+   "texto": "novecientos cincuenta y cinco"
+ },
+ {
+   "numero": 956,
+   "texto": "novecientos cincuenta y seis"
+ },
+ {
+   "numero": 957,
+   "texto": "novecientos cincuenta y siete"
+ },
+ {
+   "numero": 958,
+   "texto": "novecientos cincuenta y ocho"
+ },
+ {
+   "numero": 959,
+   "texto": "novecientos cincuenta y nueve"
+ },
+ {
+   "numero": 960,
+   "texto": "novecientos sesenta"
+ },
+ {
+   "numero": 961,
+   "texto": "novecientos sesenta y uno"
+ },
+ {
+   "numero": 962,
+   "texto": "novecientos sesenta y dos"
+ },
+ {
+   "numero": 963,
+   "texto": "novecientos sesenta y tres"
+ },
+ {
+   "numero": 964,
+   "texto": "novecientos sesenta y cuatro"
+ },
+ {
+   "numero": 965,
+   "texto": "novecientos sesenta y cinco"
+ },
+ {
+   "numero": 966,
+   "texto": "novecientos sesenta y seis"
+ },
+ {
+   "numero": 967,
+   "texto": "novecientos sesenta y siete"
+ },
+ {
+   "numero": 968,
+   "texto": "novecientos sesenta y ocho"
+ },
+ {
+   "numero": 969,
+   "texto": "novecientos sesenta y nueve"
+ },
+ {
+   "numero": 970,
+   "texto": "novecientos setenta"
+ },
+ {
+   "numero": 971,
+   "texto": "novecientos setenta y uno"
+ },
+ {
+   "numero": 972,
+   "texto": "novecientos setenta y dos"
+ },
+ {
+   "numero": 973,
+   "texto": "novecientos setenta y tres"
+ },
+ {
+   "numero": 974,
+   "texto": "novecientos setenta y cuatro"
+ },
+ {
+   "numero": 975,
+   "texto": "novecientos setenta y cinco"
+ },
+ {
+   "numero": 976,
+   "texto": "novecientos setenta y seis"
+ },
+ {
+   "numero": 977,
+   "texto": "novecientos setenta y siete"
+ },
+ {
+   "numero": 978,
+   "texto": "novecientos setenta y ocho"
+ },
+ {
+   "numero": 979,
+   "texto": "novecientos setenta y nueve"
+ },
+ {
+   "numero": 980,
+   "texto": "novecientos ochenta"
+ },
+ {
+   "numero": 981,
+   "texto": "novecientos ochenta y uno"
+ },
+ {
+   "numero": 982,
+   "texto": "novecientos ochenta y dos"
+ },
+ {
+   "numero": 983,
+   "texto": "novecientos ochenta y tres"
+ },
+ {
+   "numero": 984,
+   "texto": "novecientos ochenta y cuatro"
+ },
+ {
+   "numero": 985,
+   "texto": "novecientos ochenta y cinco"
+ },
+ {
+   "numero": 986,
+   "texto": "novecientos ochenta y seis"
+ },
+ {
+   "numero": 987,
+   "texto": "novecientos ochenta y siete"
+ },
+ {
+   "numero": 988,
+   "texto": "novecientos ochenta y ocho"
+ },
+ {
+   "numero": 989,
+   "texto": "novecientos ochenta y nueve"
+ },
+ {
+   "numero": 990,
+   "texto": "novecientos noventa"
+ },
+ {
+   "numero": 991,
+   "texto": "novecientos noventa y uno"
+ },
+ {
+   "numero": 992,
+   "texto": "novecientos noventa y dos"
+ },
+ {
+   "numero": 993,
+   "texto": "novecientos noventa y tres"
+ },
+ {
+   "numero": 994,
+   "texto": "novecientos noventa y cuatro"
+ },
+ {
+   "numero": 995,
+   "texto": "novecientos noventa y cinco"
+ },
+ {
+   "numero": 996,
+   "texto": "novecientos noventa y seis"
+ },
+ {
+   "numero": 997,
+   "texto": "novecientos noventa y siete"
+ },
+ {
+   "numero": 998,
+   "texto": "novecientos noventa y ocho"
+ },
+ {
+   "numero": 999,
+   "texto": "novecientos noventa y nueve"
+ },
+ {
+   "numero": 1000,
+   "texto": "mil"
+ }
+]

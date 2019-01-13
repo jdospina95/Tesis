@@ -1,0 +1,8 @@
+[{
+    "accion": "corre",
+    "accionpasado": "corrio"
+},
+{
+    "accion": "salta",
+    "accionpasado": "salto"
+}]

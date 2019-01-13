@@ -1,53 +1,94 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Herramienta Instituto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
+  		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-<head>
-  <title>Herramienta Instituto</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0 user-scalable=no">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Permanent+Marker" rel="stylesheet">
-  <link rel="stylesheet" href="css/bootstrap.css">
-  <link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
-  <link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
-</head>
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Logo -->
+								<a href="/" class="logo">
+									<span class="title">Herramienta Instituto</span>
+								</a>
 
-<body>
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+					
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/">Menu Inicio</a></li>
+							<li><a href="/IniciarSesion">Iniciar Sesion</a></li>
+							<li><a href="/RegistrarUsuario">Registrar Usuario</a></li>
+						</ul>
+					</nav>
+					
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            <!-- Form -->
+								<section>
+									<h2>Inicio de Sesion</h2>
+									<form action="/IniciarSesion" method="POST" id="forminiciosesion">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<select name="nom_usuario" form="forminiciosesion">
+												    {% for usuario in usuarios %}
+												    <option value='{{usuario._id}}'>{{usuario.nombre}} {{usuario.apellido}}</option>    <!--Cambio a entregar _id-->
+                                                    {% endfor %}
+                                                </select>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Iniciar" class="primary" /></li>
+													<li><input type="reset" value="Cancelar" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</div>
+						</div>
 
-  <section>
-    <center>
-      <div class="title">
-        <h1 class="title-top">Herramienta</h1>
-        <h1 class="title-bottom">Instituto</h1>
-      </div>
-    </center>
-  </section>
-  
-  <section>
-    <center>
-      <select name="nom_usuario" form="forminiciosesion">
-        {% for usuario in usuarios %}
-        <option value='{{usuario.nombre_usuario}}'>{{usuario.nombre}} {{usuario.apellido}}</option>
-        {% endfor %}
-      </select>
-      
-      <form action="/IniciarSesion" method="POST" id="forminiciosesion">
-        <div>
-          <input type="submit" value="Iniciar Sesion">
-        </div>
-      </form>
-    </center>
-  </section>
+                <!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; <a href="mailto:jdospina95@javerianacali.edu.co">Santiago Rengifo & Juan David Ospina</a></li>
+							</ul>
+						</div>
+					</footer>
 
-</body>
+			</div>
 
-<footer>
-  <center>
-    <div class="bottom">
-      <a href="mailto:jdospina95@javerianacali.edu.co">
-        <span class="yellow">©</span>
-        <span class="yellow-with-darkyellow">Santiago Rengifo & Juan David Ospina</span></a>
-    </div>
-  </center>
-</footer>
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
 
+	</body>
 </html>
