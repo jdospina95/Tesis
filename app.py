@@ -26,8 +26,8 @@ def login_required(f):
             return f()
     return wrap           #Nueva funcion para validacion de sesion iniciada
     
-def generarActividad(basicasA, basicasB, maxn):
-    actividad = []
+def generarActividad1(basicasA, basicasB, minn, maxn):
+    preguntas = []
     
     acciones = json.load(open('database/acciones.json'))
     comidas = json.load(open('database/comidas.json'))
@@ -37,7 +37,7 @@ def generarActividad(basicasA, basicasB, maxn):
         persona = personas[randint(0,len(personas)-1)]
         comida = comidas[randint(0,len(comidas)-1)]
         
-        print OperacionesBasicasA(persona,comida,maxn)
+        preguntas.append(OperacionesBasicasA(persona,comida,minn,maxn))
         
     for i in range(basicasB):
         persona1 = personas[randint(0,len(personas)-1)]
@@ -46,14 +46,58 @@ def generarActividad(basicasA, basicasB, maxn):
         accionpasado = accion["accionpasado"]
         accion = accion["accion"]
         
-        print OperacionesBasicasB(persona1,persona2,accion,accionpasado,maxn)
+        preguntas.append(OperacionesBasicasB(persona1,persona2,accion,accionpasado,minn,maxn))
     
-    return actividad
+    return preguntas
 
 @app.route('/', methods=['GET'])
 def index():
     global session
     return render_template('index.html', sesion = session)
+    
+@app.route('/GenerarReporte', methods=['GET', 'POST'])
+@login_required         #Validacion de inicio de sesion
+def generarreporte():
+    return render_template('generarReporte.html')
+    
+@app.route('/SeleccionarActividad', methods=['GET'])
+@login_required         #Validacion de inicio de sesion
+def seleccionaractividad():
+    return render_template('seleccionarActividad.html')
+    
+@app.route('/Actividad1', methods=['GET', 'POST'])
+# @login_required         #Validacion de inicio de sesion
+def actividad1():
+    if request.method == 'POST':
+        fdata = request.form
+        data = {}
+        for (k,v) in fdata.items():
+            data[k]=v
+        preguntas = generarActividad1(int(data['operacionesbasicasA']), int(data['operacionesbasicasB']), int(data['minn']), int(data['maxn']))
+        
+        deserializedSession = loads(session['usuario'])
+        deserializedSession['configuracion']
+        conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
+        print(conf)
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])]
+        return render_template('preguntas.html', preguntas=preguntas, conf=config)
+    else:
+        return render_template('actividad1.html')
+    
+@app.route('/Actividad2', methods=['GET', 'POST'])
+@login_required         #Validacion de inicio de sesion
+def actividad2():
+    return render_template('actividad2.html')
+    
+@app.route('/Actividad3', methods=['GET', 'POST'])
+@login_required         #Validacion de inicio de sesion
+def actividad3():
+    return render_template('actividad3.html')
+    
+@app.route('/VerificarProgreso', methods=['GET', 'POST'])
+@login_required         #Validacion de inicio de sesion
+def verificarprogreso():
+    return render_template('verificarProgreso.html')
     
 @app.route('/IniciarSesion', methods=['GET', 'POST'])
 def iniciarsesion():
@@ -81,7 +125,7 @@ def registrarusuario():
         data = {}
         for (k,v) in fdata.items():
             data[k]=v
-        data['configuracion'] = configuraciones.find({"nombre":"Default"})[0]['_id']#'default'           #se agrega comfiguracion default al registrar usuario
+        data['configuracion'] = ObjectId(configuraciones.find({"nombre":"Default"})[0]['_id'])#'default'           #se agrega comfiguracion default al registrar usuario
         usuarios.insert_one(data)       #Inserta un solo registro a la coleccion "Usuarios"
         return redirect('/')
     else:
@@ -101,7 +145,7 @@ def configuracion():
         deserializedSession = loads(session['usuario'])
         query = { "_id": ObjectId(deserializedSession['_id'])}
         deserializedSession['configuracion'] = request.form['id_configuracion']
-        nuevaConfiguracion = { "$set": { "configuracion": request.form['id_configuracion'] } }
+        nuevaConfiguracion = { "$set": { "configuracion": ObjectId(request.form['id_configuracion']) } }
         usuarios.update_one(query, nuevaConfiguracion)
         session['usuario'] = dumps(deserializedSession)
         return redirect('/MenuInicio')

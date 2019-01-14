@@ -22,7 +22,7 @@
 					<header id="header">
 						<div class="inner">
 							<!-- Logo -->
-								<a href="/" class="logo">
+								<a href="/MenuInicio" class="logo">
 									<span class="title">Herramienta Instituto</span>
 								</a>
 
@@ -39,35 +39,34 @@
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="/">Menu Inicio</a></li>
-							<li><a href="/IniciarSesion">Iniciar Sesion</a></li>
-							<li><a href="/RegistrarUsuario">Registrar Usuario</a></li>
+							<li><a href="/MenuInicio">Menu Inicio</a></li>
+							<li><a href="/SeleccionarActividad">Seleccionar Actividad</a></li>
+							<li><a href="/VerificarProgreso">Verificar Progreso</a></li>
+							<li><a href="/GenerarReporte">Generar Reporte</a></li>
+							<li><a href="/Configuracion">Configuracion</a></li>
+							<li><a href="/CerrarSesion">Cerrar Sesion</a></li>
 						</ul>
 					</nav>
 					
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-                            <!-- Form -->
 								<section>
-									<h2>Inicio de Sesion</h2>
-									<form action="/IniciarSesion" method="POST" id="forminiciosesion">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall">
-												<select name="nom_usuario" form="forminiciosesion">
-												    {% for usuario in usuarios %}
-												    <option value='{{usuario._id}}'>{{usuario.nombre}} {{usuario.apellido}}</option>    <!--Cambio a entregar _id-->
-                                                    {% endfor %}
-                                                </select>
-											</div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" value="Iniciar" class="primary" /></li>
-													<li><input type="reset" value="Cancelar" href="/" /></li>
-												</ul>
-											</div>
+									<h2>Verificar Progreso</h2>
+									<div class="row">
+										<nav2 class="col-3 col-12-medium">
+											<ul class="alt" id="toggle">
+												<li><a href="javascript:toggleChart();">Por meses</a></li>
+												<li><a href="javascript:toggleChart();">Por actividad</a></li>
+											</ul>
+										</nav2>
+										<div class="col-9 col-12-medium" id="bargraph">
+											<canvas id="myBarChart" width="350" height="200"></canvas>
 										</div>
-									</form>
+										<div class="col-9 col-12-medium" id="doughnut">
+											<canvas id="myDoughnutChart" width="350" height="200"></canvas>
+										</div>
+									</div>
 								</section>
 							</div>
 						</div>
@@ -89,6 +88,19 @@
 			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
 			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
 			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+			<script src="{{url_for('static', filename='assets/js/charts.js')}}"></script>
 
 	</body>
+	
+	<style scoped>
+	    nav2 ul{
+	        height:400px; width:100%;
+	        
+	    }
+        nav2 ul{
+            overflow:hidden; overflow-y:scroll;
+            
+        }
+	</style>
 </html>

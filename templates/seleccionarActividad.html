@@ -22,7 +22,7 @@
 					<header id="header">
 						<div class="inner">
 							<!-- Logo -->
-								<a href="/" class="logo">
+								<a href="/MenuInicio" class="logo">
 									<span class="title">Herramienta Instituto</span>
 								</a>
 
@@ -34,45 +34,65 @@
 								</nav>
 						</div>
 					</header>
-					
+
 				<!-- Menu -->
 					<nav id="menu">
 						<h2>Menu</h2>
 						<ul>
-							<li><a href="/">Menu Inicio</a></li>
-							<li><a href="/IniciarSesion">Iniciar Sesion</a></li>
-							<li><a href="/RegistrarUsuario">Registrar Usuario</a></li>
+							<li><a href="/MenuInicio">Menu Inicio</a></li>
+							<li><a href="/SeleccionarActividad">Seleccionar Actividad</a></li>
+							<li><a href="/VerificarProgreso">Verificar Progreso</a></li>
+							<li><a href="/GenerarReporte">Generar Reporte</a></li>
+							<li><a href="/Configuracion">Configuracion</a></li>
+							<li><a href="/CerrarSesion">Cerrar Sesion</a></li>
 						</ul>
 					</nav>
-					
+
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-                            <!-- Form -->
-								<section>
-									<h2>Inicio de Sesion</h2>
-									<form action="/IniciarSesion" method="POST" id="forminiciosesion">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall">
-												<select name="nom_usuario" form="forminiciosesion">
-												    {% for usuario in usuarios %}
-												    <option value='{{usuario._id}}'>{{usuario.nombre}} {{usuario.apellido}}</option>    <!--Cambio a entregar _id-->
-                                                    {% endfor %}
-                                                </select>
-											</div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" value="Iniciar" class="primary" /></li>
-													<li><input type="reset" value="Cancelar" href="/" /></li>
-												</ul>
-											</div>
+							<header>
+								<h1 align="center">Menu Actividades</h1>
+							</header>
+							<section class="tiles">
+								<article class="style3" align="center">
+									<span class="image">
+										<img src="{{url_for('static', filename='images/actividad.jpg')}}" alt="" />
+									</span>
+									<a href="/Actividad1">
+										<h2>Actividad 1</h2>
+										<div class="content">
+											<p>Descripcion.</p>
 										</div>
-									</form>
-								</section>
-							</div>
+									</a>
+								</article>
+								<article class="style2" align="right">
+									<span class="image">
+										<img src="{{url_for('static', filename='images/progreso.jpg')}}" alt="" />
+									</span>
+									<a href="/Actividad2">
+										<h2>Actividad 2</h2>
+										<div class="content">
+											<p>Descripcion.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style6" align="center">
+									<span class="image">
+										<img src="{{url_for('static', filename='images/img02.jpg')}}" alt="" />
+									</span>
+									<a href="/Actividad3">
+										<h2>Actividad 3</h2>
+										<div class="content">
+											<p>Descripcion.</p>
+										</div>
+									</a>
+								</article>
+							</section>
 						</div>
+					</div>
 
-                <!-- Footer -->
+				<!-- Footer -->
 					<footer id="footer">
 						<div class="inner">
 							<ul class="copyright">

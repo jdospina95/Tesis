@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	<title>Herramienta Instituto</title>
+    	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
+      	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+    </head>
+    <body>
+        <!-- {% for pregunta in preguntas %} -->
+        <h4>{{ pregunta }}</h4>
+        <!-- {% endfor %} -->
+        
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <script>
+            $(document).on('keypress',function(e) {
+            if(e.which == 13) {
+                console.log($("#respuesta").text());
+            }
+        });
+        </script>
+        <script type="text/javascript">
+            var someJavaScriptVar = '{{ conf[0] }}';
+            document.body.style.backgroundColor = someJavaScriptVar;
+        </script>
+        
+        
+    </body>
+    
+        
+    
+</html>
