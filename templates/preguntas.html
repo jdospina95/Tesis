@@ -21,18 +21,21 @@
             var respuestas = [];
             $(document).keypress(function(e) {
                 if(e.which == 13) {
+                    if (list.length == respuestas.length+1) {
+                        Redireccionar();
+                        $.post('/GuardarResultados', respuestas);
+                    }
                     cont ++;
                     document.getElementById("pregunta").innerHTML = list[cont];
                     respuestas.push(document.getElementById("respuesta").value);
                     document.getElementById("respuesta").value = '';
                     console.log(respuestas);
-                    
-                    if (list.length == respuestas.length) {
-                        $.post('/GuardarResultados', respuestas);
-                    }
-                    
                 }
             });
+            function Redireccionar() {
+                window.location = "/MenuInicio";
+            }
+
         </script>
         <script type="text/javascript">
             document.getElementById("pregunta").innerHTML = '{{ preguntas[0] }}'

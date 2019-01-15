@@ -100,8 +100,7 @@ def actividad3():
 @app.route('/GuardarResultados', methods=['POST'])
 @login_required         #Validacion de inicio de sesion
 def guardarresultados():
-    print (request)
-    return render_template('menuInicio.html')
+    return redirect('/MenuInicio')
     
 @app.route('/VerificarProgreso', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
