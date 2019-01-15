@@ -6,23 +6,42 @@
     	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
       	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+      	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     </head>
     <body>
         <!-- {% for pregunta in preguntas %} -->
-        <h4>{{ pregunta }}</h4>
-        <!-- {% endfor %} -->
+        <h4 id="pregunta"></h4>
+        <!-- {% endfor %} --> 
         
-        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+        <input type="text" id="respuesta" autofocus></input>
+        
         <script>
-            $(document).on('keypress',function(e) {
-            if(e.which == 13) {
-                console.log($("#respuesta").text());
-            }
-        });
+            var cont = 0;
+            var list = {{preguntas | safe}};
+            var respuestas = [];
+            $(document).keypress(function(e) {
+                if(e.which == 13) {
+                    cont ++;
+                    document.getElementById("pregunta").innerHTML = list[cont];
+                    respuestas.push(document.getElementById("respuesta").value);
+                    document.getElementById("respuesta").value = '';
+                    console.log(respuestas);
+                    
+                    if (list.length == respuestas.length) {
+                        $.post('/GuardarResultados', respuestas);
+                    }
+                    
+                }
+            });
         </script>
         <script type="text/javascript">
-            var someJavaScriptVar = '{{ conf[0] }}';
-            document.body.style.backgroundColor = someJavaScriptVar;
+            document.getElementById("pregunta").innerHTML = '{{ preguntas[0] }}'
+            var colorFondo = '{{ conf[0] }}';
+            var colorFuente = '{{ conf[1] }}';
+            var tamanoFuente = '{{ conf[2] }}';
+            document.body.style.backgroundColor = colorFondo;
+            document.getElementById("pregunta").style.color = colorFuente;
+            document.getElementById("pregunta").style.fontSize = tamanoFuente;
         </script>
         
         

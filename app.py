@@ -74,13 +74,16 @@ def actividad1():
         for (k,v) in fdata.items():
             data[k]=v
         preguntas = generarActividad1(int(data['operacionesbasicasA']), int(data['operacionesbasicasB']), int(data['minn']), int(data['maxn']))
-        
+        preguntasJavascript = []
+        for i in range(len(preguntas)):
+            preguntasJavascript.append(str(preguntas[i][0]))
+            
+        print(preguntasJavascript)
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
-        print(conf)
-        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])]
-        return render_template('preguntas.html', preguntas=preguntas, conf=config)
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
+        return render_template('preguntas.html', preguntas=preguntasJavascript, conf=config)
     else:
         return render_template('actividad1.html')
     
@@ -93,6 +96,12 @@ def actividad2():
 @login_required         #Validacion de inicio de sesion
 def actividad3():
     return render_template('actividad3.html')
+    
+@app.route('/GuardarResultados', methods=['POST'])
+@login_required         #Validacion de inicio de sesion
+def guardarresultados():
+    print (request)
+    return render_template('menuInicio.html')
     
 @app.route('/VerificarProgreso', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
