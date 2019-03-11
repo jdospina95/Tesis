@@ -17,23 +17,58 @@
         
         <script>
             var cont = 0;
-            var list = {{preguntas | safe}};
-            var respuestas = [];
+            var listaPreguntas = {{preguntas | safe}};
+            var listaRespuestasCorrectas = {{respuestas | safe}};
+            var respuestasUsuario = [];
+            var numeros = JSON.parse('{{ numeros|safe }}');
+            var down = true;
+            
             $(document).keypress(function(e) {
                 if(e.which == 13) {
-                    if (list.length == respuestas.length+1) {
-                        Redireccionar();
-                        $.post('/GuardarResultados', respuestas);
+                    console.log(down);
+                    if(down){
+                        down = false
+                        if(validarRespuesta(document.getElementById("respuesta").value, listaRespuestasCorrectas[cont], numeros)) {
+                            document.getElementById("pregunta").innerHTML = "Correcto";
+                        } else {
+                            document.getElementById("pregunta").innerHTML = "Incorrecto";
+                        }
+                        
+                        if (listaPreguntas.length == respuestasUsuario.length+1) {
+                            redireccionarMenuInicio();
+                            $.post('/GuardarResultados', respuestasUsuario);
+                        } else {
+                            setTimeout(function(){
+                                cont ++;
+                                document.getElementById("pregunta").innerHTML = listaPreguntas[cont];
+                                respuestasUsuario.push(document.getElementById("respuesta").value);
+                                document.getElementById("respuesta").value = '';
+                                down = true;
+                            }, 3000);
+                        }
                     }
-                    cont ++;
-                    document.getElementById("pregunta").innerHTML = list[cont];
-                    respuestas.push(document.getElementById("respuesta").value);
-                    document.getElementById("respuesta").value = '';
-                    console.log(respuestas);
                 }
             });
-            function Redireccionar() {
+            
+            function redireccionarMenuInicio() {
                 window.location = "/MenuInicio";
+            }
+            
+            function validarRespuesta(respuestaUsuario, respuestaCorrecta, numeros){
+                var validacion = false;
+                respuestaUsuario = estandarizarRespuesta(respuestaUsuario);
+                respuestaCorrecta = estandarizarRespuesta(numeros[respuestaCorrecta].texto);
+                if(respuestaCorrecta == respuestaUsuario){
+                    validacion = true;
+                }
+                return validacion
+            }
+            
+            function estandarizarRespuesta(texto){
+                texto = texto.replace(/\s+/g,'');
+                texto.toLowerCase();
+                console.log(texto);
+                return texto
             }
 
         </script>

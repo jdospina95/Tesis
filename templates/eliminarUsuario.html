@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Herramienta Instituto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
+  		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Logo -->
+								<a href="/" class="logo">
+									<span class="title">Herramienta Instituto</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+					
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/">Menu Inicio</a></li>
+							<li><a href="/IniciarSesion">Iniciar Sesion</a></li>
+							<li><a href="/RegistrarUsuario">Registrar Usuario</a></li>
+						</ul>
+					</nav>
+					
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            <!-- Form -->
+								<section>
+									<h2>Eliminar Usuario</h2>
+									<form action="/EliminarUsuario" method="POST" id="formEliminarUsuario">
+										<div class="row gtr-uniform">
+											<div class="col-6 col-12-xsmall">
+												<select name="nom_usuario" form="formEliminarUsuario">
+												    {% for usuario in usuarios %}
+												    <option value='{{usuario._id}}'>{{usuario.nombre}} {{usuario.apellido}}</option>    <!--Cambio a entregar _id-->
+                                                    {% endfor %}
+                                                </select>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Eliminar Usuario" class="primary" /></li>
+													<li><input type="reset" value="Cancelar" href="/" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</div>
+						</div>
+
+                <!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; <a href="mailto:jdospina95@javerianacali.edu.co">Santiago Rengifo & Juan David Ospina</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+	</body>
+</html>

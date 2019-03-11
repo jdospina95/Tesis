@@ -183,18 +183,5 @@ def configuracion():
             reg.append({'_id':data['_id'],'nombre':data['nombre'], 'tamano_fuente':data['tamano_fuente'], 'color_fuente':data['color_fuente'], 'color_fondo':data['color_fondo']})
         return render_template('configuracion.html',configuraciones=reg)
 
-@app.route('/EliminarUsuario', methods=['GET', 'POST'])
-def eliminarUsuario():
-    if request.method == 'POST':
-        query = {"_id": ObjectId(request.form['nom_usuario'])}
-        usuarios.delete_one(query)
-        return redirect('/')
-    else:
-        reg = []
-        for usuario in usuarios.find():         #Query .find() = SELECT *
-            data = usuario
-            reg.append({'_id':data['_id'], 'nombre':data['nombre'], 'apellido':data['apellido']})       #Se agraga campo _id para consultar usuario iniciado
-        return render_template('eliminarUsuario.html',usuarios=reg)
-
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
