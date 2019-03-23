@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+    	<title>Herramienta Instituto</title>
+    	<meta charset="utf-8" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
+      	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+      	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h4 id="pregunta"></h4>
+        
+        <input type="text" id="respuesta" autofocus></input>
+        
+        <!--<img id="imagen", src=""></img>-->
+        <object id="imagen" type="image/svg+xml"></object>
+        
+        <script type="text/javascript">
+            var cont = 0;
+            var listaPreguntas = {{preguntas | safe}};
+            var listaRespuestasCorrectas = {{respuestas | safe}};
+            var listaImagenes = {{imagenes | safe}};
+            var respuestasUsuario = [];
+            var numeros = JSON.parse('{{ numeros|safe }}');
+            var down = true;
+            
+            $(document).keypress(function(e) {
+                if(e.which == 13) {
+                    if(down){
+                        down = false
+                        if(validarRespuesta(document.getElementById("respuesta").value, listaRespuestasCorrectas[cont], numeros)) {
+                            document.getElementById("pregunta").innerHTML = "Correcto";
+                        } else {
+                            document.getElementById("pregunta").innerHTML = "Incorrecto";
+                        }
+                        
+                        if (listaPreguntas.length == respuestasUsuario.length+1) {
+                            redireccionarMenuInicio();
+                            $.post('/GuardarResultados', listaPreguntas, listaRespuestasCorrectas, respuestasUsuario);
+                        } else {
+                            setTimeout(function(){
+                                cont ++;
+                                document.getElementById("pregunta").innerHTML = listaPreguntas[cont];
+                                var imagen = listaImagenes[cont];
+                                document.getElementById("imagen").data = listaImagenes[cont]
+                                respuestasUsuario.push(document.getElementById("respuesta").value);
+                                document.getElementById("respuesta").value = '';
+                                down = true;
+                            }, 3000);
+                        }
+                    }
+                }
+            });
+            
+            function redireccionarMenuInicio() {
+                window.location = "/MenuInicio";
+            }
+            
+            function validarRespuesta(respuestaUsuario, respuestaCorrecta, numeros){
+                var validacion = false;
+                respuestaUsuario = estandarizarRespuesta(respuestaUsuario);
+                respuestaCorrecta = estandarizarRespuesta(numeros[respuestaCorrecta].texto);
+                if(respuestaCorrecta == respuestaUsuario){
+                    validacion = true;
+                }
+                return validacion
+            }
+            
+            function estandarizarRespuesta(texto){
+                texto = texto.replace(/\s+/g,'');
+                texto.toLowerCase();
+                console.log(texto);
+                return texto
+            }
+
+
+            document.getElementById("pregunta").innerHTML = '{{ preguntas[0] }}';
+            document.getElementById("imagen").data = '{{ imagenes[0] }}';
+            document.getElementById("imagen").addEventListener("load", function() {
+                var doc = this.getSVGDocument();
+                var rect = doc.getElementById("Capa_1"); // suppose our image contains a <rect>
+                rect.setAttribute("fill", '{{ conf[1] }}');
+            });
+            var colorFondo = '{{ conf[0] }}';
+            var colorFuente = '{{ conf[1] }}';
+            var tamanoFuente = '{{ conf[2] }}';
+            document.body.style.backgroundColor = colorFondo;
+            document.getElementById("pregunta").style.color = colorFuente;
+            document.getElementById("pregunta").style.fontSize = tamanoFuente;
+        </script>
+        
+    </body>
+    
+        
+    
+</html>

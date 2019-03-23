@@ -61,10 +61,10 @@
 												<p>Rango de los numeros a ser utilizados en la actividad</p>
 											</div>
 										    <div class="col-3 col-12-xsmall">
-												<select name="minn" class="minn"></select>
+												<select required name="minn" class="minn" id="minn"></select>
 											</div>
 											<div class="col-3 col-12-xsmall">
-												<select name="maxn" class="maxn"></select>
+												<select required name="maxn" class="maxn"></select>
 										    </div>
 										    <div class="col-5 col-12-xsmall">
 												<p>Numero de Actividades de Operaciones Basicas A</p>
@@ -117,30 +117,25 @@
 			<script>
 			    $(function(){
                 var $select = $(".minn");
-                $select.append($('<option></option>').val('Desde').html('Desde'))
+                $select.append($('<option></option>').val('').html('Desde'))
                 for (i=1;i<=1000;i++){
                     $select.append($('<option></option>').val(i).html(i))
                 }
-            });
-			</script>
-			<script>
+            	});
 			    $(function(){
                 var $select = $(".maxn");
-                $select.append($('<option></option>').val('Hasta').html('Hasta'))
+                $select.append($('<option></option>').val('').html('Hasta'))
                 for (i=1;i<=1000;i++){
                     $select.append($('<option></option>').val(i).html(i))
                 }
-            });
-			</script>
-			<script>
+            	});
 			    $(function(){
                 var $select = $(".1-10");
                 for (i=1;i<=10;i++){
                     $select.append($('<option></option>').val(i).html(i))
                 }
-            });
+            	});
 			</script>
-
 	</body>
 	
 	<style scoped>

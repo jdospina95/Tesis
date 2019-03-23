@@ -6,6 +6,7 @@ def OperacionesBasicasA(persona, comida, minn, maxn):
     numero1 = randint(minn,maxn)
     numero2 = randint(1,numero1)
     respuesta = numero1-numero2
+    imagen = "/static/svgs/" + comida + ".svg"
     pregunta = 'Si '+persona+' tiene '+str(numero1)+' '+comida
     
     if comida[len(comida)-1] == 'a': cuanto = 'cuantas' 
@@ -14,10 +15,11 @@ def OperacionesBasicasA(persona, comida, minn, maxn):
     if numero1 > 1: pregunta = pregunta+'s y se come '+str(numero2)+', '+cuanto+' '+comida+'s le quedan?'  
     else: pregunta = pregunta+' y se come '+str(numero2)+', '+cuanto+' '+comida+' le quedan?'
 
-    return [pregunta,respuesta]
+    return [pregunta,respuesta,imagen]
     
 def OperacionesBasicasB(persona1, persona2, accion, accionpasado, minn, maxn):
     # <persona> <accion> <numero> veces, <persona2> <accion> <numero> veces <mas|menos> que <persona>, cuantas veces <accionpasado> <persona2>?
+    imagen = "/static/svgs/" + accion + ".svg"
     numero1 = randint(minn,maxn)
     numero2 = randint(1,minn)
     masmenos = randint(0,1) #0 mas, 1 menos
@@ -34,7 +36,7 @@ def OperacionesBasicasB(persona1, persona2, accion, accionpasado, minn, maxn):
         respuesta = numero1 - numero2
         pregunta = persona1 + ' ' + accion + ' ' + str(numero1) + ' veces, ' + persona2 + ' ' + accionpasado + ' ' + str(numero2) + ' ' + veces + ' menos que ' + persona1 + ', cuantas veces ' + accionpasado + ' ' + persona2 + '?' 
 
-    return [pregunta,respuesta]
+    return [pregunta,respuesta,imagen]
 
 #Preguntas posicion numerica
 def posicionNumericaA(persona,  maxn):

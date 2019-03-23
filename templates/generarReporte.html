@@ -13,6 +13,7 @@
 		<noscript><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
 		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
   		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+		<script src="https://unpkg.com/jspdf@latest/dist/jspdf.min.js"></script>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -56,18 +57,10 @@
 									<h2>Generar Reporte</h2>
 									<div class="row">
 										<nav2 class="col-3 col-12-medium">
-											<!--<ul class="alt">-->
-											<!--    {% for actividad in actividades %}-->
-											<!--	<li href="/">{{actividad.fecha}}</li>-->
-											<!--	{% endfor %}-->
-											<!--</ul>-->
-											<ul class="alt">
-												<li id ="fecha1"><a id ="fecha1" href="javascript:reply_click(this.id)">Fecha 1</a></li>
-												<li><a id ="fecha2" href="javascript:reply_click(this.id)">Fecha 2</a></li>
-												<li><a id ="fecha3" href="javascript:reply_click(this.id)">Fecha 3</a></li>
-												<li><a id ="fecha4" href="javascript:reply_click(this.id)">Fecha 4</a></li>
-												<li><a id ="fecha5" href="javascript:reply_click(this.id)">Fecha 5</a></li>
-												<li><a id ="fecha6" href="javascript:reply_click(this.id)">Fecha 6</a></li>
+											<ul class="alt" id="myid">
+											    {% for actividad in actividades %}
+												<li><a>{{actividad.fecha}}</a></li>
+												{% endfor %}
 											</ul>
 										</nav2>
 										<div class="col-1 col-12-medium"></div>
@@ -75,11 +68,11 @@
 											<p id="info">y</p>
 										</div>
 										<div align="right">
-												<ul class="actions">
-													<li><input type="submit" value="Descargar" class="primary" /></li>
-													<li><input type="reset" value="Cancelar" href="/" /></li>
-												</ul>
-											</div>
+											<ul class="actions">
+												<li><input type="submit" value="Descargar" class="primary" /></li>
+												<li><input type="reset" value="Cancelar" href="/" /></li>
+											</ul>
+										</div>
 									</div>
 								</section>
 							</div>
@@ -104,22 +97,22 @@
 			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
 			
 			<script type="text/javascript">
-				function reply_click(clicked_id)
-				{
-				    alert(clicked_id);
-				}
+				const actividades = {{actividades | tojson | safe}}
+				console.log(actividades);
+				$("#myid li").click(function() {
+				    alert($(this).prevAll().length);
+				});
 			</script>
 
 	</body>
 	
 	<style scoped>
-	    nav2 ul{
-	        height:400px; width:100%;
-	        
-	    }
-        nav2 ul{
-            overflow:hidden; overflow-y:scroll;
-            
-        }
+	
+	nav2 ul {
+	    height: 400px;
+	    width: 100%;
+	    overflow: hidden;
+	    overflow-y: auto;
+	}
 	</style>
 </html>

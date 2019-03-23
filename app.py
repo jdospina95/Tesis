@@ -8,6 +8,9 @@ from bson.objectid import ObjectId      #Se agreaga para poder consultar por _id
 from bson.json_util import dumps, loads  #serializacion de OjectId de mongo
 from pymongo import MongoClient     #Pymongo Framework -> MongoDB
 from random import randint
+import locale
+from datetime import date
+#https://rawgit.com/MrRio/jsPDF/master/
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)     #LLave para envio de session
@@ -16,6 +19,9 @@ client = MongoClient('mongodb://usuario:123456789a@ds031835.mlab.com:31835/tesis
 db = client['tesis']
 usuarios = db.usuarios                                                                    #Referencia a la coleccion "Usuarios" de la DB
 configuraciones = db.configuraciones                                                      #Referencia a la coleccion "Usuarios" de la DB
+respuestas = db.respuestas
+
+locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
 def login_required(f):
     @wraps(f)
@@ -55,10 +61,16 @@ def index():
     global session
     return render_template('index.html', sesion = session)
     
-@app.route('/GenerarReporte', methods=['GET', 'POST'])
+@app.route('/GenerarReporte', methods=['GET'])
 @login_required         #Validacion de inicio de sesion
 def generarreporte():
-    return render_template('generarReporte.html')
+    reg = []
+    deserializedSession = loads(session['usuario'])
+    for respuesta in respuestas.find({'id_usuario': ObjectId(deserializedSession['_id'])}):
+        respuesta.pop('_id', None)
+        respuesta.pop('id_usuario', None)
+        reg.append(respuesta)
+    return render_template('generarReporte.html', actividades=reg)
     
 @app.route('/SeleccionarActividad', methods=['GET'])
 @login_required         #Validacion de inicio de sesion
@@ -76,18 +88,18 @@ def actividad1():
             data[k]=v
         preguntas = generarActividad1(int(data['operacionesbasicasA']), int(data['operacionesbasicasB']), int(data['minn']), int(data['maxn']))
         
-        preguntasJavascript, respuestasJavascript = [],[]
+        preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
         for i in range(len(preguntas)):
             preguntasJavascript.append(str(preguntas[i][0]))
             respuestasJavascript.append(preguntas[i][1])
-        print(preguntasJavascript,respuestasJavascript)
+            imagenesJavascript.append(str(preguntas[i][2]))
         
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
         config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
         numerosTexto = dumps(json.load(open('database/numeros.json')))
-        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, conf=config)
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
     else:
         return render_template('actividad1.html')
     
@@ -103,7 +115,17 @@ def actividad3():
     
 @app.route('/GuardarResultados', methods=['POST'])
 @login_required         #Validacion de inicio de sesion
-def guardarresultados():
+def guardarResultados():
+    fdata = request.form
+    data = {}
+    for (k,v) in fdata.items():
+        data[k]=v
+        
+    deserializedSession = loads(session['usuario'])
+    data['id_usuario'] = ObjectId(deserializedSession['_id'])
+    # sudo locale-gen es_ES.UTF-8 
+    data['fecha'] = date.today().strftime("%d de %B de %Y")
+    respuestas.insert_one(data)
     return redirect('/MenuInicio')
     
 @app.route('/VerificarProgreso', methods=['GET', 'POST'])
@@ -142,6 +164,10 @@ def registrarusuario():
         data = {}
         for (k,v) in fdata.items():
             data[k]=v
+            
+        if configuraciones.find().count() == 0:
+            configuraciones.insert_one({"nombre": "Default", "tamano_fuente": "76", "color_fuente": "white", "color_fondo": "black"})
+        
         data['configuracion'] = ObjectId(configuraciones.find({"nombre":"Default"})[0]['_id'])#'default'           #se agrega comfiguracion default al registrar usuario
         usuarios.insert_one(data)       #Inserta un solo registro a la coleccion "Usuarios"
         return redirect('/')
@@ -166,17 +192,6 @@ def configuracion():
         session['usuario'] = dumps(deserializedSession)
         return redirect('/MenuInicio')
     else:
-        
-        #Insercion de Data Configuracion. Mientras se mira como se llena.
-        #configuraciones.delete_many({})        #Borra todos los registros de la coleccion configuraciones
-        #insert = [
-        #    {"nombre": "Default", "tamano_fuente": "12", "color_fuente": "Negro", "color_fondo": "Verde"},
-        #    {"nombre": "Ciegos", "tamano_fuente": "12", "color_fuente": "Negro", "color_fondo": "Rojo"},
-        #    {"nombre": "Muy Ciegos", "tamano_fuente": "9", "color_fuente": "Blanco", "color_fondo": "Amarillo"}    
-        #]
-        #configuraciones.insert_many(insert)      #Inserta en la Coleccion una lista de configuraciones 
-        #Insercion de Data Configuracion. Mientras se mira como se llena.
-        
         reg = []
         for configuracion in configuraciones.find():         #Query .find() = SELECT *
             data = configuracion
@@ -195,6 +210,33 @@ def eliminarUsuario():
             data = usuario
             reg.append({'_id':data['_id'], 'nombre':data['nombre'], 'apellido':data['apellido']})       #Se agraga campo _id para consultar usuario iniciado
         return render_template('eliminarUsuario.html',usuarios=reg)
+
+@app.route('/NuevaConfiguracion', methods=['GET', 'POST'])
+@login_required         #Validacion de inicio de sesion
+def nuevaConfiguracion():
+    if request.method == 'POST':
+        fdata = request.form
+        data = {}
+        for (k,v) in fdata.items():
+            data[k]=v
+        configuraciones.insert_one(data)
+        return redirect('/Configuracion')
+    else:
+        return render_template('nuevaConfiguracion.html')
+
+@app.route('/EliminarConfiguracion', methods=['GET', 'POST'])
+@login_required         #Validacion de inicio de sesion
+def eliminarConfiguracion():
+    if request.method == 'POST':
+        query = {"_id": ObjectId(request.form['nom_configuracion'])}
+        configuraciones.delete_one(query)
+        return redirect('/Configuracion')
+    else:
+        reg = []
+        for configuracion in configuraciones.find():         #Query .find() = SELECT *
+            data = configuracion
+            reg.append({'_id':data['_id'],'nombre':data['nombre'], 'tamano_fuente':data['tamano_fuente'], 'color_fuente':data['color_fuente'], 'color_fondo':data['color_fondo']})
+        return render_template('eliminarConfiguracion.html',configuraciones=reg)
 
 if __name__ == '__main__':
     app.run(host=os.getenv('IP', '0.0.0.0'),port=int(os.getenv('PORT', 8080)))
