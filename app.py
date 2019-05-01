@@ -58,7 +58,6 @@ def generarActividad1(basicasA, basicasB, minn, maxn):
 
 @app.route('/', methods=['GET'])
 def index():
-    global session
     return render_template('index.html', sesion = session)
     
 @app.route('/GenerarReporte', methods=['GET'])

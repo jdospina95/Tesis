@@ -117,28 +117,34 @@
 			<script>
 			    $(function(){
                 var $select = $(".minn");
-                $select.append($('<option></option>').val('').html('Desde'))
-                for (i=1;i<=1000;i++){
-                    $select.append($('<option></option>').val(i).html(i))
+                $select.append($('<option></option>').val('').html('Desde').attr('disabled','disabled').prop('selected', true));
+                $(".maxn").append($('<option></option>').val('').html('Hasta').attr('disabled','disabled').prop('selected', true));
+                for (i=1;i<1000;i++){
+                    $select.append($('<option></option>').val(i).html(i));
                 }
             	});
-			    $(function(){
-                var $select = $(".maxn");
-                $select.append($('<option></option>').val('').html('Hasta'))
-                for (i=1;i<=1000;i++){
-                    $select.append($('<option></option>').val(i).html(i))
+            	$(".minn").on('change', function() {
+				var $select = $(".maxn");
+				$select.empty();
+                $select.append($('<option></option>').val('').html('Hasta').attr('disabled','disabled').prop('selected', true));
+                for (i=parseInt($(".minn").val())+1;i<=1000;i++){
+                    $select.append($('<option></option>').val(i).html(i));
                 }
-            	});
+				});
 			    $(function(){
                 var $select = $(".1-10");
                 for (i=1;i<=10;i++){
-                    $select.append($('<option></option>').val(i).html(i))
+                    $select.append($('<option></option>').val(i).html(i));
                 }
             	});
 			</script>
 	</body>
 	
 	<style scoped>
+		#header {
+			padding: 2em 0 0.1em 0 !important;
+		}
+		
         .tooltip {
           position: relative;
           display: inline-block;

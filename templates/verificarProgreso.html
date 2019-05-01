@@ -55,16 +55,13 @@
 									<h2>Verificar Progreso</h2>
 									<div class="row">
 										<nav2 class="col-3 col-12-medium">
-											<ul class="alt" id="toggle">
-												<li><a href="javascript:toggleChart();">Por meses</a></li>
-												<li><a href="javascript:toggleChart();">Por actividad</a></li>
+											<ul class="alt" id="toggle" style="overflow: hidden;">
+												<li><a href="javascript:toggleChart('doughnut');">Por meses</a></li>
+												<li><a href="javascript:toggleChart('bar');">Por actividad</a></li>
 											</ul>
 										</nav2>
-										<div class="col-9 col-12-medium" id="bargraph">
-											<canvas id="myBarChart" width="350" height="200"></canvas>
-										</div>
-										<div class="col-9 col-12-medium" id="doughnut">
-											<canvas id="myDoughnutChart" width="350" height="200"></canvas>
+										<div class="col-9 col-12-medium">
+											<canvas id="myChart" width="600" height="400"></canvas>
 										</div>
 									</div>
 								</section>
@@ -93,14 +90,9 @@
 
 	</body>
 	
-	<style scoped>
-	    nav2 ul{
-	        height:400px; width:100%;
-	        
-	    }
-        nav2 ul{
-            overflow:hidden; overflow-y:scroll;
-            
-        }
+	<style>
+		#header {
+			padding: 2em 0 0.1em 0 !important;
+		}
 	</style>
 </html>

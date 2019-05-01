@@ -7,16 +7,18 @@
     	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
       	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
     </head>
     <body>
         <h4 id="pregunta"></h4>
         
-        <input type="text" id="respuesta" autofocus></input>
-        
-        <!--<img id="imagen", src=""></img>-->
         <object id="imagen" type="image/svg+xml"></object>
         
-        <script type="text/javascript">
+        <input type="text" id="respuesta" autofocus></input>
+        
+        <div><a href="https://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></div>
+        
+        <script>
             var cont = 0;
             var listaPreguntas = {{preguntas | safe}};
             var listaRespuestasCorrectas = {{respuestas | safe}};
@@ -31,22 +33,30 @@
                         down = false
                         if(validarRespuesta(document.getElementById("respuesta").value, listaRespuestasCorrectas[cont], numeros)) {
                             document.getElementById("pregunta").innerHTML = "Correcto";
+                            responsiveVoice.speak("Correcto", "Spanish Latin American Female", {rate: 1.0});
                         } else {
                             document.getElementById("pregunta").innerHTML = "Incorrecto";
+                            responsiveVoice.speak("Incorrecto", "Spanish Latin American Female", {rate: 1.0});
                         }
                         
                         if (listaPreguntas.length == respuestasUsuario.length+1) {
+                            respuestasUsuario.push(document.getElementById("respuesta").value);
                             redireccionarMenuInicio();
-                            $.post('/GuardarResultados', listaPreguntas, listaRespuestasCorrectas, respuestasUsuario);
                         } else {
                             setTimeout(function(){
                                 cont ++;
+                                
                                 document.getElementById("pregunta").innerHTML = listaPreguntas[cont];
+                                responsiveVoice.speak(listaPreguntas[cont], "Spanish Latin American Female", {rate: 1.0});
+                                
                                 var imagen = listaImagenes[cont];
                                 document.getElementById("imagen").data = listaImagenes[cont]
+                                
                                 respuestasUsuario.push(document.getElementById("respuesta").value);
                                 document.getElementById("respuesta").value = '';
+                                
                                 down = true;
+                            
                             }, 3000);
                         }
                     }
@@ -54,6 +64,12 @@
             });
             
             function redireccionarMenuInicio() {
+                $.post( "/GuardarResultados", { 
+                    actividad: "Actividad 1",
+                    preguntas: JSON.stringify(listaPreguntas), 
+                    respuestas: JSON.stringify(respuestasUsuario),
+                    respuestasCorrectas: JSON.stringify(listaRespuestasCorrectas)
+                } );
                 window.location = "/MenuInicio";
             }
             
@@ -76,12 +92,18 @@
 
 
             document.getElementById("pregunta").innerHTML = '{{ preguntas[0] }}';
+            responsiveVoice.speak("'{{ preguntas[0] }}'", "Spanish Latin American Female", {rate: 1.0});
+            
             document.getElementById("imagen").data = '{{ imagenes[0] }}';
             document.getElementById("imagen").addEventListener("load", function() {
                 var doc = this.getSVGDocument();
                 var rect = doc.getElementById("Capa_1"); // suppose our image contains a <rect>
                 rect.setAttribute("fill", '{{ conf[1] }}');
+                
+                this.setAttribute("width", "auto")
+                //this.setAttribute("height", "")
             });
+            
             var colorFondo = '{{ conf[0] }}';
             var colorFuente = '{{ conf[1] }}';
             var tamanoFuente = '{{ conf[2] }}';

@@ -74,11 +74,11 @@ function init() {
   });
 }
 
-function toggleChart() {
+function toggleChart(chartType) {
   //destroy chart:
   myBarChart.destroy();
   //change chart type: 
-  this.chartType = (this.chartType == 'bar') ? 'doughnut' : 'bar';
+  this.chartType = chartType;
   //restart chart:
   init();
 }

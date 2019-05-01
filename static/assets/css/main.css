@@ -2119,6 +2119,7 @@ input, select, textarea {
 	input[type="password"],
 	input[type="email"],
 	input[type="tel"],
+	input[type="number"],
 	select,
 	textarea {
 		-moz-appearance: none;
@@ -2150,6 +2151,7 @@ input, select, textarea {
 		input[type="password"]:focus,
 		input[type="email"]:focus,
 		input[type="tel"]:focus,
+		input[type="number"]:focus,
 		select:focus,
 		textarea:focus {
 			border-bottom-color: #00AAD7;
@@ -2181,6 +2183,7 @@ input, select, textarea {
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="number"],
 	select {
 		height: 3em;
 	}
@@ -2806,7 +2809,7 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		padding: 8em 0 0.1em 0 ;
+		padding: 2em 0 0.1em 0 ;
 	}
 
 		#header .logo {
@@ -2947,6 +2950,8 @@ input, select, textarea {
 		-ms-transition: opacity 0.45s ease;
 		transition: opacity 0.45s ease;
 		opacity: 1;
+		height: 100%;
+ 		position: relative;
 	}
 
 	#menu {
@@ -3129,6 +3134,11 @@ input, select, textarea {
 
 	#main {
 		padding: 0em 0 6em 0 ;
+		min-height: 110vh; /* will cover the 100% of viewport */
+	    overflow: hidden;
+	    display: block;
+	    position: relative;
+	    padding-bottom: 100px; /* height of your footer */
 	}
 
 		@media screen and (max-width: 736px) {
@@ -3142,8 +3152,10 @@ input, select, textarea {
 /* Footer */
 
 	#footer {
-		padding: 3em 0 6em 0 ;
+		position: absolute;
+ 		bottom: 0;
 		background-color: #f6f6f6;
+		width: 100%;
 	}
 
 		#footer > .inner {
@@ -3178,7 +3190,7 @@ input, select, textarea {
 			#footer > .inner .copyright {
 				width: 100%;
 				padding: 0;
-				margin-top: 5em;
+				margin-top: 2em;
 				list-style: none;
 				font-size: 0.8em;
 				color: rgba(88, 88, 88, 0.5);

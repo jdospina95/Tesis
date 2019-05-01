@@ -54,16 +54,18 @@
 									<form action="/NuevaConfiguracion" method="POST">
 										<div class="row gtr-uniform">
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="nombre" placeholder="Nombre de la Confuguración" />
+												<input type="text" name="nombre" placeholder="Nombre de la Configuración" />
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="tamano_fuente" placeholder="Tamano Fuente" />
+												<input type="number" name="tamano_fuente" placeholder="Tamano Fuente" />
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="color_fuente" placeholder="Color de la Fuente" />
+												<label for="color_fuente">Color de la Fuente</label>
+												<input type="color" name="color_fuente" style="height: 3em; width: 3em; float: right;" />
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<input type="text" name="color_fondo" placeholder="Color de el Fondo" />
+												<label for="color_fondo">Color del fondo</label>
+												<input type="color" name="color_fondo" style="height: 3em; width: 3em; float: right;" />
 											</div>
 											<div class="col-12">
 												<ul class="actions">
@@ -96,4 +98,20 @@
 			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
 
 	</body>
+	
+	<style>
+		#header {
+			padding: 2em 0 0.1em 0 !important;
+		}
+		
+		label {
+			display: inline-block;
+			font-size: inherit;
+			font-weight: 100;
+			margin-bottom: 0px;
+			border-bottom: solid 1px #c9c9c9;
+			width: 75%;
+			height: 3em;
+		}
+	</style>
 </html>
