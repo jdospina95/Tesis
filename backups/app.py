@@ -8,6 +8,9 @@ from bson.objectid import ObjectId      #Se agreaga para poder consultar por _id
 from bson.json_util import dumps, loads  #serializacion de OjectId de mongo
 from pymongo import MongoClient     #Pymongo Framework -> MongoDB
 from random import randint
+import locale
+from datetime import date
+#https://rawgit.com/MrRio/jsPDF/master/
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24)     #LLave para envio de session
@@ -17,6 +20,8 @@ db = client['tesis']
 usuarios = db.usuarios                                                                    #Referencia a la coleccion "Usuarios" de la DB
 configuraciones = db.configuraciones                                                      #Referencia a la coleccion "Usuarios" de la DB
 respuestas = db.respuestas
+
+locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
 def login_required(f):
     @wraps(f)
@@ -53,13 +58,18 @@ def generarActividad1(basicasA, basicasB, minn, maxn):
 
 @app.route('/', methods=['GET'])
 def index():
-    global session
     return render_template('index.html', sesion = session)
     
-@app.route('/GenerarReporte', methods=['GET', 'POST'])
+@app.route('/GenerarReporte', methods=['GET'])
 @login_required         #Validacion de inicio de sesion
 def generarreporte():
-    return render_template('generarReporte.html')
+    reg = []
+    deserializedSession = loads(session['usuario'])
+    for respuesta in respuestas.find({'id_usuario': ObjectId(deserializedSession['_id'])}):
+        respuesta.pop('_id', None)
+        respuesta.pop('id_usuario', None)
+        reg.append(respuesta)
+    return render_template('generarReporte.html', actividades=reg)
     
 @app.route('/SeleccionarActividad', methods=['GET'])
 @login_required         #Validacion de inicio de sesion
@@ -77,18 +87,18 @@ def actividad1():
             data[k]=v
         preguntas = generarActividad1(int(data['operacionesbasicasA']), int(data['operacionesbasicasB']), int(data['minn']), int(data['maxn']))
         
-        preguntasJavascript, respuestasJavascript = [],[]
+        preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
         for i in range(len(preguntas)):
             preguntasJavascript.append(str(preguntas[i][0]))
             respuestasJavascript.append(preguntas[i][1])
-        print(preguntasJavascript,respuestasJavascript)
+            imagenesJavascript.append(str(preguntas[i][2]))
         
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
         config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
         numerosTexto = dumps(json.load(open('database/numeros.json')))
-        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, conf=config)
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
     else:
         return render_template('actividad1.html')
     
@@ -105,6 +115,16 @@ def actividad3():
 @app.route('/GuardarResultados', methods=['POST'])
 @login_required         #Validacion de inicio de sesion
 def guardarResultados():
+    fdata = request.form
+    data = {}
+    for (k,v) in fdata.items():
+        data[k]=v
+        
+    deserializedSession = loads(session['usuario'])
+    data['id_usuario'] = ObjectId(deserializedSession['_id'])
+    # sudo locale-gen es_ES.UTF-8 
+    data['fecha'] = date.today().strftime("%d de %B de %Y")
+    respuestas.insert_one(data)
     return redirect('/MenuInicio')
     
 @app.route('/VerificarProgreso', methods=['GET', 'POST'])

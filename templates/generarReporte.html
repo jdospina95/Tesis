@@ -57,35 +57,28 @@
 									<h2>Generar Reporte</h2>
 									<div class="row">
 										<nav2 class="col-3 col-12-medium">
-											<ul class="alt" id="myid">
+											<ul class="alt" id="myid" style="min-height: 50vh; max-height: 50vh; overflow: auto;">
 											    {% for actividad in actividades %}
-												<li><a>{{actividad.fecha}}</a></li>
+												<li><a style="cursor: pointer;">{{actividad.fecha}}</a></li>
 												{% endfor %}
 											</ul>
 										</nav2>
 										<div class="col-1 col-12-medium"></div>
 										<div class="col-8 col-12-medium">
-											<p id="info">y</p>
+											<h3 id="actividad"></h3>
+											<p id="usuario"></p>
+											<ul id="preguntas"></ul>
 										</div>
-										<div align="right">
-											<ul class="actions">
-												<li><input type="submit" value="Descargar" class="primary" /></li>
-												<li><input type="reset" value="Cancelar" href="/" /></li>
-											</ul>
+									</div>
+									<div class="row">
+										<div class="col-10 col-12-medium"></div>
+										<div class="col-2 col-12-medium">
+											<input type="submit" value="Descargar" class="primary" id="descargar"/>
 										</div>
 									</div>
 								</section>
 							</div>
 						</div>
-
-                <!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="copyright">
-								<li>&copy; <a href="mailto:jdospina95@javerianacali.edu.co">Santiago Rengifo & Juan David Ospina</a></li>
-							</ul>
-						</div>
-					</footer>
 
 			</div>
 
@@ -95,12 +88,35 @@
 			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
 			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
 			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
 			
 			<script type="text/javascript">
-				const actividades = {{actividades | tojson | safe}}
-				console.log(actividades);
+				$(function() {
+				    $("#descargar").hide();
+				});
+				const actividades = {{actividades | tojson | safe}};
+				const usuario = {{usuario | tojson | safe}};
 				$("#myid li").click(function() {
-				    alert($(this).prevAll().length);
+					$("#descargar").show();
+					const posicion = $(this).prevAll().length;
+					const respuestaRespuestas = actividades[posicion].aciertos === "1" ? ' respuesta correcta' : ' respuestas correctas';
+					console.log(actividades[posicion]);
+					document.getElementById("actividad").innerHTML = actividades[posicion].actividad;
+					document.getElementById("usuario").innerHTML = 'El dia ' + actividades[posicion].fecha + ' a la(s) ' + actividades[posicion].hora +
+					', ' + usuario + ' realizo la ' + actividades[posicion].actividad.toLowerCase() + ' donde obtuvo ' +
+					actividades[posicion].aciertos + respuestaRespuestas;
+					
+					$( "#descargar" ).click(function() {
+						// init the jsPDF library
+						const pdf = new jsPDF();
+						// @param 1 - Coordinate (in units declared at inception of PDF document) against left edge of the page
+						// @param 2 - Coordinate (in units declared at inception of PDF document) against upper edge of the page
+						// @param 3 - String or array of strings to be added to the page. Each line is shifted one line down per font, spacing settings declared before this call.
+						pdf.text(10, 10, 'El dia 5 de mayo de 2019 a la(s) 12:00 , Pepito Perez realizo la actividad 1');
+						pdf.text(10, 20, 'donde obtuvo 1 respuesta correcta');
+						// save the PDF document (downloadable)
+						pdf.save(usuario+'_'+actividades[posicion].actividad+'_'+actividades[posicion].fecha+'_'+actividades[posicion].hora+'.pdf');
+					});
 				});
 			</script>
 

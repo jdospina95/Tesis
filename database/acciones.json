@@ -1,8 +1,8 @@
 [{
     "accion": "corre",
-    "accionpasado": "corrio"
+    "accionPasado": "corrio"
 },
 {
     "accion": "salta",
-    "accionpasado": "salto"
+    "accionPasado": "salto"
 }]

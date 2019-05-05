@@ -32,27 +32,51 @@ def login_required(f):
             return f()
     return wrap           #Nueva funcion para validacion de sesion iniciada
     
-def generarActividad1(basicasA, basicasB, minn, maxn):
+def generarActividad1(numNumeroAntes, numNumeroDespues, numNumeroEntre, numValorPosicional, numResta, numSuma, numMultiplicacion, minn, maxn):
     preguntas = []
     
     acciones = json.load(open('database/acciones.json'))
     comidas = json.load(open('database/comidas.json'))
     personas = json.load(open('database/personas.json'))
+    objetos = json.load(open('database/objetos.json'))
     
-    for i in range(basicasA):
+    for i in range(numNumeroAntes):
+        preguntas.append(numeroAntes(minn,maxn))
+        
+    for i in range(numNumeroDespues):
+        preguntas.append(numeroDespues(minn,maxn))
+        
+    for i in range(numNumeroEntre):
+        preguntas.append(numeroEntre(minn,maxn))
+        
+    for i in range(numNumeroEntre):
+        preguntas.append(numeroEntre(minn,maxn))
+        
+    for i in range(numValorPosicional):
+        persona = personas[randint(0,len(personas)-1)]
+        objeto = objetos[randint(0,len(objetos)-1)]
+        preguntas.append(valorPosicional(persona, objeto, minn, maxn))
+        
+    for i in range(numResta):
         persona = personas[randint(0,len(personas)-1)]
         comida = comidas[randint(0,len(comidas)-1)]
-        
-        preguntas.append(OperacionesBasicasA(persona,comida,minn,maxn))
-        
-    for i in range(basicasB):
+        preguntas.append(resta(persona, comida, minn, maxn))
+
+    for i in range(numSuma):
         persona1 = personas[randint(0,len(personas)-1)]
-        persona2 = personas[randint(0,len(personas)-1)]
-        accion = acciones[randint(0,len(acciones)-1)]
-        accionpasado = accion["accionpasado"]
-        accion = accion["accion"]
         
-        preguntas.append(OperacionesBasicasB(persona1,persona2,accion,accionpasado,minn,maxn))
+        persona2 = personas[randint(0,len(personas)-1)]
+        while(persona1 == persona2):
+            persona2 = personas[randint(0,len(personas)-1)]
+        indiceAccion = acciones[randint(0,len(acciones)-1)]
+        accion = indiceAccion['accion']
+        accionPasado = indiceAccion['accionPasado']
+        preguntas.append(suma(persona1, persona2, accion, accionPasado, minn, maxn))
+    
+    for i in range(numMultiplicacion):
+        persona = personas[randint(0,len(personas)-1)]
+        objeto = objetos[randint(0,len(objetos)-1)]
+        preguntas.append(multiplicacion(persona, objeto, minn, maxn))
     
     return preguntas
 
@@ -64,12 +88,12 @@ def index():
 @login_required         #Validacion de inicio de sesion
 def generarreporte():
     reg = []
-    deserializedSession = loads(session['usuario'])
-    for respuesta in respuestas.find({'id_usuario': ObjectId(deserializedSession['_id'])}):
+    usuario = loads(session['usuario'])
+    for respuesta in respuestas.find({'id_usuario': ObjectId(usuario['_id'])}):
         respuesta.pop('_id', None)
         respuesta.pop('id_usuario', None)
         reg.append(respuesta)
-    return render_template('generarReporte.html', actividades=reg)
+    return render_template('generarReporte.html', actividades=reg, usuario=(usuario['nombre'] + ' ' + usuario['apellido']))
     
 @app.route('/SeleccionarActividad', methods=['GET'])
 @login_required         #Validacion de inicio de sesion
@@ -80,12 +104,11 @@ def seleccionaractividad():
 @login_required         #Validacion de inicio de sesion
 def actividad1():
     if request.method == 'POST':
-        
         fdata = request.form
         data = {}
         for (k,v) in fdata.items():
             data[k]=v
-        preguntas = generarActividad1(int(data['operacionesbasicasA']), int(data['operacionesbasicasB']), int(data['minn']), int(data['maxn']))
+        preguntas = generarActividad1(int(data['numeroAntes']), int(data['numeroDespues']), int(data['numeroEntre']), int(data['valorPosicional']), int(data['resta']), int(data['suma']), int(data['multiplicacion']), int(data['minn']), int(data['maxn']))
         
         preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
         for i in range(len(preguntas)):
@@ -110,7 +133,27 @@ def actividad2():
 @app.route('/Actividad3', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
 def actividad3():
-    return render_template('actividad3.html')
+    if request.method == 'POST':
+        fdata = request.form
+        data = {}
+        for (k,v) in fdata.items():
+            data[k]=v
+        preguntas = generarActividad1(int(data['numeroAntes']), int(data['numeroDespues']), int(data['numeroEntre']), int(data['minn']), int(data['maxn']))
+        
+        preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
+        for i in range(len(preguntas)):
+            preguntasJavascript.append(str(preguntas[i][0]))
+            respuestasJavascript.append(preguntas[i][1])
+            imagenesJavascript.append(str(preguntas[i][2]))
+        
+        deserializedSession = loads(session['usuario'])
+        deserializedSession['configuracion']
+        conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
+        numerosTexto = dumps(json.load(open('database/numeros.json')))
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
+    else:
+        return render_template('actividad3.html')
     
 @app.route('/GuardarResultados', methods=['POST'])
 @login_required         #Validacion de inicio de sesion
@@ -123,7 +166,8 @@ def guardarResultados():
     deserializedSession = loads(session['usuario'])
     data['id_usuario'] = ObjectId(deserializedSession['_id'])
     # sudo locale-gen es_ES.UTF-8 
-    data['fecha'] = date.today().strftime("%d de %B de %Y")
+    data['fecha'] = date.today().strftime("%-d de %B de %Y")
+    data['hora'] = date.today().strftime("%-I:%M %p")
     respuestas.insert_one(data)
     return redirect('/MenuInicio')
     

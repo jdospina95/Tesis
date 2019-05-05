@@ -1,0 +1,183 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Herramienta Instituto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
+  		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Logo -->
+								<a href="/MenuInicio" class="logo">
+									<span class="title">Herramienta Instituto</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+					
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/MenuInicio">Menu Inicio</a></li>
+							<li><a href="/SeleccionarActividad">Seleccionar Actividad</a></li>
+							<li><a href="/VerificarProgreso">Verificar Progreso</a></li>
+							<li><a href="/GenerarReporte">Generar Reporte</a></li>
+							<li><a href="/Configuracion">Configuracion</a></li>
+							<li><a href="/CerrarSesion">Cerrar Sesion</a></li>
+						</ul>
+					</nav>
+					
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            <!-- Form -->
+								<section>
+									<h2>Configuracion Actividad 1</h2>
+									<form action="/Actividad1" method="POST">
+										<div class="row gtr-uniform">
+										    <div class="col-6 col-12-xsmall">
+												<p>Rango de los numeros a ser utilizados en la actividad</p>
+											</div>
+										    <div class="col-3 col-12-xsmall">
+												<select required name="minn" class="minn" id="minn"></select>
+											</div>
+											<div class="col-3 col-12-xsmall">
+												<select required name="maxn" class="maxn"></select>
+										    </div>
+										    <div class="col-5 col-12-xsmall">
+												<p>Numero de Actividades de Operaciones Basicas A</p>
+											</div>
+											<div class="tooltip col-1 col-12-xsmall">?
+											    <span class="tooltiptext">Info</span>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="operacionesbasicasA" class="1-10"></select>
+											</div>
+											<div class="col-5 col-12-xsmall">
+												<p>Numero de Actividades de Operaciones Basicas B</p>
+											</div>
+											<div class="tooltip col-1 col-12-xsmall">?
+											    <span class="tooltiptext">Info</span>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="operacionesbasicasB" class="1-10"></select>
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Continuar" class="primary" /></li>
+													<li><input type="reset" value="Cancelar" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</div>
+						</div>
+
+                <!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="copyright">
+								<li>&copy; <a href="mailto:jdospina95@javerianacali.edu.co">Santiago Rengifo & Juan David Ospina</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+			
+			<script>
+			    $(function(){
+                var $select = $(".minn");
+                $select.append($('<option></option>').val('').html('Desde').attr('disabled','disabled').prop('selected', true));
+                $(".maxn").append($('<option></option>').val('').html('Hasta').attr('disabled','disabled').prop('selected', true));
+                for (i=1;i<1000;i++){
+                    $select.append($('<option></option>').val(i).html(i));
+                }
+            	});
+            	$(".minn").on('change', function() {
+				var $select = $(".maxn");
+				$select.empty();
+                $select.append($('<option></option>').val('').html('Hasta').attr('disabled','disabled').prop('selected', true));
+                for (i=parseInt($(".minn").val())+1;i<=1000;i++){
+                    $select.append($('<option></option>').val(i).html(i));
+                }
+				});
+			    $(function(){
+                var $select = $(".1-10");
+                for (i=1;i<=10;i++){
+                    $select.append($('<option></option>').val(i).html(i));
+                }
+            	});
+			</script>
+	</body>
+	
+	<style scoped>
+		#header {
+			padding: 2em 0 0.1em 0 !important;
+		}
+		
+        .tooltip {
+          position: relative;
+          display: inline-block;
+        }
+        
+        .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 120px;
+          background-color: black;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 5px 0;
+          position: absolute;
+          z-index: 1;
+          top: 150%;
+          left: 50%;
+          margin-left: -60px;
+        }
+        
+        .tooltip .tooltiptext::after {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          margin-left: -5px;
+          border-width: 5px;
+          border-style: solid;
+          border-color: transparent transparent black transparent;
+        }
+        
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+        }
+    </style>
+</html>

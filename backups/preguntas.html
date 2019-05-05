@@ -8,15 +8,28 @@
       	<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       	<script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+      	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <h4 id="pregunta"></h4>
+        <div class="container" style="page-break-inside: avoid; height: 100%; width: 100%;">
+          <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                  <h4 id="pregunta"></h4>
+                </div>
+                <div class="row">
+                  <input type="text" id="respuesta" style="max-width: 60%;" autofocus></input>
+                </div>
+            </div>
+            <div class="col-sm-6">
+              <object id="imagen" type="image/svg+xml" style="height: auto; width: 100%;"></object>
+            </div>
+          </div>
+        </div>
         
-        <object id="imagen" type="image/svg+xml"></object>
-        
-        <input type="text" id="respuesta" autofocus></input>
-        
-        <div><a href="https://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></div>
+        <!--<div><a href="https://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></div>-->
         
         <script>
             var cont = 0;
@@ -80,14 +93,14 @@
                 if(respuestaCorrecta == respuestaUsuario){
                     validacion = true;
                 }
-                return validacion
+                return validacion;
             }
             
             function estandarizarRespuesta(texto){
                 texto = texto.replace(/\s+/g,'');
                 texto.toLowerCase();
                 console.log(texto);
-                return texto
+                return texto;
             }
 
 
@@ -97,10 +110,10 @@
             document.getElementById("imagen").data = '{{ imagenes[0] }}';
             document.getElementById("imagen").addEventListener("load", function() {
                 var doc = this.getSVGDocument();
-                var rect = doc.getElementById("Capa_1"); // suppose our image contains a <rect>
+                var rect = doc.getElementById("Capa_1");
                 rect.setAttribute("fill", '{{ conf[1] }}');
                 
-                this.setAttribute("width", "auto")
+                this.setAttribute("width", "auto");
                 //this.setAttribute("height", "")
             });
             
@@ -110,9 +123,17 @@
             document.body.style.backgroundColor = colorFondo;
             document.getElementById("pregunta").style.color = colorFuente;
             document.getElementById("pregunta").style.fontSize = tamanoFuente;
+            document.getElementById("respuesta").style.color = colorFuente;
+            document.getElementById("respuesta").style.fontSize = tamanoFuente;
         </script>
         
     </body>
+    
+    <style>
+		#header {
+			padding: 2em 0 0.1em 0 !important;
+		}
+	</style>
     
         
     

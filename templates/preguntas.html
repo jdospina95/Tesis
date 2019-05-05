@@ -32,11 +32,41 @@
         <!--<div><a href="https://responsivevoice.org">ResponsiveVoice-NonCommercial</a> licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img title="ResponsiveVoice Text To Speech" src="https://responsivevoice.org/wp-content/uploads/2014/08/95x15.png" alt="95x15" width="95" height="15" /></div>-->
         
         <script>
+        
+            function redireccionarMenuInicio() {
+                $.post( "/GuardarResultados", { 
+                    actividad: "Actividad 1",
+                    preguntas: JSON.stringify(listaPreguntas), 
+                    respuestas: JSON.stringify(respuestasUsuario),
+                    respuestasCorrectas: JSON.stringify(listaRespuestasCorrectas),
+                    aciertos: aciertos
+                } );
+                window.location = "/MenuInicio";
+            }
+            
+            function validarRespuesta(respuestaUsuario, respuestaCorrecta, numeros){
+                var validacion = false;
+                respuestaUsuario = estandarizarRespuesta(respuestaUsuario);
+                respuestaCorrecta = estandarizarRespuesta(numeros[respuestaCorrecta].texto);
+                if(respuestaCorrecta == respuestaUsuario){
+                    validacion = true;
+                }
+                return validacion;
+            }
+            
+            function estandarizarRespuesta(texto){
+                texto = texto.replace(/\s+/g,'');
+                texto.toLowerCase();
+                return texto;
+            }
+        
+        
             var cont = 0;
             var listaPreguntas = {{preguntas | safe}};
             var listaRespuestasCorrectas = {{respuestas | safe}};
             var listaImagenes = {{imagenes | safe}};
             var respuestasUsuario = [];
+            var aciertos = 0;
             var numeros = JSON.parse('{{ numeros|safe }}');
             var down = true;
             
@@ -46,6 +76,7 @@
                         down = false
                         if(validarRespuesta(document.getElementById("respuesta").value, listaRespuestasCorrectas[cont], numeros)) {
                             document.getElementById("pregunta").innerHTML = "Correcto";
+                            aciertos =+ 1;
                             responsiveVoice.speak("Correcto", "Spanish Latin American Female", {rate: 1.0});
                         } else {
                             document.getElementById("pregunta").innerHTML = "Incorrecto";
@@ -75,34 +106,6 @@
                     }
                 }
             });
-            
-            function redireccionarMenuInicio() {
-                $.post( "/GuardarResultados", { 
-                    actividad: "Actividad 1",
-                    preguntas: JSON.stringify(listaPreguntas), 
-                    respuestas: JSON.stringify(respuestasUsuario),
-                    respuestasCorrectas: JSON.stringify(listaRespuestasCorrectas)
-                } );
-                window.location = "/MenuInicio";
-            }
-            
-            function validarRespuesta(respuestaUsuario, respuestaCorrecta, numeros){
-                var validacion = false;
-                respuestaUsuario = estandarizarRespuesta(respuestaUsuario);
-                respuestaCorrecta = estandarizarRespuesta(numeros[respuestaCorrecta].texto);
-                if(respuestaCorrecta == respuestaUsuario){
-                    validacion = true;
-                }
-                return validacion;
-            }
-            
-            function estandarizarRespuesta(texto){
-                texto = texto.replace(/\s+/g,'');
-                texto.toLowerCase();
-                console.log(texto);
-                return texto;
-            }
-
 
             document.getElementById("pregunta").innerHTML = '{{ preguntas[0] }}';
             responsiveVoice.speak("'{{ preguntas[0] }}'", "Spanish Latin American Female", {rate: 1.0});
@@ -114,7 +117,6 @@
                 rect.setAttribute("fill", '{{ conf[1] }}');
                 
                 this.setAttribute("width", "auto");
-                //this.setAttribute("height", "")
             });
             
             var colorFondo = '{{ conf[0] }}';
