@@ -140,32 +140,70 @@ def multiplicacion(persona, objeto, minn, maxn):
 #     return [pregunta, respuesta]
 
 #Preguntas conjuntos
-def conjuntosA(persona1, persona2, objeto, maxn):
-    objeto1 = objeto2 = objeto
-    numero1 = randint(1, maxn)
-    numero2 = randint(1, maxn)
-    while numero2 == numero1:
-        numero2 = randint(1, maxn)
+def conjuntosIguales(animal1, animal2):
+    
+    totalConjuntoA = randint(1, 10)
+    totalConjuntoB = randint(1, 10)
+    
+    pregunta = 'Hay dos manadas de animales, escuchalos y escribe si el numero de animales en cada manada son diferentes o iguales.'
+    
+    if totalConjuntoA != totalConjuntoB:
+        respuesta = 'diferentes'
+    else:
+        respuesta = 'iguales'
         
-    operacion = randint(1, 2)
+    imagen = "/static/svgs/" + animal1 + ".svg"
     
-    if operacion == 1: 
-        operacion = 'mas'
-        if numero1 > numero2: respuesta = persona1
-        else: respuesta = persona2
-    else: 
-        operacion = 'menos'
-        if numero1 > numero2: respuesta = persona2
-        else: respuesta = persona1
+    return [pregunta, respuesta, imagen , animal1, animal2, totalConjuntoA, totalConjuntoB]
+
+def conjuntoMayor(animal1, animal2):
     
-    if numero1 != 1:
-        objeto1 = objeto + 's'
-        
-    if numero2 != 1:
-        objeto2 = objeto + 's'
+    totalConjuntoA = randint(1, 10)
+    totalConjuntoB = randint(1, 10)
+    while totalConjuntoA == totalConjuntoB:
+        totalConjuntoB = randint(1, 10)
     
-    pregunta = 'Si ' + persona1 + ' tiene ' + str(numero1) + ' ' + objeto1 + ' y ' + persona2 + ' tiene ' + str(numero2) + ' ' + objeto2 + ', quien tiene ' + operacion + ' ' + objeto + 's?' 
-    return [pregunta, respuesta]
+    pregunta = 'Hay dos manadas de animales, escuchalos y escribe cual es el nombre del animal con mayor numero'
+    
+    if totalConjuntoA > totalConjuntoB:
+        respuesta = str(animal1)
+    else:
+        respuesta = str(animal2)
+    
+    imagen = "/static/svgs/" + animal1 + ".svg"
+    
+    return [pregunta, respuesta, imagen , animal1, animal2, totalConjuntoA, totalConjuntoB]
+
+def conjuntoMenor(animal1, animal2):
+    
+    totalConjuntoA = randint(1, 10)
+    totalConjuntoB = randint(1, 10)
+    while totalConjuntoA == totalConjuntoB:
+        totalConjuntoB = randint(1, 10)
+    
+    pregunta = 'Hay dos manadas de animales, escuchalos y escribe cual es el nombre del animal con menor numero'
+    
+    if totalConjuntoA < totalConjuntoB:
+        respuesta = str(animal1)
+    else:
+        respuesta = str(animal2)
+    
+    imagen = "/static/svgs/" + animal1 + ".svg"
+    
+    return [pregunta, respuesta, imagen , animal1, animal2, totalConjuntoA, totalConjuntoB]
+
+def contarSonidos(animal1, animal2):
+    
+    totalConjuntoA = randint(1, 10)
+    totalConjuntoB = randint(1, 10)
+    
+    pregunta = 'Dos animales cantan sin parar, cuenta cuantas veces suenan en total'
+    
+    respuesta = totalConjuntoA + totalConjuntoB
+    
+    imagen = "/static/svgs/" + animal1 + ".svg"
+    
+    return [pregunta, respuesta, imagen , animal1, animal2, totalConjuntoA, totalConjuntoB]
 
 def conjuntosB(persona1, persona2, objeto, maxn):
     objeto1 = objeto2 = objeto

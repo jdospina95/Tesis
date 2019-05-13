@@ -64,13 +64,15 @@ def generarActividad1(numNumeroAntes, numNumeroDespues, numNumeroEntre, numValor
 
     for i in range(numSuma):
         persona1 = personas[randint(0,len(personas)-1)]
-        
         persona2 = personas[randint(0,len(personas)-1)]
+        
         while(persona1 == persona2):
             persona2 = personas[randint(0,len(personas)-1)]
+        
         indiceAccion = acciones[randint(0,len(acciones)-1)]
         accion = indiceAccion['accion']
         accionPasado = indiceAccion['accionPasado']
+        
         preguntas.append(suma(persona1, persona2, accion, accionPasado, minn, maxn))
     
     for i in range(numMultiplicacion):
@@ -78,6 +80,45 @@ def generarActividad1(numNumeroAntes, numNumeroDespues, numNumeroEntre, numValor
         objeto = objetos[randint(0,len(objetos)-1)]
         preguntas.append(multiplicacion(persona, objeto, minn, maxn))
     
+    return preguntas
+
+def generarActividad2(numConjuntosIguales, numConjuntoMayor, numConjuntoMenor, numContarSonidos):
+    preguntas = []
+    
+    animales = json.load(open('database/animales.json'))
+
+    for i in range(numConjuntosIguales):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(conjuntosIguales(animal1,animal2))
+        
+    for i in range(numConjuntoMayor):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(conjuntoMayor(animal1,animal2))
+    
+    for i in range(numConjuntoMenor):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(conjuntoMenor(animal1,animal2))
+        
+    for i in range(numContarSonidos):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(contarSonidos(animal1,animal2))
+
     return preguntas
 
 @app.route('/', methods=['GET'])
@@ -121,14 +162,39 @@ def actividad1():
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
         config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
         numerosTexto = dumps(json.load(open('database/numeros.json')))
-        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, animales1 = [], animales2 = [], totalConjuntosA = [], totalConjuntosB = [],conf=config)
     else:
         return render_template('actividad1.html')
     
 @app.route('/Actividad2', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
 def actividad2():
-    return render_template('actividad2.html')
+    if request.method == 'POST':
+        fdata = request.form
+        data = {}
+        for (k,v) in fdata.items():
+            data[k]=v
+        preguntas = generarActividad2(int(data['conjuntosIguales']), int(data['conjuntoMayor']), int(data['conjuntoMenor']), int(data['contarSonidos']))
+        
+        preguntasJavascript, respuestasJavascript, imagenesJavascript, animales1Javascript, animales2Javascript, totalConjuntosAJavascript, totalConjuntosBJavascript = [], [], [], [], [], [], []
+        for i in range(len(preguntas)):
+            preguntasJavascript.append(str(preguntas[i][0]))
+            respuestasJavascript.append(preguntas[i][1])
+            imagenesJavascript.append(str(preguntas[i][2]))
+            animales1Javascript.append(str(preguntas[i][3]))
+            animales2Javascript.append(str(preguntas[i][4]))
+            totalConjuntosAJavascript.append(str(preguntas[i][5]))
+            totalConjuntosBJavascript.append(str(preguntas[i][6]))
+            
+        deserializedSession = loads(session['usuario'])
+        deserializedSession['configuracion']
+        conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
+        numerosTexto = dumps(json.load(open('database/numeros.json')))
+        
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, animales1 = animales1Javascript, animales2 = animales2Javascript, totalConjuntosA = totalConjuntosAJavascript, totalConjuntosB = totalConjuntosBJavascript, conf=config)
+    else:
+        return render_template('actividad2.html')
     
 @app.route('/Actividad3', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
