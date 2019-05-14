@@ -5,4 +5,8 @@
 {
     "accion": "salta",
     "accionPasado": "salto"
+},
+{
+    "accion": "camina",
+    "accionPasado": "camino"
 }]

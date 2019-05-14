@@ -18,6 +18,7 @@ app.secret_key = os.urandom(24)     #LLave para envio de session
 client = MongoClient('mongodb://usuario:123456789a@ds031835.mlab.com:31835/tesis')        #Conexion con MongoDB en MongoLab
 db = client['tesis']
 usuarios = db.usuarios                                                                    #Referencia a la coleccion "Usuarios" de la DB
+administradores = db.administradores
 configuraciones = db.configuraciones                                                      #Referencia a la coleccion "Usuarios" de la DB
 respuestas = db.respuestas
 
@@ -288,6 +289,30 @@ def registrarusuario():
 def menuInicio():
     global session
     return render_template('menuInicio.html', sesion = session)
+    
+@app.route('/MenuAdministrador')
+def menuAdministrador():
+    global session
+    return render_template('menuAdmin.html', sesion = session)
+    
+@app.route('/IniciarSesionAdministrador', methods=['GET', 'POST'])
+def administrador():
+    if request.method == 'POST':
+        query = {"$and":[ {"usuario": str(request.form['usuario'])}, {"contrasena": str(request.form['contrasena'])}]}
+        resultado = administradores.find(query)
+        if resultado.count() > 0:
+            return redirect('/MenuAdministrador')
+        else:
+            return render_template('iniciarSesionAdmin.html', error=True)
+    else:
+        return render_template('iniciarSesionAdmin.html')
+        
+@app.route('/AgregarObjeto', methods=['GET', 'POST'])
+def agregarObjeto():
+    if request.method == 'POST':
+        return render_template('agregarObjeto.html')
+    else:
+        return render_template('agregarObjeto.html')
 
 @app.route('/Configuracion', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion

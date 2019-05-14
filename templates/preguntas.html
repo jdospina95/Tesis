@@ -102,33 +102,35 @@
                     rect.setAttribute("fill", '{{ conf[1] }}');
                     this.setAttribute("width", "auto");
                 });
+                
+                document.getElementById("imagen").onerror = function(){
+                    document.getElementById("imagen").style.visibility = "hidden";
+                }
             }
         
-            function validarRespuesta(respuestaCorrecta, aciertos){
+            function validarRespuesta(respuestaCorrecta){
+                
+                var evaluacion = false;
                 
                 if(isNaN(listaRespuestasCorrectas[cont])){
                     if(validarRespuestaActividad2(document.getElementById("respuesta").value, respuestaCorrecta, numeros)) {
-                        document.getElementById("pregunta").innerHTML = "Correcto";
+                        //document.getElementById("pregunta").innerHTML = "Correcto";
                         aciertos =+ 1;
-                        responsiveVoice.speak("Correcto", "Spanish Latin American Female", {rate: 1.0});
+                        evaluacion = true;
                     } else {
-                        document.getElementById("pregunta").innerHTML = "Incorrecto";
-                        responsiveVoice.speak("Incorrecto", "Spanish Latin American Female", {rate: 1.0});
+                        //document.getElementById("pregunta").innerHTML = "Incorrecto";
                     }
                 } else{
                     if(validarRespuestaActividad1(document.getElementById("respuesta").value, respuestaCorrecta, numeros)) {
-                        document.getElementById("pregunta").innerHTML = "Correcto";
+                        //document.getElementById("pregunta").innerHTML = "Correcto";
                         aciertos =+ 1;
-                        responsiveVoice.speak("Correcto", "Spanish Latin American Female", {rate: 1.0});
+                        evaluacion = true;
                     } else {
-                        document.getElementById("pregunta").innerHTML = "Incorrecto";
-                        responsiveVoice.speak("Incorrecto", "Spanish Latin American Female", {rate: 1.0});
+                        //document.getElementById("pregunta").innerHTML = "Incorrecto";
                     }
                 }
                 
-                
-                return aciertos
-                
+                return evaluacion
             }
 
             function preguntaActividad1(pregunta){
@@ -185,6 +187,7 @@
             
             var respuestasUsuario = [];
             var aciertos = 0;
+            var intentos = 2;
             var numeros = JSON.parse('{{ numeros|safe }}');
             
             var down = true;
@@ -209,32 +212,48 @@
                         
                         down = false
                         
-                        aciertos = validarRespuesta(listaRespuestasCorrectas[cont], aciertos)
-                        
-                        if (listaPreguntas.length == respuestasUsuario.length+1) {
+                        if(validarRespuesta(listaRespuestasCorrectas[cont]) || intentos == 0){
+                            
+                            if(intentos == 0){
+                                responsiveVoice.speak("Incorrecto", "Spanish Latin American Female", {rate: 1.0});
+                            } else {
+                                responsiveVoice.speak("Correcto", "Spanish Latin American Female", {rate: 1.0});
+                            }
+                            
+                            intentos = 2
+                            
+                            if (listaPreguntas.length == respuestasUsuario.length+1) {
                             respuestasUsuario.push(document.getElementById("respuesta").value);
                             redireccionarMenuInicio();
                             
-                        } else {
-                            setTimeout(function(){
-                                cont ++;
+                            } else {
+                                setTimeout(function(){
+                                    cont ++;
+                                    
+                                    if(listaTotalConjuntosA.length != 0){
+                                        preguntaActividad2(listaPreguntas[cont], listaTotalConjuntosA[cont], listaTotalConjuntosB[cont], listaAnimales1[cont], listaAnimales2[cont])
+                                    } else{
+                                        preguntaActividad1(listaPreguntas[cont])
+                                    }                                
+                                    
+                                    var imagen = listaImagenes[cont];
+                                    document.getElementById("imagen").data = listaImagenes[cont]
+                                    
+                                    respuestasUsuario.push(document.getElementById("respuesta").value);
+                                    document.getElementById("respuesta").value = '';
+                                    
+                                    down = true;
                                 
-                                if(listaTotalConjuntosA.length != 0){
-                                    preguntaActividad2(listaPreguntas[cont], listaTotalConjuntosA[cont], listaTotalConjuntosB[cont], listaAnimales1[cont], listaAnimales2[cont])
-                                } else{
-                                    preguntaActividad1(listaPreguntas[cont])
-                                }                                
-                                
-                                var imagen = listaImagenes[cont];
-                                document.getElementById("imagen").data = listaImagenes[cont]
-                                
-                                respuestasUsuario.push(document.getElementById("respuesta").value);
-                                document.getElementById("respuesta").value = '';
-                                
-                                down = true;
+                                }, 3000);
+                            }
                             
-                            }, 3000);
+                        } else{
+                            responsiveVoice.speak("Incorrecto, intentalo una vez mas", "Spanish Latin American Female", {rate: 1.0});
+                            intentos = intentos - 1
+                            down = true;
                         }
+        
+                        
                     }
                 }
             });

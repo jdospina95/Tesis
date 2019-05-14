@@ -1,0 +1,122 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Herramienta Instituto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
+  		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Logo -->
+								<a href="/MenuAdministrador" class="logo">
+									<span class="title">Herramienta Instituto</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/MenuAdministrador">Menu Administrador</a></li>
+							<li><a href="/SeleccionarActividad">Seleccionar Actividad</a></li>
+							<li><a href="/VerificarProgreso">Verificar Progreso</a></li>
+							<li><a href="/GenerarReporte">Generar Reporte</a></li>
+							<li><a href="/Configuracion">Configuracion</a></li>
+							<li><a href="/CerrarSesion">Cerrar Sesion</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<header>
+								<h1 align="center">Menu Administrador</h1>
+							</header>
+							<section class="tiles">
+								<article class="style3" align="center">
+									<span class="image">
+										<img src="{{url_for('static', filename='images/actividad.jpg')}}" alt="" />
+									</span>
+									<a href="/AgregarObjeto">
+										<h2>Agregar objeto</h2>
+										<div class="content">
+											<p>Añadir un nuevo objeto a la base de datos.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style2" align="right">
+									<span class="image">
+										<img src="{{url_for('static', filename='images/progreso.jpg')}}" alt="" />
+									</span>
+									<a href="/EliminarUsuario">
+										<h2>Eliminar usuario</h2>
+										<div class="content">
+											<p>Eliminar un usuario de la base de datos.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style1" align="right">
+									<span class="image">
+										<img src="{{url_for('static', filename='images/progreso.jpg')}}" alt="" />
+									</span>
+									<a href="/EliminarConfiguracion">
+										<h2>Eliminar configuracion</h2>
+										<div class="content">
+											<p>Eliminar una configuracion de la base de datos.</p>
+										</div>
+									</a>
+								</article>
+								<article class="style4" align="center">
+									<span class="image">
+										<img src="{{url_for('static', filename='images/sesion.jpg')}}" alt="" />
+									</span>
+									<a href="/CerrarSesion">
+										<h2>Cerrar Sesion</h2>
+										<div class="content">
+											<p></p>
+										</div>
+									</a>
+								</article>
+							</section>
+						</div>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+	</body>
+	
+	<style>
+		#header {
+			padding: 2em 0 0.1em 0 !important;
+		}
+	</style>
+</html>

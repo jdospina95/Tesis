@@ -1,0 +1,104 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Herramienta Instituto</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/main.css') }}" />
+		<noscript><link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='assets/css/noscript.css') }}" /></noscript>
+		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-32x32.png" sizes="32x32" />
+  		<link rel="icon" href="http://www.ciegosysordos.org.co/wp/wp-content/uploads/2018/01/cropped-favicon_instituto_ciegos_sordos_valle_cauca-1-192x192.png" sizes="192x192" />
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+							<!-- Logo -->
+								<a href="/" class="logo">
+									<span class="title">Herramienta Instituto</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+						</div>
+					</header>
+					
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="/">Menu Inicio</a></li>
+							<li><a href="/IniciarSesion">Iniciar Sesion</a></li>
+							<li><a href="/RegistrarUsuario">Registrar Usuario</a></li>
+						</ul>
+					</nav>
+					
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+                            <!-- Form -->
+								<section>
+									<h2>Administrador</h2>
+									{% if error %}
+										<div class="alert-danger">Datos erroneos</div>
+										<div style="padding-top: 20px;"></div>
+									{% endif %}
+									<form action="/IniciarSesionAdministrador" method="POST">
+										<div class="row gtr-uniform">
+											<div class="col-7">
+												<input type="text" name="usuario" placeholder="Usuario" />
+											</div>
+											<div class="col-7">
+												<input type="password" name="contrasena" placeholder="Contrasena" />
+											</div>
+											<div class="col-12">
+												<ul class="actions">
+													<li><input type="submit" value="Iniciar" class="primary" /></li>
+													<li><input type="reset" value="Cancelar" /></li>
+												</ul>
+											</div>
+										</div>
+									</form>
+								</section>
+							</div>
+						</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="{{url_for('static', filename='assets/js/jquery.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/browser.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/breakpoints.min.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
+			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
+
+	</body>
+	
+	<style>
+		#header {
+			padding: 2em 0 0.1em 0 !important;
+		}
+		
+		.alert-danger {
+			color: #a94442;
+		    padding: 15px;
+		    background-color: #f2dede;
+		    border-color: #ebccd1;
+	        border: 1px solid transparent;
+    		border-radius: 4px;
+    		display: block;
+		}
+	</style>
+</html>
