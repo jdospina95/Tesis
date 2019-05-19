@@ -1,3 +1,4 @@
+# coding: utf-8
 import os,sys
 import subprocess
 import json
@@ -157,12 +158,14 @@ def actividad1():
             preguntasJavascript.append(str(preguntas[i][0]))
             respuestasJavascript.append(preguntas[i][1])
             imagenesJavascript.append(str(preguntas[i][2]))
+            print(preguntas[i][0])
         
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
-        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
         numerosTexto = dumps(json.load(open('database/numeros.json')))
+        preguntasJavascript = json.dumps(preguntasJavascript)
         return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, animales1 = [], animales2 = [], totalConjuntosA = [], totalConjuntosB = [],conf=config)
     else:
         return render_template('actividad1.html')
@@ -190,8 +193,9 @@ def actividad2():
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
-        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
         numerosTexto = dumps(json.load(open('database/numeros.json')))
+        preguntasJavascript = json.dumps(preguntasJavascript)
         
         return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, animales1 = animales1Javascript, animales2 = animales2Javascript, totalConjuntosA = totalConjuntosAJavascript, totalConjuntosB = totalConjuntosBJavascript, conf=config)
     else:
@@ -216,8 +220,9 @@ def actividad3():
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
-        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
         numerosTexto = dumps(json.load(open('database/numeros.json')))
+        preguntasJavascript = json.dumps(preguntasJavascript)
         return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
     else:
         return render_template('actividad3.html')

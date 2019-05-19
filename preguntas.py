@@ -1,16 +1,17 @@
+# -*- coding: utf-8 -*-
 from random import randint
 
 #Numero Antes
 def numeroAntes(minn, maxn):
     numero = randint(minn,maxn)
-    pregunta = 'Que numero esta antes del numero ' + str(numero) + '?'
+    pregunta = '¿Qué número está antes del ' + str(numero) + '?'
     respuesta = numero - 1
     return [pregunta, respuesta, None]
 
 #Numero Despues
 def numeroDespues(minn, maxn):
     numero = randint(minn,maxn)
-    pregunta = 'Que numero esta despues del numero ' + str(numero) + '?'
+    pregunta = '¿Qué número esta después del número ' + str(numero) + '?'
     respuesta = numero + 1
     return [pregunta, respuesta, None]
     
@@ -18,7 +19,7 @@ def numeroDespues(minn, maxn):
 def numeroEntre(minn, maxn):
     numero1 = randint(minn,maxn)
     numero2 = numero1 + 2
-    pregunta = 'Que numero esta entre el numero ' + str(numero1) + ' y el numero ' + str(numero2) + '?'
+    pregunta = '¿Qué número está entre el número ' + str(numero1) + ' y el ' + str(numero2) + '?'
     respuesta = numero1 + 1
     return [pregunta, respuesta, None]
 
@@ -67,7 +68,7 @@ def resta(persona, comida, minn, maxn):
     listaModelosPreguntas = [
         'Si '+persona+' tiene '+str(numero1)+' '+comida+plural + ' y se come '+str(numero2)+', '+cuanto+' '+comida+plural+' le quedan?',
         'Si '+persona+' compra '+str(numero1)+' '+comida+plural + ' y luego vende '+str(numero2)+', '+cuanto+' '+comida+plural+' le quedan?',
-        'Me regalaron '+str(numero1)+' '+comida+plural + ' y le regalo '+str(numero2)+' a '+persona+ ', ' +cuanto+' '+comida+plural+' me quedan?'
+        'Tengo '+str(numero1)+' '+comida+plural + ' y le regalo '+str(numero2)+' a '+persona+ ', ' +cuanto+' '+comida+plural+' me quedan?'
     ]
     indiceModeloPregunta = randint(0,len(listaModelosPreguntas) - 1)
     pregunta = listaModelosPreguntas[indiceModeloPregunta]
@@ -79,20 +80,11 @@ def suma(persona1, persona2, accion, accionPasado, minn, maxn):
     # <persona> <accion> <numero> veces, <persona2> <accion> <numero> veces mas que <persona>, cuantas veces <accionpasado> <persona2>?
     imagen = "/static/svgs/" + accion + ".svg"
     numero1 = randint(minn,maxn)
-    numero2 = randint(1,minn)
-    
-    if numero2 == 1:
-        veces = 'vez'
-    else:
-        veces = 'veces'
+    numero2 = randint(1,maxn)
     
     respuesta = numero1 + numero2
     
-    listaModelosPreguntas = [
-        persona1 + ' ' + accion + ' ' + str(numero1) + ' veces, ' + persona2 + ' ' + accionPasado + ' ' + str(numero2) + ' ' + veces + ' mas que ' + persona1 + ', cuantas veces ' + accionPasado + ' ' + persona2 + '?' 
-    ]
-    indiceModeloPregunta = randint(0,len(listaModelosPreguntas) - 1)
-    pregunta = listaModelosPreguntas[indiceModeloPregunta]
+    pregunta = 'Si ' + persona1 + ' ' + accion + ' ' + str(numero1) + ' kilometros y ' + persona2 + ' ' + str(numero2) + ' quien de los dos ' + accionPasado + ' mas?'
     
     return [pregunta,respuesta,imagen]
 
@@ -100,17 +92,20 @@ def suma(persona1, persona2, accion, accionPasado, minn, maxn):
 def multiplicacion(persona, objeto, minn, maxn):
     imagen = "/static/svgs/" + objeto + ".svg"
     numero1 = randint(1,maxn)
-    numero2 = randint(minn, minn)
+    numero2 = randint(minn, maxn)
     
-    if numero1 > 1: plural = 's'
-    else: plural = ''
+    if numero1 > 1: plural1 = 's'
+    else: plural1 = ''
+    
+    if numero2 > 1: plural2 = 's'
+    else: plural2 = ''
     
     respuesta = numero1 * numero2
     
     listaModelosPreguntas = [
-        persona + 'compro ' + str(numero1) + ' bolsas con ' + str(numero2) + ' ' + objeto + plural + ' cada una, que numero de ' + objeto + plural + ' compro ' + persona + '?',
-        'Si en una camioneta llevo ' + str(numero1) + ' cajas con ' + str(numero2) + ' ' + objeto + plural + ' cada una, ' + ' que numero de ' + objeto + plural + ' llevo?',
-        persona + ' recoge ' + str(numero1) + ' de ' + objeto + plural + ' todos los dias, cual es el numero de ' + objeto + plural + ' que tendra ' + persona + ' despues de ' + str(numero2) + 'de dias?'
+        persona + 'tiene ' + str(numero1) + ' bolsas cada una con ' + str(numero2) + ' ' + objeto + plural2 + ' dentro, cuantas ' + objeto + plural2 + ' compro ' + persona + '?',
+        'Si en una camioneta llevo ' + str(numero1) + ' cajas con ' + str(numero2) + ' ' + objeto + plural2 + ' cada una, ' + ' qué número de ' + objeto + plural2 + ' llevo?',
+        persona + ' recoge ' + str(numero1) + ' ' + objeto + plural1 + ' cada dia, cúal es el número de ' + objeto + plural1 + ' que tendrá ' + persona + ' después de ' + str(numero2) + ' dias?'
     ]
     indiceModeloPregunta = randint(0,len(listaModelosPreguntas) - 1)
     pregunta = listaModelosPreguntas[indiceModeloPregunta]
@@ -142,15 +137,15 @@ def multiplicacion(persona, objeto, minn, maxn):
 #Preguntas conjuntos
 def conjuntosIguales(animal1, animal2):
     
-    totalConjuntoA = randint(1, 10)
-    totalConjuntoB = randint(1, 10)
+    totalConjuntoA = randint(1, 5)
+    totalConjuntoB = randint(1, 5)
     
-    pregunta = 'Hay dos manadas de animales, escuchalos y escribe si el numero de animales en cada manada son diferentes o iguales.'
+    pregunta = 'Hay dos manadas de animales, escúchalos y escribe si el número de animales en cada manada es diferente o es igual.'
     
     if totalConjuntoA != totalConjuntoB:
-        respuesta = 'diferentes'
+        respuesta = 'diferente'
     else:
-        respuesta = 'iguales'
+        respuesta = 'igual'
         
     imagen = "/static/svgs/" + animal1 + ".svg"
     
@@ -158,12 +153,12 @@ def conjuntosIguales(animal1, animal2):
 
 def conjuntoMayor(animal1, animal2):
     
-    totalConjuntoA = randint(1, 10)
-    totalConjuntoB = randint(1, 10)
+    totalConjuntoA = randint(1, 5)
+    totalConjuntoB = randint(1, 5)
     while totalConjuntoA == totalConjuntoB:
-        totalConjuntoB = randint(1, 10)
-    
-    pregunta = 'Hay dos manadas de animales, escuchalos y escribe cual es el nombre del animal con mayor numero'
+        totalConjuntoB = randint(1, 5)
+
+    pregunta = 'Hay dos manadas de animales, escúchalos y escribe cual es el nombre del animal con mayor número'
     
     if totalConjuntoA > totalConjuntoB:
         respuesta = str(animal1)
@@ -176,12 +171,12 @@ def conjuntoMayor(animal1, animal2):
 
 def conjuntoMenor(animal1, animal2):
     
-    totalConjuntoA = randint(1, 10)
-    totalConjuntoB = randint(1, 10)
+    totalConjuntoA = randint(1, 5)
+    totalConjuntoB = randint(1, 5)
     while totalConjuntoA == totalConjuntoB:
-        totalConjuntoB = randint(1, 10)
+        totalConjuntoB = randint(1, 5)
     
-    pregunta = 'Hay dos manadas de animales, escuchalos y escribe cual es el nombre del animal con menor numero'
+    pregunta = 'Hay dos manadas de animales, escúchalos y escribe cual es el nombre del animal con menor número'
     
     if totalConjuntoA < totalConjuntoB:
         respuesta = str(animal1)
@@ -194,40 +189,13 @@ def conjuntoMenor(animal1, animal2):
 
 def contarSonidos(animal1, animal2):
     
-    totalConjuntoA = randint(1, 10)
-    totalConjuntoB = randint(1, 10)
+    totalConjuntoA = randint(1, 5)
+    totalConjuntoB = randint(1, 5)
     
-    pregunta = 'Dos animales cantan sin parar, cuenta cuantas veces suenan en total'
+    pregunta = 'Dos animales cantan sin parar, cuenta cuantas veces cantan en total?'
     
     respuesta = totalConjuntoA + totalConjuntoB
     
     imagen = "/static/svgs/" + animal1 + ".svg"
     
     return [pregunta, respuesta, imagen , animal1, animal2, totalConjuntoA, totalConjuntoB]
-
-def conjuntosB(persona1, persona2, objeto, maxn):
-    objeto1 = objeto2 = objeto
-    numero1 = randint(1, maxn)
-    numero2 = randint(1, maxn)
-    igualDiferente = randint(1,2)
-    if randint(1, 2) == 1:
-        numero2 = numero1
-        
-    if numero1 != 1:
-        objeto1 = objeto + 's'
-        
-    if numero2 != 1:
-        objeto2 = objeto + 's'
-    
-    if igualDiferente == 1: 
-        igualDiferente = 'igual'
-        if numero1 == numero2: respuesta = 'Si'
-        else: respuesta = 'No'
-    else:
-        igualDiferente = 'difetente'
-        if numero1 == numero2: respuesta = 'No'
-        else: respuesta = 'Si'
-    
-    pregunta = 'Si ' + persona1 +' tiene ' + str(numero1) + ' ' + objeto1 + ', y ' + persona2 + ' tiene ' + str(numero2) + ' ' + objeto2 + ', ambos tienen ' + igualDiferente + ' numero de ' + objeto + 's?'
-    
-    return [pregunta, respuesta]
