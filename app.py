@@ -7,7 +7,7 @@ from functools import wraps     #Se agrega wraps para validacion de iniciada ses
 from flask import Flask, render_template, request, redirect, jsonify, session
 from bson.objectid import ObjectId      #Se agreaga para poder consultar por _id
 from bson.json_util import dumps, loads  #serializacion de OjectId de mongo
-from pymongo import MongoClient     #Pymongo Framework -> MongoDB
+from pymongo import MongoClient, DESCENDING     #Pymongo Framework -> MongoDB
 from random import randint
 import locale
 from datetime import date
@@ -158,7 +158,6 @@ def actividad1():
             preguntasJavascript.append(str(preguntas[i][0]))
             respuestasJavascript.append(preguntas[i][1])
             imagenesJavascript.append(str(preguntas[i][2]))
-            print(preguntas[i][0])
         
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
@@ -205,25 +204,23 @@ def actividad2():
 @login_required         #Validacion de inicio de sesion
 def actividad3():
     if request.method == 'POST':
-        fdata = request.form
-        data = {}
-        for (k,v) in fdata.items():
-            data[k]=v
-        preguntas = generarActividad1(int(data['numeroAntes']), int(data['numeroDespues']), int(data['numeroEntre']), int(data['minn']), int(data['maxn']))
+        # fdata = request.form
+        # data = {}
+        # for (k,v) in fdata.items():
+        #     data[k]=v
+        # preguntas = generarActividad1(int(data['numeroAntes']), int(data['numeroDespues']), int(data['numeroEntre']), int(data['minn']), int(data['maxn']))
         
-        preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
-        for i in range(len(preguntas)):
-            preguntasJavascript.append(str(preguntas[i][0]))
-            respuestasJavascript.append(preguntas[i][1])
-            imagenesJavascript.append(str(preguntas[i][2]))
+        # preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
+        # for i in range(len(preguntas)):
+        #     preguntasJavascript.append(str(preguntas[i][0]))
+        #     respuestasJavascript.append(preguntas[i][1])
+        #     imagenesJavascript.append(str(preguntas[i][2]))
         
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
         config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
-        numerosTexto = dumps(json.load(open('database/numeros.json')))
-        preguntasJavascript = json.dumps(preguntasJavascript)
-        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
+        return render_template('cantaletras.html', conf=config)
     else:
         return render_template('actividad3.html')
     
@@ -242,6 +239,18 @@ def guardarResultados():
     data['hora'] = date.today().strftime("%-I:%M %p")
     respuestas.insert_one(data)
     return redirect('/MenuInicio')
+    
+
+@app.route('/FinActividad', methods=['GET'])
+@login_required         #Validacion de inicio de sesion
+def finActividad():
+    usuario = loads(session['usuario'])
+    queryResult = respuestas.find_one({'id_usuario': ObjectId(usuario['_id'])}, sort=[( '_id', DESCENDING )]);
+    preguntasActividad = queryResult['preguntas']
+    respuestasUsuario = queryResult['respuestas']
+    respuestasActividad = queryResult['respuestasCorrectas']
+    print(queryResult)
+    return render_template('finActividad.html', preguntas=preguntasActividad, respuestas=respuestasUsuario, respuestasCorrectas=respuestasActividad);
     
 @app.route('/VerificarProgreso', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion

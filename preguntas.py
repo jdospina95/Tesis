@@ -1,6 +1,10 @@
 # -*- coding: utf-8 -*-
 from random import randint
 
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 #Numero Antes
 def numeroAntes(minn, maxn):
     numero = randint(minn,maxn)
@@ -62,13 +66,13 @@ def resta(persona, comida, minn, maxn):
     if comida[len(comida)-1] == 'a': cuanto = 'cuantas' 
     else: cuanto = 'cuantos'
     
-    if numero1 > 1: plural = 's'
+    if numero1 != 1: plural = 's'
     else: plural = ''
 
     listaModelosPreguntas = [
-        'Si '+persona+' tiene '+str(numero1)+' '+comida+plural + ' y se come '+str(numero2)+', '+cuanto+' '+comida+plural+' le quedan?',
-        'Si '+persona+' compra '+str(numero1)+' '+comida+plural + ' y luego vende '+str(numero2)+', '+cuanto+' '+comida+plural+' le quedan?',
-        'Tengo '+str(numero1)+' '+comida+plural + ' y le regalo '+str(numero2)+' a '+persona+ ', ' +cuanto+' '+comida+plural+' me quedan?'
+        'Si '+persona+' tiene '+str(numero1)+' '+comida+plural + ' y se come '+str(numero2)+', '+cuanto+' '+comida+'s'+' le quedan?',
+        'Si '+persona+' compra '+str(numero1)+' '+comida+plural + ' y luego vende '+str(numero2)+', '+cuanto+' '+comida+'s'+' le quedan?',
+        'Tengo '+str(numero1)+' '+comida+plural + ' y le regalo '+str(numero2)+' a '+persona+ ', ' +cuanto+' '+comida+'s'+' me quedan?'
     ]
     indiceModeloPregunta = randint(0,len(listaModelosPreguntas) - 1)
     pregunta = listaModelosPreguntas[indiceModeloPregunta]
@@ -80,11 +84,15 @@ def suma(persona1, persona2, accion, accionPasado, minn, maxn):
     # <persona> <accion> <numero> veces, <persona2> <accion> <numero> veces mas que <persona>, cuantas veces <accionpasado> <persona2>?
     imagen = "/static/svgs/" + accion + ".svg"
     numero1 = randint(minn,maxn)
+    
+    if (numero1 + maxn) > 1000:
+        maxn = 1000 - numero1
+        
     numero2 = randint(1,maxn)
     
     respuesta = numero1 + numero2
     
-    pregunta = 'Si ' + persona1 + ' ' + accion + ' ' + str(numero1) + ' kilometros y ' + persona2 + ' ' + str(numero2) + ' quien de los dos ' + accionPasado + ' mas?'
+    pregunta = 'Si ' + persona1 + ' ' + accion + ' ' + str(numero1) + ' metros y ' + persona2 + ' ' + str(numero2) + ' cuantos metros ' + accionPasado + ' entre los dos?'
     
     return [pregunta,respuesta,imagen]
 
@@ -92,7 +100,11 @@ def suma(persona1, persona2, accion, accionPasado, minn, maxn):
 def multiplicacion(persona, objeto, minn, maxn):
     imagen = "/static/svgs/" + objeto + ".svg"
     numero1 = randint(1,maxn)
-    numero2 = randint(minn, maxn)
+    
+    if (numero1 * maxn) > 1000:
+        maxn = int(1000 / numero1)
+    
+    numero2 = randint(1, maxn)
     
     if numero1 > 1: plural1 = 's'
     else: plural1 = ''
@@ -103,7 +115,7 @@ def multiplicacion(persona, objeto, minn, maxn):
     respuesta = numero1 * numero2
     
     listaModelosPreguntas = [
-        persona + 'tiene ' + str(numero1) + ' bolsas cada una con ' + str(numero2) + ' ' + objeto + plural2 + ' dentro, cuantas ' + objeto + plural2 + ' compro ' + persona + '?',
+        persona + ' tiene ' + str(numero1) + ' bolsos cada uno con ' + str(numero2) + ' ' + objeto + plural2 + ' dentro, cuantas ' + objeto + plural2 + ' compró ' + persona + '?',
         'Si en una camioneta llevo ' + str(numero1) + ' cajas con ' + str(numero2) + ' ' + objeto + plural2 + ' cada una, ' + ' qué número de ' + objeto + plural2 + ' llevo?',
         persona + ' recoge ' + str(numero1) + ' ' + objeto + plural1 + ' cada dia, cúal es el número de ' + objeto + plural1 + ' que tendrá ' + persona + ' después de ' + str(numero2) + ' dias?'
     ]

@@ -42,9 +42,6 @@
 						<ul>
 							<li><a href="/MenuInicio">Menu Inicio</a></li>
 							<li><a href="/SeleccionarActividad">Seleccionar Actividad</a></li>
-							<li><a href="/VerificarProgreso">Verificar Progreso</a></li>
-							<li><a href="/GenerarReporte">Generar Reporte</a></li>
-							<li><a href="/Configuracion">Configuracion</a></li>
 							<li><a href="/CerrarSesion">Cerrar Sesion</a></li>
 						</ul>
 					</nav>
@@ -55,7 +52,7 @@
                             <!-- Form -->
 								<section>
 									<h2>Configuracion Actividad 1</h2>
-									<form action="/Actividad1" method="POST">
+									<form action="/Actividad1" method="POST" style="overflow: hidden;">
 										<div class="row gtr-uniform">
 										    <div class="col-6 col-12-xsmall">
 												<p>Rango de los numeros a ser utilizados en la actividad</p>
@@ -67,22 +64,67 @@
 												<select required name="maxn" class="maxn"></select>
 										    </div>
 										    <div class="col-5 col-12-xsmall">
-												<p>Numero de Actividades de Operaciones Basicas A</p>
+												<p>Numero de Preguntas de Numero Antes</p>
 											</div>
 											<div class="tooltip col-1 col-12-xsmall">?
-											    <span class="tooltiptext">Info</span>
+											    <span class="tooltiptext">Número antes del brindado</span>
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<select name="operacionesbasicasA" class="1-10"></select>
+												<select name="numeroAntes" class="0-10"></select>
 											</div>
 											<div class="col-5 col-12-xsmall">
-												<p>Numero de Actividades de Operaciones Basicas B</p>
+												<p>Numero de Preguntas de Numero Despues</p>
 											</div>
 											<div class="tooltip col-1 col-12-xsmall">?
-											    <span class="tooltiptext">Info</span>
+											    <span class="tooltiptext">Número despues del brindado</span>
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<select name="operacionesbasicasB" class="1-10"></select>
+												<select name="numeroDespues" class="0-10"></select>
+											</div>
+											<div class="col-5 col-12-xsmall">
+												<p>Numero de Preguntas de Numero Entre</p>
+											</div>
+											<div class="tooltip col-1 col-12-xsmall">?
+											    <span class="tooltiptext">Número entre dos brindados</span>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="numeroEntre" class="0-10"></select>
+											</div>
+											<div class="col-5 col-12-xsmall">
+												<p>Numero de Preguntas de Valor Posicinal</p>
+											</div>
+											<div class="tooltip col-1 col-12-xsmall">?
+											    <span class="tooltiptext">Cantidad de unidades, decenas, centenas o millares</span>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="valorPosicional" class="0-10"></select>
+											</div>
+											<div class="col-5 col-12-xsmall">
+												<p>Numero de Preguntas de Restas</p>
+											</div>
+											<div class="tooltip col-1 col-12-xsmall">?
+											    <span class="tooltiptext">Restas en forma de problemas</span>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="resta" class="0-10"></select>
+											</div>
+											<div class="col-5 col-12-xsmall">
+												<p>Numero de Preguntas de Sumas</p>
+											</div>
+											<div class="tooltip col-1 col-12-xsmall">?
+											    <span class="tooltiptext">Sumas en forma de problemas</span>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="suma" class="0-10"></select>
+											</div>
+											<div class="col-5 col-12-xsmall">
+												<p>Numero de Preguntas de Multiplicacion</p>
+											</div>
+											<div class="tooltip col-1 col-12-xsmall">?
+											    <span class="tooltiptext">Multiplicaciones en forma de problemas</span>
+											</div>
+											<div class="col-6 col-12-xsmall">
+												<select name="multiplicacion" class="0-10"></select>
 											</div>
 											<div class="col-12">
 												<ul class="actions">
@@ -95,15 +137,6 @@
 								</section>
 							</div>
 						</div>
-
-                <!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="copyright">
-								<li>&copy; <a href="mailto:jdospina95@javerianacali.edu.co">Santiago Rengifo & Juan David Ospina</a></li>
-							</ul>
-						</div>
-					</footer>
 
 			</div>
 
@@ -132,8 +165,8 @@
                 }
 				});
 			    $(function(){
-                var $select = $(".1-10");
-                for (i=1;i<=10;i++){
+                var $select = $(".0-10");
+                for (i=0;i<=10;i++){
                     $select.append($('<option></option>').val(i).html(i));
                 }
             	});

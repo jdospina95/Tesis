@@ -1,3 +1,4 @@
+# coding: utf-8
 import os,sys
 import subprocess
 import json
@@ -6,7 +7,7 @@ from functools import wraps     #Se agrega wraps para validacion de iniciada ses
 from flask import Flask, render_template, request, redirect, jsonify, session
 from bson.objectid import ObjectId      #Se agreaga para poder consultar por _id
 from bson.json_util import dumps, loads  #serializacion de OjectId de mongo
-from pymongo import MongoClient     #Pymongo Framework -> MongoDB
+from pymongo import MongoClient, DESCENDING     #Pymongo Framework -> MongoDB
 from random import randint
 import locale
 from datetime import date
@@ -18,6 +19,7 @@ app.secret_key = os.urandom(24)     #LLave para envio de session
 client = MongoClient('mongodb://usuario:123456789a@ds031835.mlab.com:31835/tesis')        #Conexion con MongoDB en MongoLab
 db = client['tesis']
 usuarios = db.usuarios                                                                    #Referencia a la coleccion "Usuarios" de la DB
+administradores = db.administradores
 configuraciones = db.configuraciones                                                      #Referencia a la coleccion "Usuarios" de la DB
 respuestas = db.respuestas
 
@@ -32,28 +34,93 @@ def login_required(f):
             return f()
     return wrap           #Nueva funcion para validacion de sesion iniciada
     
-def generarActividad1(basicasA, basicasB, minn, maxn):
+def generarActividad1(numNumeroAntes, numNumeroDespues, numNumeroEntre, numValorPosicional, numResta, numSuma, numMultiplicacion, minn, maxn):
     preguntas = []
     
     acciones = json.load(open('database/acciones.json'))
     comidas = json.load(open('database/comidas.json'))
     personas = json.load(open('database/personas.json'))
+    objetos = json.load(open('database/objetos.json'))
     
-    for i in range(basicasA):
+    for i in range(numNumeroAntes):
+        preguntas.append(numeroAntes(minn,maxn))
+        
+    for i in range(numNumeroDespues):
+        preguntas.append(numeroDespues(minn,maxn))
+        
+    for i in range(numNumeroEntre):
+        preguntas.append(numeroEntre(minn,maxn))
+        
+    for i in range(numNumeroEntre):
+        preguntas.append(numeroEntre(minn,maxn))
+        
+    for i in range(numValorPosicional):
+        persona = personas[randint(0,len(personas)-1)]
+        objeto = objetos[randint(0,len(objetos)-1)]
+        preguntas.append(valorPosicional(persona, objeto, minn, maxn))
+        
+    for i in range(numResta):
         persona = personas[randint(0,len(personas)-1)]
         comida = comidas[randint(0,len(comidas)-1)]
-        
-        preguntas.append(OperacionesBasicasA(persona,comida,minn,maxn))
-        
-    for i in range(basicasB):
+        preguntas.append(resta(persona, comida, minn, maxn))
+
+    for i in range(numSuma):
         persona1 = personas[randint(0,len(personas)-1)]
         persona2 = personas[randint(0,len(personas)-1)]
-        accion = acciones[randint(0,len(acciones)-1)]
-        accionpasado = accion["accionpasado"]
-        accion = accion["accion"]
         
-        preguntas.append(OperacionesBasicasB(persona1,persona2,accion,accionpasado,minn,maxn))
+        while(persona1 == persona2):
+            persona2 = personas[randint(0,len(personas)-1)]
+        
+        indiceAccion = acciones[randint(0,len(acciones)-1)]
+        accion = indiceAccion['accion']
+        accionPasado = indiceAccion['accionPasado']
+        
+        preguntas.append(suma(persona1, persona2, accion, accionPasado, minn, maxn))
     
+    for i in range(numMultiplicacion):
+        persona = personas[randint(0,len(personas)-1)]
+        objeto = objetos[randint(0,len(objetos)-1)]
+        preguntas.append(multiplicacion(persona, objeto, minn, maxn))
+    
+    return preguntas
+
+def generarActividad2(numConjuntosIguales, numConjuntoMayor, numConjuntoMenor, numContarSonidos):
+    preguntas = []
+    
+    animales = json.load(open('database/animales.json'))
+
+    for i in range(numConjuntosIguales):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(conjuntosIguales(animal1,animal2))
+        
+    for i in range(numConjuntoMayor):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(conjuntoMayor(animal1,animal2))
+    
+    for i in range(numConjuntoMenor):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(conjuntoMenor(animal1,animal2))
+        
+    for i in range(numContarSonidos):
+        animal1 = animales[randint(0,len(animales)-1)]
+        animal2 = animales[randint(0,len(animales)-1)]
+        while(animal1 == animal2):
+            animal2 = animales[randint(0,len(animales)-1)]
+            
+        preguntas.append(contarSonidos(animal1,animal2))
+
     return preguntas
 
 @app.route('/', methods=['GET'])
@@ -64,12 +131,12 @@ def index():
 @login_required         #Validacion de inicio de sesion
 def generarreporte():
     reg = []
-    deserializedSession = loads(session['usuario'])
-    for respuesta in respuestas.find({'id_usuario': ObjectId(deserializedSession['_id'])}):
+    usuario = loads(session['usuario'])
+    for respuesta in respuestas.find({'id_usuario': ObjectId(usuario['_id'])}):
         respuesta.pop('_id', None)
         respuesta.pop('id_usuario', None)
         reg.append(respuesta)
-    return render_template('generarReporte.html', actividades=reg)
+    return render_template('generarReporte.html', actividades=reg, usuario=(usuario['nombre'] + ' ' + usuario['apellido']))
     
 @app.route('/SeleccionarActividad', methods=['GET'])
 @login_required         #Validacion de inicio de sesion
@@ -80,12 +147,11 @@ def seleccionaractividad():
 @login_required         #Validacion de inicio de sesion
 def actividad1():
     if request.method == 'POST':
-        
         fdata = request.form
         data = {}
         for (k,v) in fdata.items():
             data[k]=v
-        preguntas = generarActividad1(int(data['operacionesbasicasA']), int(data['operacionesbasicasB']), int(data['minn']), int(data['maxn']))
+        preguntas = generarActividad1(int(data['numeroAntes']), int(data['numeroDespues']), int(data['numeroEntre']), int(data['valorPosicional']), int(data['resta']), int(data['suma']), int(data['multiplicacion']), int(data['minn']), int(data['maxn']))
         
         preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
         for i in range(len(preguntas)):
@@ -96,21 +162,69 @@ def actividad1():
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
         conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
-        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px']
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
         numerosTexto = dumps(json.load(open('database/numeros.json')))
-        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
+        preguntasJavascript = json.dumps(preguntasJavascript)
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, animales1 = [], animales2 = [], totalConjuntosA = [], totalConjuntosB = [],conf=config)
     else:
         return render_template('actividad1.html')
     
 @app.route('/Actividad2', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
 def actividad2():
-    return render_template('actividad2.html')
+    if request.method == 'POST':
+        fdata = request.form
+        data = {}
+        for (k,v) in fdata.items():
+            data[k]=v
+        preguntas = generarActividad2(int(data['conjuntosIguales']), int(data['conjuntoMayor']), int(data['conjuntoMenor']), int(data['contarSonidos']))
+        
+        preguntasJavascript, respuestasJavascript, imagenesJavascript, animales1Javascript, animales2Javascript, totalConjuntosAJavascript, totalConjuntosBJavascript = [], [], [], [], [], [], []
+        for i in range(len(preguntas)):
+            preguntasJavascript.append(str(preguntas[i][0]))
+            respuestasJavascript.append(preguntas[i][1])
+            imagenesJavascript.append(str(preguntas[i][2]))
+            animales1Javascript.append(str(preguntas[i][3]))
+            animales2Javascript.append(str(preguntas[i][4]))
+            totalConjuntosAJavascript.append(str(preguntas[i][5]))
+            totalConjuntosBJavascript.append(str(preguntas[i][6]))
+            
+        deserializedSession = loads(session['usuario'])
+        deserializedSession['configuracion']
+        conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
+        numerosTexto = dumps(json.load(open('database/numeros.json')))
+        preguntasJavascript = json.dumps(preguntasJavascript)
+        
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, animales1 = animales1Javascript, animales2 = animales2Javascript, totalConjuntosA = totalConjuntosAJavascript, totalConjuntosB = totalConjuntosBJavascript, conf=config)
+    else:
+        return render_template('actividad2.html')
     
 @app.route('/Actividad3', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
 def actividad3():
-    return render_template('actividad3.html')
+    if request.method == 'POST':
+        fdata = request.form
+        data = {}
+        for (k,v) in fdata.items():
+            data[k]=v
+        preguntas = generarActividad1(int(data['numeroAntes']), int(data['numeroDespues']), int(data['numeroEntre']), int(data['minn']), int(data['maxn']))
+        
+        preguntasJavascript, respuestasJavascript, imagenesJavascript = [],[],[]
+        for i in range(len(preguntas)):
+            preguntasJavascript.append(str(preguntas[i][0]))
+            respuestasJavascript.append(preguntas[i][1])
+            imagenesJavascript.append(str(preguntas[i][2]))
+        
+        deserializedSession = loads(session['usuario'])
+        deserializedSession['configuracion']
+        conf = configuraciones.find_one({'_id': ObjectId(deserializedSession['configuracion'])})
+        config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
+        numerosTexto = dumps(json.load(open('database/numeros.json')))
+        preguntasJavascript = json.dumps(preguntasJavascript)
+        return render_template('preguntas.html', preguntas=preguntasJavascript, respuestas=respuestasJavascript, numeros=numerosTexto, imagenes=imagenesJavascript, conf=config)
+    else:
+        return render_template('actividad3.html')
     
 @app.route('/GuardarResultados', methods=['POST'])
 @login_required         #Validacion de inicio de sesion
@@ -123,9 +237,20 @@ def guardarResultados():
     deserializedSession = loads(session['usuario'])
     data['id_usuario'] = ObjectId(deserializedSession['_id'])
     # sudo locale-gen es_ES.UTF-8 
-    data['fecha'] = date.today().strftime("%d de %B de %Y")
+    data['fecha'] = date.today().strftime("%-d de %B de %Y")
+    data['hora'] = date.today().strftime("%-I:%M %p")
     respuestas.insert_one(data)
     return redirect('/MenuInicio')
+    
+
+@app.route('/FinActividad', methods=['GET'])
+@login_required         #Validacion de inicio de sesion
+def finActividad():
+    usuario = loads(session['usuario'])
+    queryResult = respuestas.find_one({'id_usuario': ObjectId(usuario['_id'])}, sort=[( '_id', DESCENDING )]);
+    preguntasActividades = loads(queryResult['preguntas'])
+    respuestasActividades = loads(queryResult['respuestas'])
+    return render_template('finActividad.html', preguntas=preguntasActividades, respuestas=respuestasActividades);
     
 @app.route('/VerificarProgreso', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
@@ -178,6 +303,30 @@ def registrarusuario():
 def menuInicio():
     global session
     return render_template('menuInicio.html', sesion = session)
+    
+@app.route('/MenuAdministrador')
+def menuAdministrador():
+    global session
+    return render_template('menuAdmin.html', sesion = session)
+    
+@app.route('/IniciarSesionAdministrador', methods=['GET', 'POST'])
+def administrador():
+    if request.method == 'POST':
+        query = {"$and":[ {"usuario": str(request.form['usuario'])}, {"contrasena": str(request.form['contrasena'])}]}
+        resultado = administradores.find(query)
+        if resultado.count() > 0:
+            return redirect('/MenuAdministrador')
+        else:
+            return render_template('iniciarSesionAdmin.html', error=True)
+    else:
+        return render_template('iniciarSesionAdmin.html')
+        
+@app.route('/AgregarObjeto', methods=['GET', 'POST'])
+def agregarObjeto():
+    if request.method == 'POST':
+        return render_template('agregarObjeto.html')
+    else:
+        return render_template('agregarObjeto.html')
 
 @app.route('/Configuracion', methods=['GET', 'POST'])
 @login_required         #Validacion de inicio de sesion
