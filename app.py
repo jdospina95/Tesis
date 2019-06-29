@@ -22,6 +22,7 @@ usuarios = db.usuarios                                                          
 administradores = db.administradores
 configuraciones = db.configuraciones                                                      #Referencia a la coleccion "Usuarios" de la DB
 respuestas = db.respuestas
+cuentos = db.cuentos
 
 locale.setlocale(locale.LC_ALL, 'es_ES.UTF-8')
 
@@ -214,7 +215,7 @@ def actividad3():
         # for i in range(len(preguntas)):
         #     preguntasJavascript.append(str(preguntas[i][0]))
         #     respuestasJavascript.append(preguntas[i][1])
-        #     imagenesJavascript.append(str(preguntas[i][2]))
+        #     imagenesJavascript.append
         
         deserializedSession = loads(session['usuario'])
         deserializedSession['configuracion']
@@ -222,7 +223,16 @@ def actividad3():
         config = [str(conf['color_fondo']), str(conf['color_fuente']), str(conf['tamano_fuente'])+'px', int(conf['lectura_pantalla'])]
         return render_template('cantaletras.html', conf=config)
     else:
-        return render_template('actividad3.html')
+        # cuentos.insert_one({
+        #     'nombre': 'Ricitos de Oro',
+        #     'cuento': 'Érase una vez una familia de osos que vivían en una linda casita en el bosque. Papá Oso era muy grande, Mamá Osa era de tamaño mediano y Osito era pequeño. Una mañana, Mamá Osa sirvió la más deliciosa avena para el desayuno, pero como estaba demasiado caliente para comer, los tres osos decidieron ir de paseo por el bosque mientras se enfriaba. Al cabo de unos minutos, una niña llamada Ricitos de Oro llegó a la casa de los osos y tocó la puerta. Al no encontrar respuesta, abrió la puerta y entró en la casa sin permiso. En la cocina había una mesa con tres tazas de avena: una grande, una mediana y una pequeña. Ricitos de Oro tenía un gran apetito y la avena se veía deliciosa. Primero, probó la avena de la taza grande, pero la avena estaba muy fría y no le gustó. Luego, probó la avena de la taza mediana, pero la avena estaba muy caliente y tampoco le gustó. Por último, probó la avena de la taza pequeña y esta vez la avena no estaba ni fría ni caliente, ¡estaba perfecta! La avena estaba tan deliciosa que se la comió toda sin dejar ni un poquito. Después de comer el desayuno de los osos, Ricitos de Oro fue a la sala. En la sala había tres sillas: una grande, una mediana y una pequeña. Primero, se sentó en la silla grande, pero la silla era muy alta y no le gustó. Luego, se sentó en la silla mediana, pero la silla era muy ancha y tampoco le gustó. Fue entonces que encontró la silla pequeña y se sentó en ella, pero la silla era frágil y se rompió bajo su peso.',
+        #     'preguntas': ['pregunta', 'pregunta 2'],
+        #     'respuestas': ['respuesta 1', 'respuesta 2']
+        # })
+        cuentosdb = []
+        for cuento in cuentos.find():
+            cuentosdb.append(json.dumps({'cuento':cuento['cuento'], 'nombre':cuento['nombre'], 'preguntas':cuento['preguntas'], 'respuestas':cuento['respuestas']}))
+        return render_template('actividad3.html', cuentos=cuentosdb)
     
 @app.route('/GuardarResultados', methods=['POST'])
 @login_required         #Validacion de inicio de sesion

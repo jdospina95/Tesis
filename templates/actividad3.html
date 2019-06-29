@@ -56,34 +56,32 @@
 								<section>
 									<h2>Configuracion Actividad 3</h2>
 									<form action="/Actividad3" method="POST">
-										<div class="row gtr-uniform">
+										<div class="row">
 										    <div class="col-6 col-12-xsmall">
-												<p>Rango de los numeros a ser utilizados en la actividad</p>
+												<p>Cuento a ser utilizado en la actividad</p>
 											</div>
-										    <div class="col-3 col-12-xsmall">
-												<select required name="minn" class="minn" id="minn"></select>
-											</div>
-											<div class="col-3 col-12-xsmall">
-												<select required name="maxn" class="maxn"></select>
+											<div class="col-6 col-12-xsmall">
+												<select required name="cuento" class="cuento" id="cuento">
+													<option value="seleccionar" disabled selected>Seleccionar cuento</option>
+												</select>
 										    </div>
-										    <div class="col-5 col-12-xsmall">
-												<p>Numero de drag and drop</p>
-											</div>
-											<div class="tooltip col-1 col-12-xsmall">?
-											    <span class="tooltiptext">Info</span>
-											</div>
-											<div class="col-6 col-12-xsmall">
-												<select name="numeroAntes" class="0-10"></select>
-											</div>
-											<div class="col-5 col-12-xsmall">
-												<p>Numero de drag and drop 2</p>
-											</div>
-											<div class="tooltip col-1 col-12-xsmall">?
-											    <span class="tooltiptext">Info</span>
+										</div>
+									    <div class="row infocuento" id="infocuento">
+										    <div class="col-6 col-12-xsmall">
+												<p>Cuento</p>
 											</div>
 											<div class="col-6 col-12-xsmall">
-												<select name="numeroDespues" class="0-10"></select>
+												<p>Preguntas</p>
+										    </div>
+										    <div class="col-6 col-12-xsmall">
+												<textarea class="cuento" id="cuentocuento" rows="50" readonly></textarea>
 											</div>
+											<div class="col-6 col-12-xsmall">
+												<ul name="preguntas" class="preguntas" id="preguntas">
+												</ul>
+										    </div>
+										</div>
+										<div class="row">
 											<div class="col-12">
 												<ul class="actions">
 													<li><input type="submit" value="Continuar" class="primary" /></li>
@@ -105,70 +103,45 @@
 			<script src="{{url_for('static', filename='assets/js/util.js')}}"></script>
 			<script src="{{url_for('static', filename='assets/js/main.js')}}"></script>
 			
-			<script>
-			    $(function(){
-                var $select = $(".minn");
-                $select.append($('<option></option>').val('').html('Desde').attr('disabled','disabled').prop('selected', true));
-                $(".maxn").append($('<option></option>').val('').html('Hasta').attr('disabled','disabled').prop('selected', true));
-                for (i=1;i<1000;i++){
-                    $select.append($('<option></option>').val(i).html(i));
-                }
-            	});
-            	$(".minn").on('change', function() {
-				var $select = $(".maxn");
-				$select.empty();
-                $select.append($('<option></option>').val('').html('Hasta').attr('disabled','disabled').prop('selected', true));
-                for (i=parseInt($(".minn").val())+1;i<=1000;i++){
-                    $select.append($('<option></option>').val(i).html(i));
-                }
+			
+			<script type="text/javascript">
+				var cuentos = {{cuentos | safe}};
+				var $select = $(".cuento");
+				console.log($select);
+				for (i=0;i<cuentos.length;i++) { 
+					cuentos[i] = JSON.parse(cuentos[i]);
+					$select.append($('<option></option>').val(cuentos[i].nombre).html(cuentos[i].nombre));
+				}
+			
+				document.getElementById('cuento').addEventListener('change', function (evt) {
+				    if (this.value != 'seleccionar') {
+				    	document.getElementById('infocuento').style.display = 'flex';
+				    	document.getElementById('cuentocuento').value = cuentos[0]['cuento'];
+				    	
+				    	$(function(){
+			                var $ul = $(".preguntas");
+			                for (i=0;i<cuentos[0]['preguntas'].length;i++){
+			                    $ul.append($('<li></li>').html(cuentos[0]['preguntas'][i]));
+			                }
+		            	});
+				    }
+				    else document.getElementById('infocuento').style.display = 'none';
 				});
-			    $(function(){
-                var $select = $(".0-10");
-                for (i=0;i<=10;i++){
-                    $select.append($('<option></option>').val(i).html(i));
-                }
-            	});
 			</script>
 	</body>
 	
 	<style scoped>
-		#header {
-			padding: 2em 0 0.1em 0 !important;
+		.row {
+			padding-bottom: 20px;
 		}
 		
-        .tooltip {
-          position: relative;
-          display: inline-block;
-        }
-        
-        .tooltip .tooltiptext {
-          visibility: hidden;
-          width: 120px;
-          background-color: black;
-          color: #fff;
-          text-align: center;
-          border-radius: 6px;
-          padding: 5px 0;
-          position: absolute;
-          z-index: 1;
-          top: 150%;
-          left: 50%;
-          margin-left: -60px;
-        }
-        
-        .tooltip .tooltiptext::after {
-          content: "";
-          position: absolute;
-          bottom: 100%;
-          left: 50%;
-          margin-left: -5px;
-          border-width: 5px;
-          border-style: solid;
-          border-color: transparent transparent black transparent;
-        }
-        
-        .tooltip:hover .tooltiptext {
-          visibility: visible;
-        }
+		.cuento {
+			max-height: 40vh;
+			overflow: auto !important;
+		}
+		
+		.infocuento {
+			display: none;
+		}
     </style>
 </html>
